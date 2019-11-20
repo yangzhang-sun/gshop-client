@@ -1,6 +1,6 @@
 <template>
   <div>
-    实战开始
+    实战开始111
   </div>
 </template>
 
