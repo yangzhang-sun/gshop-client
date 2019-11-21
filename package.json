@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
+<<<<<<< HEAD
     "lib-flexible": "^0.3.2",
+=======
+>>>>>>> 63d63cb0cff41a42f2ff3cf34aa2d44cdf002736
     "postcss-px2rem": "^0.3.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
