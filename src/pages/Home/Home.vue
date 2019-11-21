@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div class="HomeHeader">
-    <span class="HomeLogo">
-      <img src="../../common/images/home/jiuxian.png">
-    </span>
-    <div class="HomeInput">
-      <Input/>
-=======
   <div id="g-homeWrap">
     <!-- 头部搜索 -->
     <div class="HomeHeader">
@@ -258,19 +250,11 @@
           alt=""
         />
       </a>
->>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-<<<<<<< HEAD
-  import Input from '../../components/Input/Input'
-  export default {
-    components:{
-      Input
-    }
-=======
 import Swiper from 'swiper'
 import Bscroll from 'better-scroll'
 import 'swiper/css/swiper.min.css'
@@ -294,7 +278,6 @@ import 'swiper/css/swiper.min.css'
       this.$route.path !== path && this.$router.replace(path)
      }
    }
->>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
   }
 </script>
 
@@ -319,13 +302,6 @@ import 'swiper/css/swiper.min.css'
       img
         width 57px
         height 27px
-<<<<<<< HEAD
-    .HomeInput
-      position fixed
-      top 6px
-      left 70px
-      
-=======
     .serach
         position fixed
         top 6px
@@ -433,5 +409,4 @@ import 'swiper/css/swiper.min.css'
 
         .myp
           text-decoration line-through
->>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
 </style>
