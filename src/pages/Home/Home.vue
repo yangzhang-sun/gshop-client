@@ -1,13 +1,9 @@
 <template>
-  <div>
-    <HeaderGuide title="裸价清仓">
-      <span slot="left" class="header_search">
-        <i class="iconfont icon-zuozhishi"></i>
-      </span>
-      <span slot="right" class="header_menu">
-        <i class="iconfont icon-webicon03"></i>
-      </span>
-    </HeaderGuide>
+  <div class="HomeHeader">
+    <span class="HomeLogo">
+      <img src="../../common/images/home/jiuxian.png">
+    </span>
+    <input class="serach" type="text">
   </div>
 </template>
 
@@ -17,6 +13,24 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
- 
+  .HomeHeader
+    position fixed
+    z-index 100
+    left 0
+    top 0
+    width 100%
+    height 40px
+    display flex
+    justify-content space-between
+    background pink
+    .HomeLogo
+      position relative
+      top 6px
+      left 6px
+      img
+        width 57px
+        height 27px
+    .serach
+      position absolute
+      
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="header header-cart">
+  <header class="header">
     <slot name="left"></slot>
     <a class="header_title">
       <span class="header_title_text ellipsis">{{title}}</span>
@@ -19,7 +19,7 @@
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" >
   .header
     background-color #de4943
     position fixed
