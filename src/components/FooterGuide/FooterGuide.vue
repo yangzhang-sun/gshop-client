@@ -1,9 +1,14 @@
 <template>
+<<<<<<< HEAD
+  <div class="footer">
+    <div @click="goPath('/Home')">
+=======
   <div id="footerGuideContainer">
     <div class="guideItem" @click="goPath('/Home')">
       <span>
         <i class="iconfont icon-index"></i>
       </span>
+>>>>>>> 2a45275e25ea69175b732641327d79f33af4874b
       <span>首页</span>
     </div>
     <div class="guideItem" @click="goPath('/Sort')">
@@ -43,6 +48,16 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+<<<<<<< HEAD
+  .footer
+    display flex
+    justify-content space-between
+    position fixed
+    bottom 0
+    left: 0;
+    width: 100%;
+ 
+=======
 @import "../../common/stylus/mixins.styl"
   #footerGuideContainer
     position fixed
@@ -70,4 +85,5 @@
         width 42px
         height 42px
 
+>>>>>>> 2a45275e25ea69175b732641327d79f33af4874b
 </style>
