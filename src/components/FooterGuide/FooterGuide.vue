@@ -63,10 +63,11 @@
       flex-direction column
       span
         i
+          font-size 12px
         &:first-child
           margin 6px 0
       .flush
         width 42px
         height 42px
- 
+
 </style>
