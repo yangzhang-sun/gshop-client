@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-bigContain">
     <div class="w-headerTitle"></div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -41,24 +41,30 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
+.w-bigContain
+  background #F5F5F5
   .w-headerTitle 
     width: 100%
     height: 40px
     background: red
-  .swiper-wrapper
-    width: 100%;
-    height: 320px;
-    display flex
-    .swiper-slide img 
-      width: 320px;
+  .swiper-container
+    width 100%
+    .swiper-wrapper
+      width: 100%;
       height: 320px;
-      margin: 0 28px;
+      display flex
+      .swiper-slide
+       width 100%
+       img 
+        width: 320px
+        height: 320px;
+        margin: 0 28px;
   h4
     color black 
     font-size 15px
     margin 10px 50px
   .w-message
-    margin 30px 20px
+    margin 20px 20px
     width 100%
     height 39px
     position relative
@@ -66,9 +72,13 @@ export default {
       position absolute 
       top 0px
       left  0px
+      color red
+      font-weight blod
+      font-size 15px
     .w-club
       position absolute 
-      bottom 0px
+      bottom 5px
       left 0px
+      font-size 10px
 </style>
 `
