@@ -36,6 +36,7 @@
   export default {
     methods:{
       goPath(path){
+        console.log(this.$route)
         this.$route.path !== path && this.$router.replace(path)
       }
     }
@@ -55,7 +56,7 @@
     display flex
     background #eee
     .guideItem
-      width 25%
+      width 20%
       height 100%
       padding-bottom 6px
       text-align center
