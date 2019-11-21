@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <div>
       <header class="CartHeader">
-        <span class="header_search">
+        <span @click="$router.replace('/Home')" class="header_search">
           <i class="iconfont icon-zuozhishi"></i>
         </span>
         <a class="header_title">
