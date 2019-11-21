@@ -28,7 +28,7 @@
         <span>!自营商品实付满100元免运费，偏远地区满500元免运费</span>
       </div>
       <div class="cartKongBox">
-        <img src="../../../static/images/cart/kong.png.png" alt="购物车">
+        <img src="../../common/images/cart/kong.png" alt="购物车">
         <p class="kongCarText">购物车还是空的</p>
         <p class="cartText">快去逛逛吧~</p>
         <a @click="goOther('/Home')" class="cartBtn">促销活动</a>
@@ -144,9 +144,5 @@
               border-radius 5px
               border 1px solid #999
             
-
-
-
-
  
 </style>
