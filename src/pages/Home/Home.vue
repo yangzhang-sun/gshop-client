@@ -1,7 +1,7 @@
 <template>
   <div id="g-homeWrap">
     <!-- 头部搜索 -->
-    <header class="topFix">
+    <!-- <header class="topFix">
        <div class="searchTb">
           <span>
             <img src="../../static/images/jiuxian.png" alt="">
@@ -11,8 +11,14 @@
           
           <input type="text" placeholder="自营酒仙超市 专区第二件半价">
           <!-- <i class="iconfont icon-sousuo1"></i> -->
-        </div>
-    </header>
+        <!-- </div>
+    </header> -->
+    <div class="HomeHeader">
+    <span class="HomeLogo">
+      <img src="../../common/images/home/jiuxian.png">
+    </span>
+    <input class="serach" placeholder="珍酒酒仙甄选特卖  9.9元限量抢美酒" type="text">
+    </div>
     <!-- 轮播图 -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -138,24 +144,50 @@ import 'swiper/css/swiper.min.css'
 <style lang="stylus" rel="stylesheet/stylus">
  #g-homeWrap
   width 100%
-  .topFix
-    box-sizing border-box
-    position fixed  
+  .HomeHeader
     width 100%
-    height 27px
+    height 40px
     display flex
-    z-index 30
-    .searchTb
-      span 
-        width: 57px;
-        height: 27px;
-    .searchInput
-      input 
-        width 274px
+    .HomeLogo
+      position fixed
+      top 6px
+      left 6px
+      img
+        width 57px
         height 27px
-        border 1px solid #eee
-        border-radius 3px
-        margin 3px
+    .serach
+        position fixed
+        top 6px
+        left 70px
+        height 27px
+        line-height 27px
+        width 290px
+        border-radius 5px
+        box-sizing border-box
+        background-image url('../../common/images/home/sousuo.png')
+        background-size 12px 12px 
+        background-position 10px 8px
+        background-repeat no-repeat
+        padding-left 30px
+  // .topFix
+  //   box-sizing border-box
+  //   position fixed  
+  //   width 100%
+  //   height 27px
+  //   display flex
+  //   z-index 30
+  //   .searchTb
+  //     span 
+  //       width: 57px;
+  //       height: 27px;
+  //   .searchInput
+  //     input 
+  //       width 274px
+  //       height 27px
+  //       border 1px solid #eee
+  //       border-radius 3px
+  //       margin 3px
+  
   .swiper-container
     .swiper-wrapper
       .swiper-slide

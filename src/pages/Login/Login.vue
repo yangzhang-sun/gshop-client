@@ -1,6 +1,11 @@
 <template>
   <div>
-    Login
+    <HeaderGuide title="用户登录">
+      <span slot="left" class="header_search">
+        <i class="iconfont icon-zuozhishi"></i>
+      </span>
+
+    </HeaderGuide>
   </div>
 </template>
 
@@ -10,6 +15,5 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
  
 </style>
