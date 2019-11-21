@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+import Purchase from '../pages/Purchase/Purchase.vue'
 
 export default[
   {
@@ -21,7 +22,11 @@ export default[
   },
   {
     path:'/Home',
-    component:Home
+    component:Home,
+  },
+  {
+    path: '/Purchase',
+    component: Purchase
   },
   {
     path:'/Flush',
@@ -33,6 +38,6 @@ export default[
   },
   {
     path:'/',
-    component:Login
+    redirect: '/Purchase'
   }
 ]
