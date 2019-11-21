@@ -9,7 +9,11 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+<<<<<<< HEAD
 import SortList from '../pages/SortList/SortList.vue'
+=======
+import Purchase from '../pages/Purchase/Purchase.vue'
+>>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
 
 export default[
   {
@@ -21,11 +25,20 @@ export default[
     component:Cart
   },
   {
+<<<<<<< HEAD
     path:'/home',
     component:Home
     // meta:{//只有一个页面需要底部导航
     //   isShowFooterGuide:true
     // }
+=======
+    path:'/Home',
+    component:Home,
+  },
+  {
+    path: '/Purchase',
+    component: Purchase
+>>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
   },
   {
     path:'/flush',
@@ -41,6 +54,10 @@ export default[
   },
   {
     path:'/',
+<<<<<<< HEAD
     redirect:'/sort'
+=======
+    redirect: '/Purchase'
+>>>>>>> 7ab942221576ca71038ecb59470f49fa903431b2
   }
 ]
