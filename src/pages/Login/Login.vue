@@ -2,7 +2,7 @@
 
   <div class="loginContainer">
     <HeaderGuide title="用户登录">
-      <span slot="left" class="header_search">
+      <span @click="$router.replace('/Home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
 

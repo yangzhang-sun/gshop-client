@@ -23,7 +23,7 @@
   .header
     background-color #de4943
     position fixed
-    z-index 100
+    z-index 99
     left 0
     top 0
     width 100%
