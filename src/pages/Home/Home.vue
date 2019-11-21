@@ -1,6 +1,13 @@
 <template>
   <div>
-    Home
+    <HeaderGuide title="裸价清仓">
+      <span slot="left" class="header_search">
+        <i class="iconfont icon-zuozhishi"></i>
+      </span>
+      <span slot="right" class="header_menu">
+        <i class="iconfont icon-webicon03"></i>
+      </span>
+    </HeaderGuide>
   </div>
 </template>
 

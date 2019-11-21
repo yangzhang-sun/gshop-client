@@ -1,27 +1,27 @@
 <template>
-  <div>
-    <header class="CartHeader">
-      <span class="header_search">
-        <i class="iconfont icon-zuozhishi"></i>
-      </span>
-      <a class="header_title">
-        <span class="header_title_text ellipsis">购物车</span>
-      </a>
-      <span class="header_menu">
-        <i class="iconfont icon-webicon03"></i>
-      </span>
-    </header>
-  </div>
+  <header class="header header-cart">
+    <slot name="left"></slot>
+    <a class="header_title">
+      <span class="header_title_text ellipsis">{{title}}</span>
+    </a>
+    <slot name="right"></slot>
+  </header>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   export default {
+    props: {
+      title: {
+        required:true,
+        type: String
+      }
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .CartHeader
-    background-color #fafafa
+  .header
+    background-color #de4943
     position fixed
     z-index 100
     left 0
@@ -37,7 +37,7 @@
       height 50%
       .icon-zuozhishi
         font-size 22px
-        color #252525 
+        color #fff 
     .header_menu
       position absolute
       right 15px
@@ -47,7 +47,7 @@
       height 50%
       .icon-webicon03
         font-size 22px
-        color #252525 
+        color #fff 
     .header_title
       position absolute
       top 50%
@@ -59,7 +59,15 @@
       .header_title_text
         font-family "宋体"
         font-size 16px
-        color #252525
+        color #fff
         display block
- 
+    .header_login
+      font-size 14px
+      color #fff
+      position absolute
+      right 15px
+      top 50%
+      transform translateY(-50%)
+      .header_login_text
+        color #fff
 </style>
