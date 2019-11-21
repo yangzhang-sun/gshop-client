@@ -1,47 +1,49 @@
 <template>
+
   <div class="loginContainer">
+    <HeaderGuide title="用户登录">
+      <span slot="left" class="header_search">
+        <i class="iconfont icon-zuozhishi"></i>
+      </span>
+
+    </HeaderGuide>
+
     <div class="loginInner">
       <div class="login_header">
-        <h2 class="login_logo">用户登录</h2>
         <div class="login_header_title">
-          <a href="javascript:;" >短信登录</a>
-          <a href="javascript:;" class="on">密码登录</a>
+          <a href="javascript:;" :class="{on:!isPassWrrldLogin}" @click="isPassWrrldLogin=false">账号登录</a>
+          <a href="javascript:;" :class="{on:isPassWrrldLogin}" @click="isPassWrrldLogin=true">手机动态登录</a>
         </div>
       </div>
       <div class="login_content">
         <form>
-          <div class="on">
+          <div :class="{on:!isPassWrrldLogin}">
             <section class="login_message">
-              <input type="tel" maxlength="11" placeholder="手机号">
-              <button disabled="disabled" class="get_verification" >获取验证码</button>
+              <input type="tel" maxlength="11" placeholder="用户名/邮箱/手机号">
             </section>
             <section class="login_verification">
-              <input type="tel" maxlength="8" placeholder="验证码">
+              <input type="tel" maxlength="8" placeholder="密码">
             </section>
-            <section class="login_hint">
-              温馨提示：未注册的手机号，登录时将自动注册，且代表已同意
-              <a href="javascript:;">《用户服务协议》</a>
-            </section>
+            
           </div>
-          <div>
+          <div :class="{on:isPassWrrldLogin}">
             <section>
               <section class="login_message">
-                <input type="tel" maxlength="11" placeholder="手机/邮箱/用户名">
+                <input type="tel" maxlength="11" placeholder="请输入手机号，新用户将自动登录">
               </section>
               <section class="login_verification">
-                <input type="tel" maxlength="8" placeholder="密码">
+                <input type="tel" maxlength="8" placeholder="请以此点击">
                 <div class="switch_button off">
                   <div class="switch_circle"></div>
                   <span class="switch_text">...</span>
                 </div>
               </section>
               <section class="login_message">
-                <input type="text" maxlength="11" placeholder="验证码">
-                <img class="get_verification" src="" alt="captcha">
+                <input type="text" maxlength="11" placeholder="请输入验证码">         
               </section>
             </section>
           </div>
-          <button class="login_submit">登录</button>
+          <button class="login_submit">立即登录</button>
         </form>
         <a href="javascript:;" class="about_us">关于我们</a>
       </div>
@@ -52,19 +54,18 @@
   </div>
 </template>
 
-<script>
-  export default {
-     data(){
-       return {
-         isPassWordLogin: false, // 标识是否是用户名/密码登录
-         isShowPassword: false, // 是否显示密码
-       }
-     }
+<script type="text/ecmascript-6">
+export default {
+  data(){
+    return{
+      isPassWrrldLogin:false  //标识
+    }
   }
+}
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scoped>
-  @import "../../common/stylus/mixins.styl"
+<style lang="stylus" rel="stylesheet/stylus">
+@import "../../common/stylus/mixins.styl"
   .loginContainer
     width 100%
     height 100%
@@ -74,13 +75,7 @@
       width 80%
       margin 0 auto
       .login_header
-        margin-top -30px 
-        background-color yellowgreen
-        .login_logo
-          font-size 20px
-          font-weight bold
-          color #de4943
-          text-align center
+        
         .login_header_title
           padding-top 40px
           text-align center
@@ -91,9 +86,9 @@
             &:first-child
               margin-right 40px
             &.on
-              color #de4943
+              color #DE4B45
               font-weight 700
-              border-bottom 2px solid #de4943
+              border-bottom 2px solid #DE4B45
       .login_content
         >form
           >div
@@ -110,22 +105,14 @@
               outline 0
               font 400 14px Arial
               &:focus
-                border 1px solid #de4943
+                border 1px solid #02a774
             .login_message
               position relative
               margin-top 16px
               height 48px
               font-size 14px
               background #fff
-              .get_verification
-                position absolute
-                top 50%
-                right 10px
-                transform translateY(-50%)
-                border 0
-                color #ccc
-                font-size 14px
-                background transparent
+              
             .login_verification
               position relative
               margin-top 16px
@@ -152,7 +139,7 @@
                     float right
                     color #ddd
                 &.on
-                  background #de4943
+                  background #02a774
                 >.switch_circle
                 //transform translateX(27px)
                   position absolute
@@ -165,20 +152,14 @@
                   background #fff
                   box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
                   transition transform .3s
-            .login_hint
-              margin-top 12px
-              color #999
-              font-size 14px
-              line-height 20px
-              >a
-                color #de4943
+            
           .login_submit
             display block
             width 100%
             height 42px
             margin-top 30px
             border-radius 4px
-            background #de4943
+            background #DE4B45
             color #fff
             text-align center
             font-size 16px
@@ -200,3 +181,4 @@
           font-size 20px
           color #999
 </style>
+
