@@ -92,8 +92,8 @@
     </div>
     <div class="w-bottomContain">
        <ul class="w-botttomList">
-        <li><img src="../../common/images/qingcang/guizezuo.jpg" alt=""></li>
-        <li><img src="../../common/images/qingcang/guize.jpg" alt=""></li>
+        <li class="left"><img src="../../common/images/qingcang/guizezuo.jpg" alt=""></li>
+        <li class="right"><img src="../../common/images/qingcang/guize.jpg" alt=""></li>
       </ul>      
     </div>
   </div>
@@ -162,7 +162,17 @@
                 background red
                 outline:none
     .w-bottomContain
+      margin 5px auto 
       width 100%
+      overflow hidden
+      .w-botttomList
+        .left img 
+          width 50%
+          float left 
+        .right img
+          width 50%
+          float right
+          
          
               
            
