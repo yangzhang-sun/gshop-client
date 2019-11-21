@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+import Wdetail from '../pages/Wdetail/Wdetail'
 
 export default[
   {
@@ -28,11 +29,15 @@ export default[
   },
   {
     path:'/Flush',
-    component:Flush
+    component:Flush,
   },
   {
     path:'/Sort',
     component:Sort
+  },
+  {
+    path: '/wdetail',
+    component:Wdetail 
   },
   {
     path:'/',
