@@ -21,7 +21,10 @@ export default[
   },
   {
     path:'/Home',
-    component:Home
+    component:Home,
+    meta: {
+      isShowFooterGuide:true
+    }
   },
   {
     path:'/Flush',
