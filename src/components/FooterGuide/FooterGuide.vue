@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     <div @click="goPath('/Home')">
       <span>首页</span>
     </div>
@@ -29,6 +29,12 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  .footer
+    display flex
+    justify-content space-between
+    position fixed
+    bottom 0
+    left: 0;
+    width: 100%;
  
 </style>
