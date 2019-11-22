@@ -18,11 +18,6 @@
             :class="{'active' : active == item.name}" 
             @click="selected(item.name)">{{item.name}}
           </span>
-          <!-- <span   >综合</span>
-          <span  class="" >效率</span>
-          <span  class="">价格</span>
-          <span  class="shop_tabBar_line" >|</span>
-          <span  class="" >筛选</span> -->
         </div>
         <div class="shop_filtrate">
           <span class="shop_filtrate_left">酒仙配送</span>
@@ -197,6 +192,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
   import Input from '../../components/Input/Input'
   export default {
     components:{
@@ -204,27 +200,23 @@
     },
     data(){
       return {
-        wpList: [
-        {
-          name: '综合'
-        },
-        {
-          name: '效率'
-        },
-        {
-          name: '价格'
-        },
-        {
-          name: '筛选'
-        }
-      ],
-      active:''
+        active:''
       }
+    },
+    async mounted(){
+      console.log(this.$store)
+      this.$store.dispatch('getWinesAction')
     },
     methods:{
       selected(name){
         this.active = name;
       }
+    },
+    computed:{
+      ...mapState({
+        wines:state => state.wines,
+        wpList:state => state.wpList
+      })
     }
   }
 </script>
