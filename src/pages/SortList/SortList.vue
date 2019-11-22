@@ -1,5 +1,7 @@
 <template>
-  <div class="SortShopContainer"> 
+  <div class="SortShopContainer" > 
+    <div class="Srot_shop_guide">       
+    </div>
     <div class="Sort_shop_list">
       <!-- 头部 -->
       <header class="SortHeader">
@@ -18,6 +20,7 @@
             :class="{'active' : active == item.name}" 
             @click="selected(item.name)">{{item.name}}
           </span>
+          <input v-show="isShowInout===true" class="Srot_ipout" type="text">
         </div>
         <div class="shop_filtrate">
           <span class="shop_filtrate_left">酒仙配送</span>
@@ -27,8 +30,7 @@
       <!-- 搜索详情 -->
       <div class="shop_container">
         <ul class="shop_list">
-          <li class="shop_li border-1px">
-            <a v-for="(wine, index) in wines" :key="index">
+          <li class="shop_li border-1px" v-for="(wine, index) in filterPersons" :key="index">
               <div class="shop_left">
                 <img class="shop_img" :src='wine.image_url'>
               </div>
@@ -49,11 +51,10 @@
                   <p class="shop_delivery_msg">
                     <span class="scalping">酒自营</span>
                     <span class="segmentation">{{wine.appraise}}</span>
-                    <span>{{wine.comment}}</span>
+                    <span>{{wine.comment}}人评论</span>
                   </p>
                 </section>
               </div>
-            </a>
           </li>   
         </ul>
       </div>
@@ -70,23 +71,49 @@
     },
     data(){
       return {
-        active:''
+        active:'综合',
+        isShowInout:false,
       }
     },
     async mounted(){
-      console.log(this.$store)
       this.$store.dispatch('getWinesAction')
     },
     methods:{
       selected(name){
-        this.active = name;
+        this.active !== name && (this.active = name)
+        if(this.active === '筛选'){
+          this.isShowInout = !this.isShowInout
+          console.log(this.isShowInout)
+        }
       }
     },
     computed:{
       ...mapState({
         wines:state => state.wines,
         wpList:state => state.wpList
-      })
+      }),
+      filterPersons () {
+        const { wines, active } =this
+        const arr = wines.filter(p => p.price)
+        // 有可能要进行排序
+        if(active!=='综合'){
+          if(active==='价格'){
+            arr.sort((p1,p2)=>{
+              return p2.price - p1.price
+            })
+          }else if(active==='销量'){
+            arr.sort((p1,p2)=>{
+              return p2.comment - p1.comment
+            })
+          }else if(active==='筛选'){
+            arr.sort((p1,p2)=>{
+              return p2.id - p1.id
+            })
+          }
+        }
+        
+        return arr
+      }
     }
   }
 </script>
@@ -116,6 +143,13 @@
           left 0
           line-height 40px
           background-color #fff
+          .Srot_ipout
+            position fixed
+            width 200px
+            height 30px
+            left 50%
+            transform translateX(-100px)
+            background #eee
           span 
             width 26%
             height 40px
@@ -186,12 +220,15 @@
             display block
       .shop_container
         // box-sizing border-box
-        // margin-top 120px
+        margin-top 120px
         width 100%
-        // height 120px
+        height 547px
         .shop_list
+          display block
           .shop_li
-            border-top 1px solid red
+            display block
+            height 120px
+            border-top 1px solid #eee
             .shop_left
               float left
               box-sizing border-box
@@ -203,7 +240,6 @@
                 width 100%
                 height 100%
             .shop_right
-              border-bottom 1px solid red
               margin-top 5px
               padding-left 6px
               box-sizing border-box

@@ -17,7 +17,6 @@ export default {
     let result = await getWines()
     if(result.code === 0){
       commit(SAVE_WINES,{wines:result.data})
-      console.log('actions',result.data)
     }
   }
 }
