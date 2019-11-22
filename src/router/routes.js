@@ -9,6 +9,7 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+import Wdetail from '../pages/Wdetail/Wdetail'
 import SortList from '../pages/SortList/SortList.vue'
 import Purchase from '../pages/Purchase/Purchase.vue'
 
@@ -41,9 +42,14 @@ export default[
     component:Sort
   },
   {
-    path:'/sortList',
+    path: '/wdetail',
+    component:Wdetail 
+  },
+
+  {path:'/sortList',
     component:SortList
   },
+
   {
     path:'/',
     redirect: '/sort'
