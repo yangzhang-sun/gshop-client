@@ -14,11 +14,10 @@
         </div>
         <!-- 导航栏 -->
         <div class="shop_tabBar">
-          <span  class="shop_tabBar_com on" >综合</span>
-          <span  class="shop_tabBar_prod" >效率</span>
-          <span  class="shop_tabBar_price">价格</span>
-          <span  class="shop_tabBar_line" >|</span>
-          <span  class="shop_tabBa_filtr" >筛选</span>
+          <span v-for="item in wpList" :key="item.name" 
+            :class="{'active' : active == item.name}" 
+            @click="selected(item.name)">{{item.name}}
+          </span>
         </div>
         <div class="shop_filtrate">
           <span class="shop_filtrate_left">酒仙配送</span>
@@ -193,6 +192,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
   import Input from '../../components/Input/Input'
   export default {
     components:{
@@ -200,8 +200,23 @@
     },
     data(){
       return {
-        active:false,
+        active:''
       }
+    },
+    async mounted(){
+      console.log(this.$store)
+      this.$store.dispatch('getWinesAction')
+    },
+    methods:{
+      selected(name){
+        this.active = name;
+      }
+    },
+    computed:{
+      ...mapState({
+        wines:state => state.wines,
+        wpList:state => state.wpList
+      })
     }
   }
 </script>
@@ -233,7 +248,7 @@
           text-align center
           color #252525
           overflow hidden
-        .on
+        .active
           color #fc5a5a
         .shop_tabBar_line
           color #eee
