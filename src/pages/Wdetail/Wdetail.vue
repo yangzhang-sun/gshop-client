@@ -19,7 +19,7 @@
     <div class="w-messageContainer">
       <div class="w-degree" >46°牛栏山二锅头大二（绿瓶）500ml</div>
       <div class="w-message">
-        <p class="w-price" >￥19.00</p>
+        <p class="w-price" >￥888.00</p>
         <p class="w-club">会员下单再享98折,可省0.38元</p>
       </div>
     </div>
@@ -62,9 +62,67 @@
         <p>满100包邮</p>
         <p>七天退换</p>
       </div>
+      </div>
     </div>
+    <div class="w-commentContainer">
+      <div class="w-Container">
+         <div class="w-commentTitle">
+           <p>商品评价</p>
+           <p>5220人评价</p>
+           <div class="w-good">
+             <p style="font-size: 10px">好评度<span>99%</span></p>
+             <span>></span>
+           </div>
+        </div>
+        <div class="w-listComment">
+          <div class="w-listCommentTitle">
+            <span class="w-border"></span>
+            <img class="w-touxiang" src="../../common/images/touxiang.jpg" alt="">
+            <p class="w-useName">LH</p>
+            <p class="w-nickName">酒仙</p>
+            <p class="w-time">2019年11-11 16:19:40</p>
+          </div>
+          <div class="w-listCommentBody">
+            <p>入口绵柔,送货快,品质好酒,老牌名酒,多次购买</p>
+            <img src="../../common/images/pingluntu.jpg" alt="">
+          </div>
+        </div> 
+        <div class="w-listComment">
+          <div class="w-listCommentTitle">
+            <span class="w-border"></span>
+            <img class="w-touxiang" src="../../common/images/touxiang.jpg" alt="">
+            <p class="w-useName">LH</p>
+            <p class="w-nickName">酒仙</p>
+            <p class="w-time">2019年11-11 16:19:40</p>
+          </div>
+          <div class="w-listCommentBody">
+            <p>入口绵柔,送货快,品质好酒,老牌名酒,多次购买</p>
+            <img src="../../common/images/pingluntu2.jpg" alt="">
+          </div>
+        </div> 
+        <div class="w-listComment">
+          <div class="w-listCommentTitle">
+            <span class="w-border"></span>
+            <img class="w-touxiang" src="../../common/images/touxiang.jpg" alt="">
+            <p class="w-useName">LH</p>
+            <p class="w-nickName">酒仙</p>
+            <p class="w-time">2019年11-11 16:19:40</p>
+          </div>
+          <div class="w-listCommentBody">
+            <p>入口绵柔,送货快,品质好酒,老牌名酒,多次购买</p>
+            <img src="../../common/images/pingluntu3.jpg" alt="">
+          </div>
+        </div> 
+      </div>
     </div>
-    
+    <div class="w-bottomContainer">
+      <ul class="w-bottomLIst">
+        <li>在线客服</li>
+        <li>收藏</li>
+        <li>购物车</li>
+        <li>到货通知</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -105,6 +163,7 @@ export default {
     .w-degree
       font-size 17px
       text-align center
+      padding-top 15px
     .w-message
       display flex
       flex-direction column
@@ -214,8 +273,99 @@ export default {
         line-height 30px
         display flex
         justify-content space-around
-        background #F5F5F5
-
-
-
+  .w-commentContainer
+    width 100%
+    background white
+    box-sizing border-box
+    margin-top 10px
+    .w-Container
+      margin 5px 5px  
+      .w-commentTitle
+        width 100%
+        height 45px
+        line-height 45px
+        padding-top 10px
+        display flex
+        p:nth-child(1)
+          width 80px
+          font-size 14px
+        p:nth-child(2)
+          width 100px
+          font-size 10px
+          margin 0 10px 0 10px
+          color #999
+        .w-good
+          width 100px
+          height 44px
+          line-height 44px
+          font-size 10px
+          text-align center
+          display flex
+          margin-left 60px
+          p span 
+            color red
+      .w-listComment
+        border-top 1px solid #999  
+        .w-listCommentTitle
+          height 26px
+          line-height 26px
+          display flex
+          margin-top 10px
+          .w-useName
+            font-size 10px
+            margin 0 10px
+          .w-time 
+            margin-left 130px
+          .w-nickName
+            margin-top 7px
+            width 30px
+            height 10px
+            line-height 10px
+            text-align center
+            border 1px solid #999
+          img
+            width 30px
+            height 30px
+            border-radius 50%
+        .w-listCommentBody
+          p
+            margin 20px 0
+            font-size 12px
+          img 
+            width 78px
+            height 130px
+            margin-bottom 10px
+  .w-bottomContainer
+    position fixed
+    left 0
+    bottom 0
+    width 100%
+    background white
+    border-top 1px solid #999
+    .w-bottomLIst
+      height 40px
+      line-height 40px
+      display flex
+      font-size 15px
+      li:nth-child(1)
+        width 20%
+        line-height 40px
+        text-align center
+      li:nth-child(2)
+        width 20%
+        line-height 40px
+        text-align center
+        border-left 1px solid #999
+        border-right 1px solid #999
+      li:nth-child(3)
+        width 20%
+        line-height 40px
+        text-align center
+      li:nth-child(4)
+        width 45%
+        line-height 40px
+        text-align center
+        background #f4b63f
+        color white
+        font-weight bold
 </style>
