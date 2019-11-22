@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/Home')" slot="left" class="header_search">
+      <span @click="$router.replace('/home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -16,25 +16,25 @@
     </header>
     <!-- 遮罩层 -->
     <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice">
-      <div class="guideItem" @click="goPath('/Home')">
+      <div class="guideItem" @click="goPath('/home')">
         <span>
           <i class="iconfont icon-index"></i>
         </span>
         <span>首页</span>
       </div>
-      <div class="guideItem" @click="goPath('/Sort')">
+      <div class="guideItem" @click="goPath('/sort')">
         <span>
           <i class="iconfont icon-sousuo1"></i>
         </span>
         <span>搜索</span>
       </div>
-      <div class="guideItem" @click="goPath('/Cart')">
+      <div class="guideItem" @click="goPath('/cart')">
         <span>
           <i class="iconfont icon-icongouwuche1"></i>
         </span>
         <span>购物车</span>
       </div>
-      <div class="guideItem" @click="goPath('/Login')">
+      <div class="guideItem" @click="goPath('/login')">
         <span>
           <i class="iconfont icon-wodedangxuan1"></i>
         </span>
@@ -45,7 +45,7 @@
     <div class="SortList">
       <ul class="SortDetail">
         <li >
-          <a @click.prevent="goPath('/SortList')" href="">
+          <a @click.prevent="goPath('/sortList')" href="">
             <i class="iconfont icon-jiubei"></i>
             <span>白酒</span>
           </a>

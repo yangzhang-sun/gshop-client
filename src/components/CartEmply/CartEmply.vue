@@ -4,7 +4,7 @@
         <img src="../../common/images/cart/kong.png" alt="购物车">
         <p class="kongCarText">购物车还是空的</p>
         <p class="cartText">快去逛逛吧~</p>
-        <a @click="goOther('/Home')" class="cartBtn">促销活动</a>
+        <a @click="goOther('/home')" class="cartBtn">促销活动</a>
       </div>
   </section>
 </template>
@@ -27,7 +27,7 @@
   }
 </script>
 
-<style lang='stylus' rel='stylesheet/stylus' scoped>
+<style lang='stylus' rel='stylesheet/stylus'>
         .cartKongBox
            height 158px
            margin 100px 0

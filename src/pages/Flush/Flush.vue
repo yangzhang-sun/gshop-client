@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderGuide title="裸价清仓">
-      <span @click="$router.replace('/Home')" slot="left" class="header_search">
+      <span @click="$router.replace('/home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span slot="right" class="header_menu">
