@@ -1,13 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'lib-flexible/flexible'
-<<<<<<< HEAD
-import './vuevalidate'
-import { Button } from 'mint-ui'
-import 'mint-ui/lib/style.css'
-=======
 import '../public/reset.css'
->>>>>>> 25ee236634ef15cd1fa8f8b4ac4c5b51a0e1b6a6
 
 import router from './router'
 import store from './store'
