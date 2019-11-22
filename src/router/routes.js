@@ -12,6 +12,10 @@ import Sort from '../pages/Sort/Sort.vue'
 import Wdetail from '../pages/Wdetail/Wdetail'
 import SortList from '../pages/SortList/SortList.vue'
 import Purchase from '../pages/Purchase/Purchase.vue'
+import WhiteJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
+import CartList from '../components/CartList/CartList.vue'
+import CartEmply from '../components/CartEmply/CartEmply.vue'
+import Search from '../pages/Home/Search/Search.vue'
 
 
 export default[
@@ -52,6 +56,10 @@ export default[
     component:WhiteJiu,
   },
   {
+    path:'/search',
+    component:Search,
+  },
+  {
     path:'/flush',
     component:Flush,
     meta: {
@@ -76,6 +84,6 @@ export default[
 
   {
     path:'/',
-    redirect: '/sort'
+    redirect: '/cart'
   }
 ]
