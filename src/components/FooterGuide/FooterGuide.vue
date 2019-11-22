@@ -29,12 +29,6 @@
       </span>
       <span>我的酒仙</span>
     </div>
-     <div class="guideItem" @click="goPath('/Mine')">
-      <span>
-        <i class="iconfont icon-wodedangxuan1"></i>
-      </span>
-      <span>个人中心</span>
-    </div>
   </div>
 </template>
 

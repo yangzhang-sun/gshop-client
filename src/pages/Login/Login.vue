@@ -1,50 +1,62 @@
 <template>
-
+     <!-- 头部 -->
   <div class="loginContainer">
     <HeaderGuide title="用户登录">
       <span @click="$router.replace('/Home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
-
     </HeaderGuide>
-
+       <!-- 开始登陆 -->
     <div class="loginInner">
       <div class="login_header">
         <div class="login_header_title">
-          <a href="javascript:;" :class="{on:!isPassWrrldLogin}" @click="isPassWrrldLogin=false">账号登录</a>
-          <a href="javascript:;" :class="{on:isPassWrrldLogin}" @click="isPassWrrldLogin=true">手机动态登录</a>
+          <a href="javascript:;" :class="{on:!isPassWrrldLogin}" @click="isPassWrrldLogin=false">手机动态登录</a>
+          <a href="javascript:;" :class="{on:isPassWrrldLogin}" @click="isPassWrrldLogin=true">账号登录</a>
         </div>
       </div>
       <div class="login_content">
-        <form>
-          <div :class="{on:!isPassWrrldLogin}">
+      <form>
+          <div :class="{on:isPassWrrldLogin}">
             <section class="login_message">
-              <input type="tel" maxlength="11" placeholder="用户名/邮箱/手机号">
+              <input name="username" v-validate="'required'"  type="tel" maxlength="11" placeholder="用户名/邮箱/手机号">
+              <span style="color: red;" v-show="errors.has('username')">{{errors.first('username')}}</span>
             </section>
+
             <section class="login_verification">
-              <input type="tel" maxlength="8" placeholder="密码">
+                    <input  
+                      v-validate="'required'" 
+                      :type=" isShowPassword?'tel':'password'" 
+                      maxlength="8" 
+                      placeholder="密码">
+
+                <div 
+               @click="isShowPassword=!isShowPassword"
+                class="switch_button " 
+                 :class="isShowPassword?'on':'off'">
+                  <div class="switch_circle" :class="{right:isShowPassword}"></div>
+                  <span class="switch_text">{{isShowPassword?'abc':'...'}}</span>
+                </div>
             </section>
             
           </div>
-          <div :class="{on:isPassWrrldLogin}">
+          <div :class="{on:!isPassWrrldLogin}">
             <section>
               <section class="login_message">
                 <input type="tel" maxlength="11" placeholder="请输入手机号，新用户将自动登录">
               </section>
               <section class="login_verification">
                 <input type="tel" maxlength="8" placeholder="请以此点击">
-                <div class="switch_button off">
-                  <div class="switch_circle"></div>
-                  <span class="switch_text">...</span>
-                </div>
               </section>
               <section class="login_message">
                 <input type="text" maxlength="11" placeholder="请输入验证码">
-                <img  class="get_verification" src="../../common/images/captcha.svg" alt="captcha">       
+                <img  class="get_verification" src="../../common/images/captcha.svg" alt="captcha">   
+                 <span class="switch_text">{{isShowPassword?'abc':'...'}}</span>    
               </section>
             </section>
           </div>
-          <button class="login_submit">立即登录</button>
+
+          <!-- 登陆按钮 -->
+          <mt-button class="login_submit" type="danger" @click="goPost('/Mine')">立即登录</mt-button>
         </form>
         <a href="javascript:;" class="about_us">关于我们</a>
       </div>
@@ -56,17 +68,20 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { Button } from 'mint-ui'
 export default {
   data(){
     return{
-      isPassWrrldLogin:true //标识
+      isPassWrrldLogin:true, //标识是否是用户名 / 密码登录
+      isShowPassword: false,//是否显示密码
     }
   },
-  // methods: {
-  //    updateCaptcha(){
-
-  //    }
-  // }
+    methods:{
+      goPost(path){
+        this.$route.path !== path && this.$router.replace(path)
+      }
+    }
+  
 }
 </script>
 
@@ -165,7 +180,9 @@ export default {
                   border-radius 50%
                   background #fff
                   box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
-                  transition transform .3s  
+                  transition transform .3s 
+                  &.right
+                    transform translateX(27px)
           .login_submit
             display block
             width 100%
