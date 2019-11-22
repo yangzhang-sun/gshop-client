@@ -9,30 +9,59 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+import CartList from '../components/CartList/CartList.vue'
+import CartEmply from '../components/CartEmply/CartEmply.vue'
+import WhileJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
 
 export default[
   {
     path:'/Login',
-    component:Login
+    component:Login,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/Cart',
-    component:Cart
+    component:Cart,
+    children:[
+      {
+        path:'/Cart/CartList',
+        component:CartList,
+      },
+      {
+        path:'/Cart/CartEmply',
+        component:CartEmply,
+      }
+    ]
   },
   {
     path:'/Home',
-    component:Home
+    component:Home,
+    meta: {
+      isShowFooterGuide: true
+    }
+  },
+  {
+    path:'/whileJiu',
+    component:WhileJiu,
   },
   {
     path:'/Flush',
-    component:Flush
+    component:Flush,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/Sort',
-    component:Sort
+    component:Sort,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/',
-    component:Login
+    redirect:'/whileJiu'
   }
 ]
