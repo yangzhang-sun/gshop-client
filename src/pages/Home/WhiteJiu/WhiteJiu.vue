@@ -3,7 +3,7 @@
     <div class="headerBox">
       <header class="WhileHeader">
         <span class="header_search">
-          <i class="iconfont icon-zuozhishi" @click="goOther('/Home')"></i>
+          <i class="iconfont icon-zuozhishi" @click="goOther('/home')"></i>
         </span>
         <a class="header_title">
           <span class="header_title_text ellipsis">白酒</span>
@@ -13,10 +13,10 @@
         </span>
       </header>
       <div class="hideList" v-show="isHideList">
-        <div @click="goOther('/Home')">首页</div>
-        <div @click="goOther('/Sort')">搜索</div>
+        <div @click="goOther('/home')">首页</div>
+        <div @click="goOther('/sort')">搜索</div>
         <div @click="toggleHideList">购物车</div>
-        <div @click="goOther('/Flush')">我的酒仙</div>
+        <div @click="goOther('/flush')">我的酒仙</div>
       </div>
     </div>
     <div class="whiteJiuContent">
