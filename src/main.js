@@ -4,7 +4,7 @@ import 'lib-flexible/flexible'
 import '../public/reset.css'
 
 import router from './router'
-import stroe from './store'
+import store from './store'
 Vue.config.productionTip = false
 
 import HeaderGuide from './components/HeaderGuide/HeaderGuide.vue'
@@ -20,5 +20,5 @@ new Vue({
   // 安装路由器
   router,
   // 集中管理状态store
-  stroe
+  store
 }).$mount('#app')
