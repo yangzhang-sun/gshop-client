@@ -9,38 +9,52 @@ import Cart from '../pages/Cart/Cart.vue'
 import Home from '../pages/Home/Home.vue'
 import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
+<<<<<<< HEAD
 import Wdetail from '../pages/Wdetail/Wdetail'
+=======
+import SortList from '../pages/SortList/SortList.vue'
+import Purchase from '../pages/Purchase/Purchase.vue'
+>>>>>>> 764a6d2fab0870155e8e3979942c11fa62a85c24
 
 export default[
   {
-    path:'/Login',
+    path:'/login',
     component:Login
   },
   {
-    path:'/Cart',
+    path:'/cart',
     component:Cart
   },
   {
-    path:'/Home',
-    component:Home,
-    meta: {
-      isShowFooterGuide:true
-    }
+    path:'/home',
+    component:Home
+    // meta:{//只有一个页面需要底部导航
+    //   isShowFooterGuide:true
+    // }
   },
   {
-    path:'/Flush',
-    component:Flush,
+    path: '/Purchase',
+    component: Purchase
   },
   {
-    path:'/Sort',
+    path:'/flush',
+    component:Flush
+  },
+  {
+    path:'/sort',
     component:Sort
   },
   {
     path: '/wdetail',
     component:Wdetail 
   },
+
+  {path:'/sortList',
+    component:SortList
+  },
+  
   {
     path:'/',
-    component:Login
+    redirect: '/sort'
   }
 ]

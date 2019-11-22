@@ -13,7 +13,7 @@ Vue.use(VueRouter)
 
 // 管理路由
 const router = new VueRouter({
-  mode:'hash',//history带#号
+  mode:'hash',//history不带#号
   routes
 })
 

@@ -96,6 +96,14 @@
         <li class="right"><img src="../../common/images/qingcang/guize.jpg" alt=""></li>
       </ul>      
     </div>
+    <HeaderGuide title="裸价清仓">
+      <span @click="$router.replace('/Home')" slot="left" class="header_search">
+        <i class="iconfont icon-zuozhishi"></i>
+      </span>
+      <span slot="right" class="header_menu">
+        <i class="iconfont icon-webicon03"></i>
+      </span>
+    </HeaderGuide>
   </div>
 </template>
 
