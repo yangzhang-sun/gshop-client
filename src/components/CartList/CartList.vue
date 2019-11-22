@@ -15,10 +15,132 @@
           <li class="CartListWineLi">
             <div class="WineLiDet">
                 <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="https://img10.jiuxian.com/2019/0109/4c9c7fc2fcf247e283b14637fe1862994.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
                 <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
             </div>
             <div class="winesDetail">
-                <span>40°美国深蓝伏特加750ml(原味)</span>
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
+                <p class="winesPrice">
+                  <span>￥118.00</span>
+                </p>
+                <div class="changeCount">
+                  <a class="countDelete">-</a>
+                  <span class="countNumber">1</span>
+                  <a class="countAdd">+</a>
+                </div>
+            </div>
+            <a class="deleteWine">|&nbsp;删除</a>
+          </li>
+          <li class="CartListWineLi">
+            <div class="WineLiDet">
+                <input type="checkbox" class="CartListCheckBox">
+                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
+            </div>
+            <div class="winesDetail">
+                <div class="futejia">
+                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                </div>
                 <p class="winesPrice">
                   <span>￥118.00</span>
                 </p>
@@ -77,11 +199,11 @@
               width 15px
               height 15px
             .CartShopImg
-                width 18px
-                height 15px
+                width 17px
+                height 14px
                 margin 0 5px
               .jiujia
-                font-size 18px
+                font-size 16px
                 color #252525
               .discount
                 float right
@@ -90,8 +212,11 @@
                     margin-left 5px
                     font-size 16px
         .CartListWineUl
+          padding-bottom 40px
           .CartListWineLi
             height 100px
+            line-height 18px
+            width 100%
             border-bottom 1px solid #eee
             position relative
             .WineLiDet
@@ -104,35 +229,40 @@
                  left 2px
                  top 38px
                .winesImg
+                 padding-left 15px
                  width 80px
                  height 80px
+                 border 1px solid #eee
             .winesDetail
                float left
-               span 
-                 font-size 16px
+               width calc(100vw - 105px)
+               .futejia
+                  width 100%
+                  span 
+                    font-size 16px
                .winesPrice
                   span 
-                      font-size 14px
-                      color #ff0000 
-                 .changeCount
-                    margin-top 25px
-                    font-size 20px
-                    border 1px solid #d0d0d0
-                    width 84px
-                    .countDelete,.countAdd
-                       display inline-block
-                       width 20px
-                       height 20px
-                       line-height 20px
-                       text-align center
-                       border-right 1px solid #d0d0d0
-                    .countNumber
-                       display inline-block
-                       width 40px
-                       text-align center
-                       border-right 1px solid #d0d0d0
-                       height 20px
-                       line-height 20px
+                    font-size 14px
+                    color #ff0000 
+               .changeCount
+                  margin-top 25px
+                  font-size 20px
+                  border 1px solid #d0d0d0
+                  width 84px
+                  .countDelete,.countAdd
+                    display inline-block
+                    width 20px
+                    height 20px
+                    line-height 20px
+                    text-align center
+                    border-right 1px solid #d0d0d0
+                  .countNumber
+                    display inline-block
+                    width 40px
+                    text-align center
+                    border-right 1px solid #d0d0d0
+                    height 20px
+                    line-height 20px
             .deleteWine
                float right
                color  #000
@@ -148,6 +278,8 @@
       left 0
       display flex
       border-top 1px solid #eee
+      z-index 24px
+      background-color #fff
       .cartCountInput
          display inline-block
          width 15px

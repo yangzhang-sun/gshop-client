@@ -32,7 +32,7 @@
     <!-- 商品分类 -->
     <div class="newNav">
       <ul class="listItem">
-        <li>
+        <li @click="goPurchase('/whiteJiu')">
           <img
             src="https://img10.jiuxian.com/bill/2019/1121/914885086a214218bcdf806272c3012a.jpg"
             alt=""

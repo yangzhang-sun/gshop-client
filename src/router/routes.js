@@ -11,7 +11,7 @@ import Flush from '../pages/Flush/Flush.vue'
 import Sort from '../pages/Sort/Sort.vue'
 import CartList from '../components/CartList/CartList.vue'
 import CartEmply from '../components/CartEmply/CartEmply.vue'
-import WhileJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
+import WhiteJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
 import SortList from '../pages/SortList/SortList.vue'
 import Purchase from '../pages/Purchase/Purchase.vue'
 
@@ -50,8 +50,8 @@ export default[
     component: Purchase
   },
   {
-    path:'/whileJiu',
-    component:WhileJiu,
+    path:'/whiteJiu',
+    component:WhiteJiu,
   },
   {
     path:'/flush',
@@ -66,5 +66,9 @@ export default[
     meta: {
       isShowFooterGuide: true
     }
-  }
+  },
+  {
+    path: '/',
+    redirect: '/whiteJiu'
+  },
 ]
