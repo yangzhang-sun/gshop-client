@@ -3,7 +3,7 @@
     <div class="w-headerTitle"></div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" >
           <img src="../../common/images/jiudatu.jpg" alt="">
           </div>
         <div class="swiper-slide">
@@ -16,11 +16,14 @@
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
     </div>
-    <h4>46°牛栏山二锅头大二（绿瓶）500ml</h4>  
-    <div class="w-message">
-      <span class="w-price">￥19.00</span>
-      <span class="w-club">会员下单再享98折,可省0.38元</span>
+    <div class="w-messageContainer">
+      <div class="w-degree" >46°牛栏山二锅头大二（绿瓶）500ml</div>
+      <div class="w-message">
+        <span class="w-price" >￥19.00</span>
+        <span class="w-club">会员下单再享98折,可省0.38元</span>
+      </div>
     </div>
+    
     
   </div>
 </template>
@@ -48,37 +51,28 @@ export default {
     height: 40px
     background: red
   .swiper-container
-    width 100%
     .swiper-wrapper
-      width: 100%;
-      height: 320px;
-      display flex
       .swiper-slide
-       width 100%
-       img 
-        width: 320px
-        height: 320px;
-        margin: 0 28px;
-  h4
-    color black 
-    font-size 15px
-    margin 10px 50px
-  .w-message
-    margin 20px 20px
+        img 
+          width 102%
+          height 110%
+  .w-messageContainer
+    background white
     width 100%
-    height 39px
-    position relative
-    .w-price
-      position absolute 
-      top 0px
-      left  0px
-      color red
-      font-weight blod
-      font-size 15px
-    .w-club
-      position absolute 
-      bottom 5px
-      left 0px
-      font-size 10px
+    .w-degree
+      font-size 20px
+      text-align center
+    .w-message
+      
+      margin-top 10px  
+      .w-price
+        font-size 18px
+        color red
+        text-indent 12px
+      .w-club
+        font-size 10px
+
+
+// style="font-size:18px;color:red"
+
 </style>
-`
