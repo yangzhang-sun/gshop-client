@@ -1,6 +1,41 @@
 <template>
   <div class="w-bigContain">
-    <div class="w-headerTitle"></div>
+    <header class="SortHeader">
+      <HeaderGuide title="选酒">
+      <span @click="$router.replace('/Flush')" slot="left" class="header_search">
+        <i class="iconfont icon-zuozhishi"></i>
+      </span>
+      <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
+        <i class="iconfont icon-webicon03"></i>
+      </span>
+      </HeaderGuide>
+    </header>
+     <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice" style="z-index= 2">
+      <div class="guideItem" @click="goPath('/Home')">
+        <span>
+          <i class="iconfont icon-index"></i>
+        </span>
+        <span>首页</span>
+      </div>
+      <div class="guideItem" @click="goPath('/Sort')">
+        <span>
+          <i class="iconfont icon-sousuo1"></i>
+        </span>
+        <span>搜索</span>
+      </div>
+      <div class="guideItem" @click="goPath('/Cart')">
+        <span>
+          <i class="iconfont icon-icongouwuche1"></i>
+        </span>
+        <span>购物车</span>
+      </div>
+      <div class="guideItem" @click="goPath('/Login')">
+        <span>
+          <i class="iconfont icon-wodedangxuan1"></i>
+        </span>
+        <span>我的酒仙</span>
+      </div>
+    </div> 
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" >
@@ -130,6 +165,18 @@
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
 export default {
+ data(){
+      return{
+        isShowNotice: false 
+      }
+    },
+  methods: {
+    shade(){
+      // console.log('1')
+      this.isShade = !this.isShade
+    }
+   
+  },
   mounted() {
     var mySwiper = new Swiper(".swiper-container", {
        loop: true,
@@ -143,12 +190,70 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
+ @import "../../common/stylus/mixins.styl"
+  .SortHeader
+    width 100%
+    height 40px
+    .SortInput
+      position fixed
+      top 46px
+      left 42px
+  .SortList
+    width 100%
+    height 324px
+    .SortDetail
+      width 100%
+      height 100%
+      display block
+      li
+        text-align center
+        float left
+        width 124px
+        height 81px
+        border  1px solid #eee
+        margin 0 -1px -1px 0
+        a
+          display flex
+          flex-direction column
+          text-align center
+          margin-top 10px
+          color #333
+          i
+            width 100%
+            height 36px
+            font-size 36px
+          span 
+            margin-top 6px
+            font-size 18px
 .w-bigContain
+  position relative
   background #F5F5F5
-  .w-headerTitle 
-    width: 100%
-    height: 40px
-    background: red
+  // .w-headerTitle 
+  //   width: 100%
+  //   height: 40px
+  //   background: red
+  .shade
+    width 100%
+    height 45px
+    border-bottom: 1px solid #ccc
+    background-color: #efefef
+    position absolute
+    top 40px
+    left 0
+    display flex
+    justify-content space-around
+    .shadeItem
+      display flex
+      flex-direction column
+      margin 10px
+  .viewModule
+    margin-top 40px
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #f13063;
+    text-align: center;
+    font-size: 16px;
   .swiper-container
     .swiper-wrapper
       .swiper-slide
