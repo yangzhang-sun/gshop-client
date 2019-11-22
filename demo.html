@@ -1,23 +1,1290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-  
-  </style>
-</head>
-<body>
-  <a src href=""></a>
-  <image class="" src="" >
-    
-  </image>
-  <input type="text">
-  <img src="./static/images/jiuxian.png" alt="">
-  <script>
-      
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta name="wap-font-scale" content="no" />
+  <script src="https://m.jiuxian.com/mjava_statics/js/tingyun/jxmall-web-wap.js" type="text/javascript"></script>
+  <title> 酒仙网-白酒、红酒、洋酒、保健酒、黄酒、酒具官方旗舰店 </title>
+  <link href="https://m.jiuxian.com/mjava_statics/css/base.css" rel="stylesheet" type="text/css" />
+  <script src="https://m.jiuxian.com/mjava_statics/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    (function ($) {
+
+      window.listUrl = 'https://mlist.jiuxian.com/m_v1'; //搜索
+      //window.mjava.listUrl = window.listUrl; //搜索
+      window.root_url = 'https://m.jiuxian.com';
+      window.cartUrl = 'https://mcart.jiuxian.com'; //购物车
+      window.tradeUrl = 'https://morder.jiuxian.com'; //订单提交
+      window.loginUrl = 'https://mlogin.jiuxian.com'; //登录
+      window.memberUrl = 'https://mmember.jiuxian.com'; //我的酒仙
+      window.universalLinkUrl = 'https://misc.jiuxian.com/universallink';
+      window.realMisc = 'https://misc.jiuxian.com';
+      window.mjava = {
+        listUrl: window.listUrl
+      };
+    })(jQuery);
   </script>
+  <script src="https://m.jiuxian.com/mjava_statics/js/commons/mshop.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+  <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/miniapps/wx_applet_m.js"></script>
+
+  <script type="text/javascript">
+    /*获取指定名称的cookie的值*/
+    function getCookie(objName) {
+      var arrStr = document.cookie.split("; ");
+      for (var i = 0; i < arrStr.length; i++) {
+        var temp = arrStr[i].split("=");
+        if (temp[0] == objName) return unescape(temp[1]);
+      }
+      return "";
+    }
+    var _ozuid = getCookie("jx_user_id");
+  </script>
+
+</head>
+
+<body>
+  <script type="text/javascript">
+    /***微信小程序访问页面安卓手机处理（页面未加载完不可点击）**/
+    if (window.__wxjs_environment === 'miniprogram') { //判断是否小程序访问
+      $('body').append('<div id="loadMask" style="width:100%; height:100%; background: rgba(0, 0, 0, 0); position: fixed; top: 0; left: 0; z-index:10000;"></div>');
+      document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+          window.onload = function () {
+            setTimeout('$("#loadMask").remove();', 1500)
+          }
+        };
+      };
+    }
+  </script>
+  <link href="https://m.jiuxian.com/mjava_statics/css/index1.css?v20180404" rel="stylesheet" type="text/css" />
+  <link href="https://m.jiuxian.com/mjava_statics/css/index2.css?v20170802" rel="stylesheet" type="text/css" />
+  <!-- <link href="https://mlist.jiuxian.com/mjava_statics/css/search/searchindex.css" rel="stylesheet" type="text/css"> -->
+
+  <!-- <script type="text/javascript" src="https://mlist.jiuxian.com/mjava_statics/js/search/search.js"></script> -->
+
+
+  <script type="text/javascript" src="https://misc.jiuxian.com/js/wap/autoawaken/autoAwaken.js?v20180309"></script>
+  <script type="text/javascript">
+    //九章统计代码
+    window._JX_INFO = window._JX_INFO || [];
+    _JX_INFO.push(["home"]);
+  </script>
+
+
+
+  <script type="text/javascript">
+
+    var globalids = '';
+    var globalnum = 0;
+    var idsstr = "";
+
+    var req_id_global = "";
+    var banner_id_global = "";
+
+
+
+  </script>
+  <div class="app-download" id="appdownload">
+    <a href="javascript:;" class="close"><i class="close"></i></a> <span class="add-logo"></span>
+    <h3>
+      <p>打开酒仙网APP</p>
+      <p class="red">新人领198元礼包</p>
+    </h3>
+    <a class="down-btn" id="openApp" onclick="jxMlink()">立即打开</a>
+  </div>
+  <div class="homeWrap">
+    <header class="topFix">
+      <div class="fixBg"></div>
+      <div class="searchBox" id="header">
+        <div class="searchTb">
+          <div class="jxLogo"><span class="jx-sprite-icon"></span></div>
+          <div class="searchWrap" id="__home_search">
+
+            <link href="https://mlist.jiuxian.com/mjava_statics/css/base.css?v=20180704" type="text/css"
+              rel="stylesheet" />
+            <link href="https://mlist.jiuxian.com/mjava_statics/css/search/searchbox.css?v=20180723" type="text/css"
+              rel="stylesheet" />
+            <script type="text/javascript"
+              src="https://mlist.jiuxian.com/mjava_statics/js/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript"
+              src="https://mlist.jiuxian.com/mjava_statics/js/search/searchbox.js?v=2018083002"></script>
+            <script type="text/javascript"
+              src="https://mlist.jiuxian.com/mjava_statics/js/search/m_alert.js?v=20180814"></script>
+
+            <header class="header">
+              <div class="headSearch clearfix">
+                <div class="searchInput">
+                  <em class="sIcon" id="searchIcon"></em>
+                  <b id='search_text'></b>
+                  <input type="hidden" id="originKeyword" value="">
+                </div>
+              </div>
+            </header>
+
+            <!-- mjava.js -->
+
+            <script type="text/javascript">
+              (function ($) {
+                //全局url
+                window.rootUrl = "https://m.jiuxian.com";
+                window.listUrl = "https://mlist.jiuxian.com";
+
+                window.wx_mjx_url = encodeURIComponent(window.rootUrl).toLowerCase();
+                //线上微信链接
+                window.wxCheckOutUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd647a6f7a600fa8f&redirect_uri=" + window.wx_mjx_url + "%2fm_v1%2fcart%2fcheck_out%3fplatfrom%3dweixin&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+                window.voteIndexUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd647a6f7a600fa8f&redirect_uri=" + window.wx_mjx_url + "%2fm_v1%2fvotewx%2findex&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+                window.voteDetailUrl1 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd647a6f7a600fa8f&redirect_uri=" + window.wx_mjx_url + "%2fm_v1%2fvotewx%2fdetail%3fproId%3d";
+                window.voteToWap = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd647a6f7a600fa8f&redirect_uri=" + window.wx_mjx_url + "%2fm_v1%2fweixin_jx%2fgetReturnUrl%2fa&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+
+                window.voteDetailUrl2 = "&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+                window.mjava = {
+                  rootUrl: window.rootUrl,
+                  staUrl: window.rootUrl + "/mjava_statics",
+                  dynUrl: window.rootUrl + "/m_v1",
+                  dataUrl: window.rootUrl + "/m_v1",
+                  listUrl: window.listUrl + "/m_v1",
+                  ajaxJson: function (url, data, fun, type) {
+                    jQuery.ajax({
+                      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                      dataType: 'json',
+                      url: url,
+                      type: type || 'POST',
+                      data: data || {},
+                      success: function (data) {
+                        if (data.success) {
+                          sucFun.call(null, data);
+                        } else {
+                          alert("操作失败：" + data.errMessage);
+                        }
+                      }
+                    });
+                  },
+                  ajaxPage: function (url, data, sucfun, errfun, type) {
+                    jQuery.ajax({
+                      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                      dataType: 'html',
+                      url: url,
+                      type: type || 'POST',
+                      data: data || {},
+                      success: function (page) {
+                        if (data.success && sucfun) {
+                          sucFun.call(page);
+                        } else {
+                          if (errfun) {
+                            errfun.call(page);
+                          }
+                        }
+                      }
+                    });
+                  }
+                };
+              })(jQuery);
+            </script>
+
+            <div class="searchBoxWrap" id="searchBoxWrap">
+              <div class="pubSearcHeader">
+                <div class="headSearch clearfix">
+                  <a class="back sIcon" id='backList' href="javascript:;" onclick="closeSearch()"></a>
+                  <div class="searchInput"><em class="sIcon"></em><input id='search_input' type="search" value=""
+                      placeholder=""><span class="sIcon" id="search_clear"></span></div>
+                  <a class="searchBtn" id="searchBtn" href="javascript:;">搜索</a>
+                </div>
+              </div>
+              <!-- 热词and搜索历史 -->
+              <div class="hsContent" id="hsContent">
+                <div class="hs-wrap hotWords" id="hotwordId">
+                  <div class="hs-title"><em class="sIcon"></em><span>热门搜索</span></div>
+                  <div class="hs-list" id="hot_keyword">
+
+                  </div>
+                </div>
+                <div class="hs-wrap historyWords" id="hiswordId">
+                  <div class="hs-title"><em class="sIcon"></em><span>最近搜索</span><b class="sIcon clear"
+                      id="historyClear"></b></div>
+                  <div class="hs-list" id="history_keyword">
+                    <ul id="history_keyword_ul">
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- 热词and搜索历史end -->
+              <!-- 联想词 -->
+              <div class="automatedwords" id="automatedwords">
+                <ul class="aut-wrap" id="suggests">
+
+                </ul>
+              </div>
+              <!-- 联想词end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="swiper-container slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="__home_lunbo1-1"><a class="pic"
+            href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1716"><img
+              src="https://img09.jiuxian.com/bill/2019/1121/43528c0fb1cb4b80bf87b9f4c258d9c3.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-2"><a class="pic"
+            href="https://m.jiuxian.com/mobile/2019/11.15ZXHC/index.html"><img
+              src="https://img06.jiuxian.com/bill/2019/1118/4516d58f20b04adb9fd41e4778cb2f4d.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-3"><a class="pic"
+            href="https://m.jiuxian.com/mobile/2019/2.17MTDPR/index.html"><img
+              src="https://img07.jiuxian.com/bill/2019/1001/d71901d6b8b54903bed61a34797ec77f.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-4"><a class="pic"
+            href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=4044"><img
+              src="https://img06.jiuxian.com/bill/2019/1121/89f71d09ad0242d49e68fdb5bdc14da5.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-5"><a class="pic"
+            href="https://m.jiuxian.com/mobile/SP/517JXZX/index.html"><img
+              src="https://img10.jiuxian.com/bill/2019/1118/df7ca101c65a499eadfd0bb54165cc72.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-6"><a class="pic"
+            href="https://m.jiuxian.com/mobile/2019/JGJ/index.html"><img
+              src="https://img09.jiuxian.com/bill/2019/1118/90e336bd186c4fe3ad16b55b2b043abb.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-7"><a class="pic"
+            href="https://m.jiuxian.com/mobile/2019/2019GT/index.html"><img
+              src="https://img10.jiuxian.com/bill/2019/0916/6ff1eb1a3b3f41109fe801dc61d951e4.jpg"
+              class="swiper-lazy" /></a></div>
+        <div class="swiper-slide" id="__home_lunbo1-8"><a class="pic"
+            href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1385"><img
+              src="https://img08.jiuxian.com/bill/2019/1119/86a16c87dfa54b2ca345a48d212cfb80.jpg"
+              class="swiper-lazy" /></a></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+    </div>
+    <div class="newNav clearfix">
+      <a id="__home_icon1" href="https://m.jiuxian.com/m_v1/home/baijiu_new/660/150053"> <img
+          src="https://img10.jiuxian.com/bill/2019/1121/914885086a214218bcdf806272c3012a.jpg"></a>
+      <a id="__home_icon2" href="http://m.jiuxian.com/m_v1/home/putaojiu_new/661/150054"> <img
+          src="https://img08.jiuxian.com/bill/2019/1121/b9f9bc8da7754a09975a2405fece0b0a.jpg"></a>
+      <a id="__home_icon3" href="http://m.jiuxian.com/m_v1/home/yangjiu_new/662/150055"> <img
+          src="https://img09.jiuxian.com/bill/2019/1121/914a80f071724083a366ad4fd0619567.jpg"></a>
+      <a id="__home_icon4" href="https://m.jiuxian.com/m_v1/dynamic/mob01/151746"> <img
+          src="https://img09.jiuxian.com/bill/2019/1121/c838f6a3cf8d47e39cedf39fe84f268b.jpg"></a>
+      <a id="__home_icon5" href="https://m.jiuxian.com/mobile/2018/GJMJC/"> <img
+          src="https://img08.jiuxian.com/bill/2019/1121/b5ab96fb2cc44146b55cc9c539a46876.jpg"></a>
+      <a id="__home_icon6" href="https://m.jiuxian.com/mobile/2019/11.15ZXHC/index.html"> <img
+          src="https://img06.jiuxian.com/bill/2019/1121/59e6bd1f9a8c4f50bf09d563203383e3.jpg"></a>
+      <a id="__home_icon7" href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=4040"> <img
+          src="https://img10.jiuxian.com/bill/2019/1121/46c9f65b00594daaae1cf3a2f2f4c78e.jpg"></a>
+      <a id="__home_icon8" href="https://jc.jiuxian.com/"> <img
+          src="https://img10.jiuxian.com/bill/2019/1121/4fec183a905841fe9611b44d6a329a0c.jpg"></a>
+      <a id="__home_icon9" href="https://pintuan.jiuxian.com/"> <img
+          src="https://img09.jiuxian.com/bill/2019/1121/1c154bfd2aec45a8ba0fe96f99dee52f.jpg"></a>
+      <a id="__home_icon10" href="https://m.jiuxian.com/m_v1/dynamic/mob01/151711"> <img
+          src="https://img10.jiuxian.com/bill/2019/1121/f359ab8a94e54f579b47998855a84b26.jpg"></a>
+    </div>
+    <div class="pubBanner" id="__tonglan1-1"><a
+        href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1716"><img
+          src="https://img08.jiuxian.com/bill/2019/1121/f4222a3a30a64b849076886439639558.jpg" /></a></div>
+    <div class="jxAdBox">
+      <div class="itemFlex">
+        <div class="cular minH90 fl"><a id="__home_shouping2-1"
+            href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1716"><img
+              src="https://img09.jiuxian.com/bill/2019/1121/a0b6d6b170c04c55b980ea1b4a8a19a2.jpg"></a></div>
+        <div class="cular minH90 fl"><a id="__home_shouping2-2"
+            href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1716"><img
+              src="https://img10.jiuxian.com/bill/2019/1121/0a1e731bc4f74594bdf0d5fa44d53242.jpg"></a></div>
+      </div>
+    </div>
+    <div class="newsBox" id="__home_toutiao">
+      <div class="news"><i><img src="https://img07.jiuxian.com/bill/2018/0703/23e12867518b4a779bd6530e694e817f.jpg"></i>
+        <div class="swiper-container newList" id="newList">
+          <div class="swiper-wrapper">
+            <li class="swiper-slide"><a href="https://m.jiuxian.com/m_v1/dynamic/hdgz/151844">2元拼1499茅台飞天中奖名单</a></li>
+            <li class="swiper-slide"><a href="https://m.jiuxian.com/m_v1/dynamic/hdgz/151895">温馨提示 谨防上当受骗 造成财产损失</a>
+            </li>
+            <li class="swiper-slide"><a
+                href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=3820">爆品腰斩日 限时24小时</a>
+            </li>
+            <li class="swiper-slide"><a href="https://m.jiuxian.com/mobile/2019/2019GT/index.html">国台限时特惠 买一送一</a></li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spikeBox">
+      <div class="spikeTit">
+        <h3>掌上秒拍</h3>
+        <div class="lastTime" remainTime="11925"><span>距结束</span><i class="hours">12</i><em>:</em><i
+            class="minutes">12</i><em>:</em><i class="seconds">12</i></div>
+        <a id="__home_mp-more" href="https://m.jiuxian.com/m_v1/promote/qg?from=ad_03" class="more">
+          <span>更多商品的你来抢！</span>
+          <i class="jx-sprite-icon"></i></a>
+      </div>
+      <div class="spikeWrap">
+        <div class="swiper-container" id="tSlider_1" name="__home_mp-Item"></div>
+      </div>
+    </div>
+    <div class="pubBanner" id="__tonglan3-1"><a
+        href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=3820"><img
+          src="https://img10.jiuxian.com/bill/2019/0821/fb176ffae5b941a2aa0a38e88607a278.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan3-2"><a href="https://m.jiuxian.com/mobile/2019/11.15ZXHC/index.html"><img
+          src="https://img09.jiuxian.com/bill/2019/1118/cae554a9e2eb4519aa199e40ff94f71a.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan3-3"><a
+        href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1385"><img
+          src="https://img07.jiuxian.com/bill/2019/1119/6d175d47f8b2403688a9463ceccaaedf.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan3-4"><a href="https://m.jiuxian.com/mobile//2019/10.21CCZY/"><img
+          src="https://img10.jiuxian.com/bill/2019/1118/8e427c31a44043b093c2cce330d8e099.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan3-5"><a href="https://m.jiuxian.com/mobile/2019/88WULIANGYE/index.html"><img
+          src="https://img08.jiuxian.com/bill/2019/0916/2f2c0a029b0c47aeb7c1667d1bf32e95.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan3-6"><a href="https://m.jiuxian.com/mobile/SP/517JXZX/index.html"><img
+          src="https://img06.jiuxian.com/bill/2019/0917/b956bafcc014452db2219c7d9c634327.jpg" /></a></div>
+    <div class="jxAdBox">
+      <div class="adMidBox">
+        <div class="itemFlex">
+          <div class="wrapCon1">
+            <div class="cular borderCom pba1"><a id="__home_zhutizuo"
+                href="https://m.jiuxian.com/m_v1/dynamic/mob01/151889" class="minH172 height1"><img
+                  data-original="https://img07.jiuxian.com/bill/2019/0916/a3d193822f094b209f9e8f2b1cb891a2.jpg"
+                  class="test-lazyload"></a></div>
+          </div>
+          <div class="cular wrapCon2">
+            <div class="pba2">
+              <a id="__home_zhutiyoushang" href="https://m.jiuxian.com/mobile/2018/8.20CJXP/index.html"
+                class="borderComT minH86 height1"><img
+                  data-original="https://img10.jiuxian.com/bill/2019/1112/b60b0e14b2554a86b655b00470682534.jpg"
+                  class="test-lazyload"></a>
+            </div>
+            <div class="pba2">
+              <a name="__home_zhutiyouxia" href="https://m.jiuxian.com/mobile/SP/517JXZX/index.html"
+                class="minH86 height1"><img
+                  data-original="https://img09.jiuxian.com/bill/2019/0730/322e644c697c4cb088a1202536cf5f2e.jpg"
+                  class="test-lazyload"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-container" id="tSlider_2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="__zhutihuadong1">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/97945"><img
+              data-src="https://img09.jiuxian.com/bill/2019/1121/235715f6a0634342942e395c45446032.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong2">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/83967"><img
+              data-src="https://img10.jiuxian.com/bill/2019/1117/e65cb87ab3dd4136833e95143ff458e3.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong3">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/87754"><img
+              data-src="https://img10.jiuxian.com/bill/2019/1121/c4faaac2454b4fd6a8808b91ca54c25b.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong4">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/74745"><img
+              data-src="https://img07.jiuxian.com/bill/2019/0513/349f4a4396d24a8d9df8c740b0f04b93.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong5">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/99629"><img
+              data-src="https://img06.jiuxian.com/bill/2019/1114/ea6d3d5ec31d41dd9433f210b542d7ad.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong6">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/88869"><img
+              data-src="https://img07.jiuxian.com/bill/2019/1121/c45fd266c3cd469fbfe2f8c741df3935.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong7">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/25813"><img
+              data-src="https://img06.jiuxian.com/bill/2019/0911/f380a2028e5b4c9fabf15856ce764096.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong8">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/87414"><img
+              data-src="https://img09.jiuxian.com/bill/2019/0927/6d2bcc9c88e9438c899f664a9aa3ce96.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong9">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/84121"><img
+              data-src="https://img07.jiuxian.com/bill/2019/1121/23939cd5a41b4d149c9c928938e38e4a.jpg"
+              class="swiper-lazy"></a>
+        </div>
+        <div class="swiper-slide" id="__zhutihuadong10">
+          <div class="swiper-lazy-preloader"></div>
+          <a href="https://m.jiuxian.com/m_v1/goods/view/30049"><img
+              data-src="https://img09.jiuxian.com/bill/2019/1114/af93f2ce3c3640359ffa326cb786e1e5.jpg"
+              class="swiper-lazy"></a>
+        </div>
+      </div>
+    </div>
+    <div class="pubBanner" id="__tonglan4-1"><a href="https://m.jiuxian.com/mobile/2019/2.17MTDPR/index.html"><img
+          src="https://img07.jiuxian.com/bill/2019/0617/f97481907a4a44578ba12a1399f3e0c9.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan4-2"><a href="https://m.jiuxian.com/mobile/2019/JGJ/index.html"><img
+          src="https://img06.jiuxian.com/bill/2019/0624/a1eb933b54f949e2ad432a4e6186272d.JPG" /></a></div>
+    <div class="pubBanner" id="__tonglan4-3"><a href="https://m.jiuxian.com/mobile/2019/2019GT/index.html"><img
+          src="https://img09.jiuxian.com/bill/2019/0626/4f9bfb05033c44059aad5533479478d6.jpg" /></a></div>
+    <div class="pubBanner" id="__tonglan4-4"><a
+        href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1226"><img
+          src="https://img09.jiuxian.com/bill/2019/1120/ee91e33b8c5447ca8aa84b2a620776f8.jpg" /></a></div>
+    <div class="publicTitle" id="__home_jingxuan"><a href=""><img
+          src="https://img08.jiuxian.com/bill/2018/0504/3b79febef26042daacd65629b8d4cecf.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="fiveTop itemFlex">
+        <div class="cular minH90 borderCom"><a id="__home_jingxuan2-1"
+            href="https://m.jiuxian.com/mobile/SP/517JXZX/index.html"><img
+              data-original="https://img06.jiuxian.com/bill/2018/1116/e6f8a6a838b345fdb2a24db4bb5a19f2.jpg"
+              class="test-lazyload"></a>
+        </div>
+        <div class="cular minH90 borderCom"><a id="__home_jingxuan2-2"
+            href="https://m.jiuxian.com/m_v1/dynamic/mob01/151711"><img
+              data-original="https://img06.jiuxian.com/bill/2018/1116/44ea9eb1afc24e108ee34169d5bca895.jpg"
+              class="test-lazyload"></a>
+        </div>
+      </div>
+    </div>
+    <div class="jxAdBox">
+      <div class="third">
+        <div class="itemFlex">
+          <div class="cular minH107 borderCom"><a id="__home_jingxuan3-1"
+              href="https://m.jiuxian.com/m_v1/dynamic/mob01/151306"><img
+                data-original="https://img09.jiuxian.com/bill/2019/0927/1e09d761efc74e43a7649970e3fc4185.jpg"
+                class="test-lazyload"></a></div>
+          <div class="cular minH107 borderCom"><a id="__home_jingxuan3-2"
+              href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=3678"><img
+                data-original="https://img06.jiuxian.com/bill/2019/0524/eca21af27b9643a18ee356a4972bb37d.jpg"
+                class="test-lazyload"></a></div>
+          <div class="cular minH107 borderCom"><a id="__home_jingxuan3-3"
+              href="https://m.jiuxian.com/mobile/2019/JGJ/index.html"><img
+                data-original="https://img07.jiuxian.com/bill/2019/0401/0b8f7b1d41c842ccafd16d9651ab6d3a.jpg"
+                class="test-lazyload"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="publicTitle" id="__home_baijiu"><a href=""><img
+          src="https://img07.jiuxian.com/bill/2018/0504/4693b96b2e244c0e88636247c4044795.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="floorAd clearfix">
+        <div class="floorAdLeft">
+          <div class="borderCom pba3" id="__home_baijiu1"><a
+              href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=1&actId=3820&t=1570937832755"
+              class=" minH167 height1"><img
+                data-original="https://img07.jiuxian.com/bill/2019/1121/53b87897d4b44688b92a3a2eb299cc92.jpg"
+                class="test-lazyload"></a></div>
+        </div>
+        <div class="floorAdRight">
+          <div class="floorAdTop borderComT pba4" id="__home_baijiu2"><a
+              href="https://m.jiuxian.com/m_v1/dynamic/mob01/151784" class="minH83 height1"><img
+                data-original="https://img09.jiuxian.com/bill/2018/1210/de1e4bceafe54493b0b844ea79a1c179.jpg"
+                class="test-lazyload"></a></div>
+          <div class="floorAdBottom itemFlex">
+            <div class="floorAdWrap">
+              <div class="cular borderCom pba5" id="__home_baijiu3"><a
+                  href="https://m.jiuxian.com/m_v1/dynamic/mob01/151820" class="minH84 height1"><img
+                    data-original="https://img10.jiuxian.com/bill/2018/1116/d5ac428dcf9b42fcb3f7a0b0bef71354.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+            <div class="floorAdWrap">
+              <div class="cular pba5" id="__home_baijiu4"><a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151802"
+                  class="minH84 height1"><img
+                    data-original="https://img08.jiuxian.com/bill/2019/0114/95415ff5ec404e64a548acc5e0baae86.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="swiper-container J_silderTwo">
+        <div class="swiper-wrapper" id="__home_baijiuicon">
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/mobile/2019/2.17MTDPR/index.html"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1118/8fe8ce3934814bfcab6fe95f148c9525.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/mobile/2019/WULIANGYE/index.html"><img
+                data-src="https://img06.jiuxian.com/bill/2016/1118/62dd0d533ef94f3c8a8cfb9883fd9c10.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/mobile/2019/2019GT/index.html"><img
+                data-src="https://img06.jiuxian.com/bill/2019/0114/12ee3b5cc6f145739f9b7055b41fe79f.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/mobile/2019/JNCRC/index.html"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1118/8f58d3feba1145ae960e0644a284ea8f.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=4055"><img
+                data-src="https://img06.jiuxian.com/bill/2017/0406/d1404eeec935421c8b850daa94f140f3.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1361"><img
+                data-src="https://img10.jiuxian.com/bill/2018/1102/79f0383b1c18496cb3efd28206aa0ab5.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151411"><img
+                data-src="https://img08.jiuxian.com/bill/2019/0225/5b57eb9292f84e4a90f53bda52374b34.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151410"><img
+                data-src="https://img08.jiuxian.com/bill/2016/1118/cda95e60066044a295fb3a810575ada3.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/mobile/2019/JGJ/index.html"><img
+                data-src="https://img08.jiuxian.com/bill/2018/1102/212562ac1f834ff2b2748c2c514a91ea.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E6%B3%B8%E5%B7%9E%E8%80%81%E7%AA%96"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1118/d2fadf05b223423e972e6b6ca629320c.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=1&actId=3100&t=1541161069321"><img
+                data-src="https://img07.jiuxian.com/bill/2016/1118/ad1d2dc3a06d40c28a3a05ee23a266cc.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151413"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1118/3078db947b654fcc9b190f8261a2c5a7.jpg"
+                class="swiper-lazy"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="publicTitle" id="__home_hongjiu"><a href=""><img
+          src="https://img06.jiuxian.com/bill/2018/0504/9b57f0f2dfc140938243a6d578eae0a9.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="floorAd clearfix">
+        <div class="floorAdLeft">
+          <div class="borderCom pba3" id="__home_hongjiu1"><a
+              href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=4044"
+              class=" minH167 height1"><img
+                data-original="https://img06.jiuxian.com/bill/2019/1118/716159834b594bc1a8747cda6875d0b5.jpg"
+                class="test-lazyload"></a></div>
+        </div>
+        <div class="floorAdRight">
+          <div class="floorAdTop borderComT pba4" id="__home_hongjiu2"><a
+              href="https://m.jiuxian.com/m_v1/dynamic/mob01/150739" class="minH83 height1"><img
+                data-original="https://img10.jiuxian.com/bill/2019/0227/bce1fa0cdd4b4cc0be5a7211cfe6a8c3.jpg"
+                class="test-lazyload"></a></div>
+          <div class="floorAdBottom itemFlex">
+            <div class="floorAdWrap">
+              <div class="cular borderCom pba5" id="__home_hongjiu3"><a
+                  href="https://m.jiuxian.com/m_v1/dynamic/mob01/151892" class="minH84 height1"><img
+                    data-original="https://img07.jiuxian.com/bill/2019/0719/d460692b300145a19d00b49cb635122a.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+            <div class="floorAdWrap">
+              <div class="cular pba5" id="__home_hongjiu4"><a href="https://m.jiuxian.com/m_v1/dynamic/mob01/150979"
+                  class="minH84 height1"><img
+                    data-original="https://img09.jiuxian.com/bill/2019/0227/91bca573da814cb89c9fb7b5378ffabd.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="swiper-container J_silderTwo">
+        <div class="swiper-wrapper" id="__home_hongjiuicon">
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=拉菲"><img
+                data-src="https://img07.jiuxian.com/bill/2016/1214/87f5156b749a4f7c8e745b2e144918b0.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=木桐"><img
+                data-src="https://img07.jiuxian.com/bill/2016/1214/01d3da4a53414f23a4627cb592dcb023.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=长城"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1214/9ca6c041b78a460aac158dd57db972d3.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=奔富"><img
+                data-src="https://img06.jiuxian.com/bill/2016/1214/65187714191e4f64b7b446d459a49f6c.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=黄尾袋鼠"><img
+                data-src="https://img07.jiuxian.com/bill/2016/1214/fc002201fee649388b5df6014104ffd0.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=卡斯特"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1118/70ee4f867da64aebadc5b0791c80217e.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=32领域"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1214/8bd6a17dce1c476cb3c82dd3516c3e76.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=张裕"><img
+                data-src="https://img08.jiuxian.com/bill/2016/1214/589993ace2114fec8bb73e25726bdf24.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=小企鹅"><img
+                data-src="https://img08.jiuxian.com/bill/2016/1214/03d76b0ca9c8498a8ddabcd9480f21a8.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E6%80%A1%E4%BA%A8"><img
+                data-src="https://img06.jiuxian.com/bill/2018/0316/5fb276790e024574a049035d47f6d3de.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E6%BE%B3%E5%B0%9A%E7%9C%9F%E6%97%97%E8%88%B0%E5%BA%97"><img
+                data-src="https://img10.jiuxian.com/bill/2017/1017/477e11cc54ba44859062bbbcc76747f5.jpg"
+                class="swiper-lazy"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="publicTitle" id="__home_yangjiu"><a href=""><img
+          src="https://img10.jiuxian.com/bill/2018/0504/ff4cabd031ea4e2e881bd4318188dfda.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="floorAd clearfix">
+        <div class="floorAdLeft">
+          <div class="borderCom pba3" id="__home_yangjiu1"><a
+              href="https://m.jiuxian.com/mobile/2019/11.11RTM/index.html" class=" minH167 height1"><img
+                data-original="https://img08.jiuxian.com/bill/2019/1118/2acf1f53ce5a45de965d52a37c0c1c97.jpg"
+                class="test-lazyload"></a></div>
+        </div>
+        <div class="floorAdRight">
+          <div class="floorAdTop borderComT pba4" id="__home_yangjiu2"><a
+              href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=3878"
+              class="minH83 height1"><img
+                data-original="https://img10.jiuxian.com/bill/2019/0923/73829a2f07d84146b33f4c7b6ae4c8ff.jpg"
+                class="test-lazyload"></a></div>
+          <div class="floorAdBottom itemFlex">
+            <div class="floorAdWrap">
+              <div class="cular borderCom pba5" id="__home_yangjiu3"><a
+                  href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1134"
+                  class="minH84 height1"><img
+                    data-original="https://img08.jiuxian.com/bill/2019/0718/b8a8262972244cefa7e4b10226365364.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+            <div class="floorAdWrap">
+              <div class="cular pba5" id="__home_yangjiu4"><a href="http://m.jiuxian.com/m_v1/dynamic/mob01/150811"
+                  class="minH84 height1"><img
+                    data-original="https://img07.jiuxian.com/bill/2019/0808/d1c09a51620d42a5851e97c713a2f114.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="swiper-container J_silderTwo">
+        <div class="swiper-wrapper" id="__home_yangjiuicon">
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=人头马"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1214/5051c53be5404ab29aada67cc521a258.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=芝华士"><img
+                data-src="https://img06.jiuxian.com/bill/2016/1214/83557b78c1aa4f668b0ae01a902753d5.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=百龄坛"><img
+                data-src="https://img07.jiuxian.com/bill/2016/1214/b2e5ccfb7b66428ba485cc71b084b129.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=马爹利"><img
+                data-src="https://img06.jiuxian.com/bill/2016/1214/cfc1ffacb8f8432d996ee3c1a10d59f5.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=轩尼诗"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1214/1d7119a5956e4cc5bf07d0ca7b8b455a.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=皇家礼炮"><img
+                data-src="https://img09.jiuxian.com/bill/2016/1214/3a10b37d9ba646449f3048f67a87d890.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=尊尼获加"><img
+                data-src="https://img08.jiuxian.com/bill/2016/1214/7985349fdf504428a5773af0c307c18f.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=真露"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1214/bc540b6f9f8d4a599b60991733819e2d.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E6%B8%85%E9%85%92"><img
+                data-src="https://img08.jiuxian.com/bill/2017/1031/8955684a1e5f4119be21985d23b83776.png"
+                class="swiper-lazy"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="publicTitle" id="__home_pijiu"><a href=""><img
+          src="https://img08.jiuxian.com/bill/2018/0504/7cf197b2e4084248b367b9a1b297d83c.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="floorAd clearfix">
+        <div class="floorAdLeft">
+          <div class="borderCom pba3" id="__home_pijiu1"><a
+              href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1163"
+              class=" minH167 height1"><img
+                data-original="https://img06.jiuxian.com/bill/2019/0527/2620b0e9c0164eee8936a2e4e61852a2.jpg"
+                class="test-lazyload"></a></div>
+        </div>
+        <div class="floorAdRight">
+          <div class="floorAdTop borderComT pba4" id="__home_pijiu2"><a
+              href="https://m.jiuxian.com/m_v1/dynamic/mob01/151796" class="minH83 height1"><img
+                data-original="https://img07.jiuxian.com/bill/2018/0913/c93c8a1ef0394e41894fa484d53f3a65.jpg"
+                class="test-lazyload"></a></div>
+          <div class="floorAdBottom itemFlex">
+            <div class="floorAdWrap">
+              <div class="cular borderCom pba5" id="__home_pijiu3"><a
+                  href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1289"
+                  class="minH84 height1"><img
+                    data-original="https://img06.jiuxian.com/bill/2019/0111/90c89520facf43e481814112670105ad.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+            <div class="floorAdWrap">
+              <div class="cular pba5" id="__home_pijiu4"><a
+                  href="https://shop.jiuxian.com/show/wap/viewShopIndex.htm?viewType=2&shopId=1195"
+                  class="minH84 height1"><img
+                    data-original="https://img07.jiuxian.com/bill/2019/0511/4adb48faf81b4759b1112f856fd7c53d.jpg"
+                    class="test-lazyload"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand">
+      <div class="swiper-container J_silderTwo">
+        <div class="swiper-wrapper" id="__home_pijiuicon">
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E4%B9%8C%E8%8B%8F"><img
+                data-src="https://img06.jiuxian.com/bill/2019/0615/a07eb2d0166141b49239de9feaee9028.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E5%92%8C%E9%81%93%E9%85%92%E7%B1%BB%E7%B2%BE%E5%93%81%E5%BA%97"><img
+                data-src="https://img06.jiuxian.com/bill/2017/0901/bc3baa1f3a96492bb5eb44ac8f8a9035.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E5%98%89%E5%A3%AB%E4%BC%AF"><img
+                data-src="https://img08.jiuxian.com/bill/2016/1118/6436d8b38d09436ea7809ce0b98e8c0d.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E5%A4%AA%E6%B9%96%E9%85%BF%E9%85%92%E6%97%97%E8%88%B0%E5%BA%97"><img
+                data-src="https://img10.jiuxian.com/bill/2017/1017/d6a7fb7162e44f11ad43aab5624845bf.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E9%9D%92%E5%B2%9B%E5%95%A4%E9%85%92"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1118/052d700ebd624fb8ae1ab4ea9207f631.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a href="http://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E5%8A%B2%E7%89%8C"><img
+                data-src="https://img10.jiuxian.com/bill/2016/1118/e52016c8313e4bab9306c9377a709d2b.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E6%A4%B0%E5%B2%9B%E5%AE%98%E6%96%B9%E6%97%97%E8%88%B0%E5%BA%97"><img
+                data-src="https://img10.jiuxian.com/bill/2017/0901/128ceb1474c944e492673a1917ffcad4.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E5%AE%81%E5%A4%8F%E7%BA%A2%E7%B2%BE%E5%93%81%E5%BA%97"><img
+                data-src="https://img10.jiuxian.com/bill/2017/0616/46296622c05d475a978330ee2686a9f2.jpg"
+                class="swiper-lazy"></a>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-lazy-preloader"></div>
+            <a
+              href="https://mlist.jiuxian.com/m_v1/search/ksearch?keyword=%E7%87%95%E4%BA%AC%E5%95%A4%E9%85%92%E9%85%92%E7%B1%BB%E6%97%97%E8%88%B0%E5%BA%97"><img
+                data-src="https://img10.jiuxian.com/bill/2017/0901/bd6b3905393e450ea00ab82c45dc8cf6.jpg"
+                class="swiper-lazy"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="publicTitle" id="__home_zhutijie"><a href=""><img
+          src="https://img10.jiuxian.com/bill/2018/0504/6dba580b72164560b8fd47fc81f396b5.jpg"></a></div>
+    <div class="jxAdBox">
+      <div class="themeList" id="__home_zhutijieads">
+        <ul class="clearfix">
+          <li><a href="http://m.jiuxian.com/m_v1/dynamic/mob01/150393" class="loadImg"><img
+                data-original="https://img07.jiuxian.com/bill/2018/0504/657126212d0540c8bbac602c77d5955c.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/mobile/POP/2019.3.18JPJP/index.html" class="loadImg"><img
+                data-original="https://img06.jiuxian.com/bill/2018/0504/aced73aca3854aeea7aa14e53d641dcb.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/mobile/2019/2.17MTDPR/index.html" class="loadImg"><img
+                data-original="https://img06.jiuxian.com/bill/2019/0611/eb625d2d053e422bbc497f85d9c6cd75.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151711" class="loadImg"><img
+                data-original="https://img09.jiuxian.com/bill/2018/1119/c3297cff4d2a4fdda61fef3570b3672b.png"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/m_v1/dynamic/mob01/151260" class="loadImg"><img
+                data-original="https://img06.jiuxian.com/bill/2018/1120/551470f5b99b497ea40b042728c31319.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://shop.jiuxian.com/show/wap/act/viewShopActivity.htm?viewType=2&actId=3678"
+              class="loadImg"><img
+                data-original="https://img09.jiuxian.com/bill/2019/0603/17b1d00a75e64754aba095a14fcbeb67.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/mobile/2019/9.1SSSY/index.html" class="loadImg"><img
+                data-original="https://img06.jiuxian.com/bill/2019/1107/0bfd7af9d8e047cd803689c2f938467c.jpg"
+                class="test-lazyload"></a></li>
+          <li><a href="https://m.jiuxian.com/m_v1/dynamic/mob01/150378" class="loadImg"><img
+                data-original="https://img06.jiuxian.com/bill/2018/0613/fd423ab042ec45e0ae46aa8c3676ed1a.jpg"
+                class="test-lazyload"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="h10"></div>
+    <div class="productList">
+      <input type="hidden" id="topicId" value="1165" />
+      <div class="tabs itemFlex"><a href="javascript:;" class="cular">爆款推荐</a></div>
+      <div class="swiper-container" id="qSlider_1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="content-slide" id="__home_baokuan">
+              <ul class="proItem clearfix" id="zxList">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomBar">
+      <ul class="itemFlex">
+        <li class="cular"><a name="didao1" href="https://m.jiuxian.com"><img
+              src="https://img08.jiuxian.com/bill/2016/0224/cccd8df26a754c139de800406af82178.png" class="lazyload"></a>
+        </li>
+        <li class="cular"><a name="didao2" href="https://m.jiuxian.com/m_v1/search"><img
+              src="https://img07.jiuxian.com/bill/2016/0224/36a49b28ec5e4cdf9dbe37988199487d.png" class="lazyload"></a>
+        </li>
+        <li class="cular"><a name="didao3" href="https://m.jiuxian.com/m_v1/dynamic/mob01/151763"><img
+              src="https://img09.jiuxian.com/bill/2018/0528/56760d41e3e745afa14e3cea1713631c.png" class="lazyload"></a>
+        </li>
+        <li class="cular"><a name="didao4" href="https://mcart.jiuxian.com/cart/info"><img
+              src="https://img08.jiuxian.com/bill/2016/0224/42baf46987b6460bb43b3396e9941653.png" class="lazyload"></a>
+        </li>
+        <li class="cular"><a name="didao5" href="https://mmember.jiuxian.com/user"><img
+              src="https://img09.jiuxian.com/bill/2016/0224/cba9029a8f4444a989a2ab5aa84c6538.png" class="lazyload"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="refresh">
+      <i class="refresh-w refresh-360">
+        <span class="refresh-n"></span>
+      </i>
+      <p>玩命加载中...</p>
+    </div>
+    <div class="noMore">亲，看完了</div>
+    <div class="copyright fl"
+      style="height:80px; width:100%; text-align:center; line-height:20px; color:#999; font-size:12px; display:none; padding:10px 0 5px;">
+      <p>北京酒仙网络科技有限公司版权所有</p>
+      <p>北京市北京经济技术开发区经海五路58号院8幢4层</p>
+      <p><span>400-617-9999</span></p>
+      <p><a href="https://m.jiuxian.com/mobile/2016/about/index.html" style="color:#0088ff;">关于我们</a></p>
+    </div>
+    <!--吸底导航-->
+    <div class="navFix">
+      <ul>
+      </ul>
+    </div>
+    <!--吸底导航 结束-->
+    <!--返回顶部-->
+    <div class="toTop" id="toTop"><i class="jx-sprite-icon"></i></div>
+    <!--返回顶部 结束-->
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/splitscreenload.js"></script>
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/home/swiper-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/home/index.js?v20160923"></script>
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/goods/goodsPrice.js?v20170802"></script>
+
+    <script type="text/javascript">
+
+      // 根据网页滚动条懒加载
+      picLazyLoad({
+        className: "test-lazyload"
+      });
+      // 容器纵向滚动懒加载
+      picLazyLoad({
+        parent: 'scroll_y',
+        className: "test-lazyload",
+        placeholder: 'mjava_statics/images/loazy_img.png',
+        callback: function (me) {
+          me.classList.add('fadeIn');
+        }
+      });
+      var temp = 1;      //专属推荐分页的-第几页(初始化为1)
+      var curIndex = 0;  //用来统计专属推荐的商品页面已经展示的个数
+      var total = 0;     //专属推荐商品的总个数
+      var flag = true;   //专属推荐是否需要请求下一页
+
+      $(function ($) {
+
+        //掌上秒拍默认显示,如果没有秒杀商品,再隐藏
+        $(".spikeBox").show();
+        //掌上秒拍
+        getms(1, 1);
+        //专属推荐
+        getzxs(1);
+        //掌上秒杀倒计时
+        timeChange();
+        var countPage = 1;
+        //滚动到底部加载
+
+        $(document).scroll(function () {
+          var sw = getScrollTop() + getWindowHeight();
+          var sh = getScrollHeight();
+          // 			if(Math.ceil(sw) == sh || Math.floor(sw) == sh){
+          if ((sh >= (Math.floor(sw) - 30)) && (sh <= (Math.ceil(sw) + 30))) {
+            //加载区域
+            if (total == 0) {
+              return;
+            }
+
+            //这里不根据总total来判断是否下次请求,根据下一页是否还有商品来判断下一次请求
+            if (flag) {
+              temp++;
+              getzxs(temp);
+            } else {
+              $('.refresh').hide();
+              $(".noMore").show();
+              var time = 2;
+              var i = null;
+              $(".copyright").show();
+              function getTimer() {
+                time--;
+                if (time == 0) {
+                  clearInterval(i);
+                  $(".noMore").addClass("noMoreHover");
+                  time = 2;
+                }
+
+              }
+
+              i = setInterval(getTimer, 1000);
+            }
+
+          }
+        });
+      });
+
+      //专属推荐
+      var getzxs = function (index) {
+
+        var topicId = $("#topicId").val();
+        if (topicId != undefined) {
+          $.ajax({
+            type: "GET",
+            url: "/m_v1/statics/getzx.htm",
+            data: { topicId: topicId, "pageNum": index },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+              if (index == 1) {
+                //如果第一页都没有数据, 那整个部分都隐藏
+                if (data.promoList == undefined || data.promoList.length <= 0) {
+                  $('.productList').hide();
+                  $('.refresh').hide();
+                  $(".noMore").show();
+                  var time = 2;
+                  var i = null;
+                  $(".copyright").show();
+                  function getTimer() {
+                    time--;
+                    if (time == 0) {
+                      clearInterval(i);
+                      $(".noMore").addClass("noMoreHover");
+                      time = 2;
+                    }
+
+                  }
+
+                  i = setInterval(getTimer, 1000);
+                }
+              }
+              var lihtml = "";
+              var resultVal = data.promoList;
+              //total = resultVal.length;
+              total = data.totalCount;
+
+              if (total == undefined || total == null || total < 2) {
+                $('.productList').hide();
+              }
+              if (resultVal != undefined && resultVal != null && resultVal.length > 0) {
+                for (var i = 0; i < resultVal.length; i++) {
+                  if (resultVal[i].commonProductInfo.onSale) {
+                    lihtml = lihtml + "<li> <a href=" + window.mshop.dynUrl + "/goods/view/" + resultVal[i].commonProductInfo.pid + "> "
+                    if (null != resultVal[i].promo) {
+                      lihtml = lihtml + "<span class='tagList'>";
+                      for (var j = 0; j < resultVal[i].promo.length; j++) {
+                        lihtml = lihtml + "<i style='background:" + resultVal[i].promo[j].backColor + ";'>" + resultVal[i].promo[j].name + "</i>";
+                      }
+                      lihtml = lihtml + "</span>";
+                    }
+                    if (!resultVal[i].commonProductInfo.inventoryExists) {
+                      lihtml = lihtml + "<i class='saleOut'></i>";
+                    }
+                    lihtml = lihtml + "<div class='ulImg'> <strong class='loadImg'></strong> <span class='pic'><img src='mjava_statics/images/loazy_img.png' data-original=" + resultVal[i].commonProductInfo.imgPath + " class='test-lazyload'></span> </div>" +
+                      "<span class='name'>";
+                    if (resultVal[i].commonProductInfo.isSelection) {//判断商品是否酒仙甄选标识
+                      lihtml = lihtml + "<i class='jxzx'></i>";
+                    }
+                    //判断商品是否增加酒仙配送标识(目前业务这里不会满足)
+                    var jxSelf = resultVal[i].commonProductInfo.jxSelf;
+                    var deliverMode = resultVal[i].commonProductInfo.deliverMode;
+                    if (jxSelf != undefined && jxSelf != null && jxSelf == false && deliverMode != undefined && deliverMode != null && deliverMode == true) {
+                      lihtml = lihtml + "<em>酒仙配送</em>";
+                    }
+                    lihtml = lihtml + "<span>" + resultVal[i].commonProductInfo.pname + "</span> </span> <span class='price'><strong class='priceInteger' goodid=" + resultVal[i].commonProductInfo.pid + ">¥" + resultVal[i].commonProductInfo.actPrice.toFixed(2) + "</strong>";
+                    //如果有club价格
+                    if (resultVal[i].commonProductInfo.clubPrice != undefined && resultVal[i].commonProductInfo.clubPrice != null) {
+                      lihtml = lihtml + "<em class='clubPrice' goodidclub='" + resultVal[i].commonProductInfo.pid + "'><font>¥" + resultVal[i].commonProductInfo.clubPrice.toFixed(2) + "</font><i></i></em>";
+                    } else {
+                      if (resultVal[i].commonProductInfo.actPrice < resultVal[i].commonProductInfo.jxPrice) {
+                        lihtml = lihtml + "<del>¥" + resultVal[i].commonProductInfo.jxPrice.toFixed(2) + "</del>";
+                      }
+                    }
+                    lihtml = lihtml + " </span> </a> </li>";
+                  }
+                }
+                curIndex = curIndex + resultVal.length;
+              } else {
+                flag = false;
+              }
+
+              $("#zxList").append(lihtml);
+
+              $(".picHeight").each(function () {
+                var picWidth = $(this).width();
+                $(this).find("img").css("height", picWidth);
+              });
+            },
+            error: function () {
+            }
+          });
+        }
+      };
+
+
+      function timeChange() {
+        setInterval(function () {
+          var time = parseInt($('.lastTime').attr('remainTime'));
+          time--;
+          if (time < 0 || isNaN(time)) {
+            $(".lastTime").hide();
+            $(".lastTime").find("i").text("00");
+            getms(1, 1);
+          }
+          else {
+
+            $('.lastTime').attr("remaintime", time);
+            var handerResult = handerTime(time);
+            $('.lastTime').find(".hours").text(handerResult["h"]);
+            $('.lastTime').find(".minutes").text(handerResult["m"]);
+            $('.lastTime').find(".seconds").text(handerResult["s"]);
+          }
+        }, 1000);
+      };
+      function handerTime(time) {
+        var h = parseInt(time / 3600);
+        h = h < 10 ? '0' + h : h;
+        var m = parseInt((time % 3600) / 60);
+        m = m < 10 ? '0' + m : m;
+        var s = parseInt(time % 60);
+        s = s < 10 ? '0' + s : s;
+        return {
+          'h': h,
+          'm': m,
+          's': s
+        }
+      };
+      var getms = function (pagenum, tabnum) {
+        var now = new Date();
+        var t = now.getTime();
+        $.ajax({
+          type: "GET",
+          //                url: window.mshop.dynUrl + "/promote/qgajax.do?t=" + t,
+          url: "/m_v1/promote/qgajax.do?t=" + t,
+          data: { pagenum: pagenum, tabnum: tabnum },
+          dataType: "json",
+          async: false,
+          success: function (data) {
+            var resultVal = "";
+            var lihtml = "";
+            var pageCount = data.pageCount;
+            //给剩余结束时间赋值
+            if (data.remainTime != null && data.remainTime != '') {
+              $('.lastTime').attr('remainTime', data.remainTime);
+            }
+            if (data.killProList != null && data.killProList != '') {
+              resultVal = data.killProList;
+              var length = data.killProList.length;
+              if (length > 10) {
+                length = 10;
+              }
+              if (pagenum == 1) {
+                lihtml = lihtml + "<ul class='swiper-wrapper' id='mp'>";
+              }
+              for (var i = 0; i < length; i++) {
+                lihtml = lihtml + "<li class='swiper-slide'><a href='" + window.mshop.dynUrl + "/promote/qg?from=ad_01'>" +
+                  "<div class='ulImg'><strong class='loadImg'> </strong> <span class='pic'><div class='swiper-lazy-preloader'></div><img data-src='" + resultVal[i].proImg + "' class='swiper-lazy'></span></div><span class='name'>" + resultVal[i].proName +
+                  "</span><span class='price'>¥" + resultVal[i].proPrice.toFixed(2) + "</span>";
+                if (resultVal[i].proPrice < resultVal[i].jxPrice) {
+                  lihtml = lihtml + "<del class='y-price'>¥" + resultVal[i].jxPrice.toFixed(2) + "</del>";
+                }
+                lihtml = lihtml + "</a></li>";
+              }
+              if (pagenum == 1) {
+                lihtml = lihtml + "</ul>";
+              }
+            } else {
+              $(".spikeBox").hide();
+            }
+
+            if (pagenum == 1) {
+              $("#tSlider_1").append(lihtml);
+            } else {
+              $("#mp").append(lihtml);
+            }
+
+
+            var mySwiper = new Swiper('#tSlider_1', {
+              autoHeight: false,
+              slidesPerView: 3.5,
+              preloadImages: true,
+              updateOnImagesReady: true,
+              freeModeMomentum: true,
+              touchMoveStopPropagation: true,//阻止冒泡
+              setWrapperSize: true,
+              lazyLoading: true,
+              autoResize: true,
+              spaceBetween: 10,
+              observer: true,
+              observeParents: true,
+              onTransitionEnd: function (mySwiper) {
+                var wrapWidth = Math.abs(mySwiper.getWrapperTranslate('x'));
+                var winWidth = $('.homeWrap').width();
+                var windowT = $("#mp").width() - winWidth;
+                if (wrapWidth >= windowT) {
+                  if (pageCount > pagenum) {
+                    getms(pagenum + 1, 1);
+                    pagenum++;
+                  }
+                }
+              }
+            });
+
+
+          }
+        });
+
+      }
+    </script>
+
+    <script>
+      function jztj(clientId) {
+        window._JX_INFO = window._JX_INFO || [];
+        _JX_INFO.push(["eventId", "10001"]);
+        _JX_INFO.push(["clientId", clientId]);
+        _JX_INFO.push(["go"]);
+      }
+    </script>
+
+
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/m_code.js"></script>
+    <script type="text/javascript" src="https://m.jiuxian.com/mjava_statics/js/commons/jztj.js"></script>
+
 </body>
+
 </html>

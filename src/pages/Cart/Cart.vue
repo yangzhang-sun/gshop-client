@@ -3,8 +3,13 @@
     <!-- 头部 -->
     <div>
       <header class="CartHeader">
+<<<<<<< HEAD
         <span class="header_search">
           <i class="iconfont icon-zuozhishi" @click="goOther('/Home')"></i>
+=======
+        <span @click="$router.replace('/Home')" class="header_search">
+          <i class="iconfont icon-zuozhishi"></i>
+>>>>>>> 764a6d2fab0870155e8e3979942c11fa62a85c24
         </span>
         <a class="header_title">
           <span class="header_title_text ellipsis">购物车</span>
@@ -28,6 +33,15 @@
       <div class="CartFree">
         <span>!自营商品实付满100元免运费，偏远地区满500元免运费</span>
       </div>
+<<<<<<< HEAD
+=======
+      <div class="cartKongBox">
+        <img src="../../common/images/cart/kong.png" alt="购物车">
+        <p class="kongCarText">购物车还是空的</p>
+        <p class="cartText">快去逛逛吧~</p>
+        <a @click="goOther('/Home')" class="cartBtn">促销活动</a>
+      </div>
+>>>>>>> 764a6d2fab0870155e8e3979942c11fa62a85c24
     </div>
       <!-- <CartEmply /> -->
       <CartList />
@@ -125,9 +139,5 @@
             font-size 12px
             color #ff3333
             
-
-
-
-
  
 </style>
