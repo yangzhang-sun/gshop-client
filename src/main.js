@@ -8,6 +8,7 @@ import { Button } from 'mint-ui'
 import router from './router'
 import store from './store'
 Vue.config.productionTip = false
+import './vuevalidate'
 
 import HeaderGuide from './components/HeaderGuide/HeaderGuide.vue'
 
