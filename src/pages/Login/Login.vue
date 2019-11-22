@@ -39,7 +39,8 @@
                 </div>
               </section>
               <section class="login_message">
-                <input type="text" maxlength="11" placeholder="请输入验证码">         
+                <input type="text" maxlength="11" placeholder="请输入验证码">
+                <img  class="get_verification" src="../../common/images/captcha.svg" alt="captcha">       
               </section>
             </section>
           </div>
@@ -58,9 +59,14 @@
 export default {
   data(){
     return{
-      isPassWrrldLogin:false  //标识
+      isPassWrrldLogin:true //标识
     }
-  }
+  },
+  // methods: {
+  //    updateCaptcha(){
+
+  //    }
+  // }
 }
 </script>
 
@@ -74,8 +80,7 @@ export default {
       padding-top 60px
       width 80%
       margin 0 auto
-      .login_header
-        
+      .login_header 
         .login_header_title
           padding-top 40px
           text-align center
@@ -98,21 +103,30 @@ export default {
             input
               width 100%
               height 100%
-              padding-left 10px
+              padding-left 25px
               box-sizing border-box
               border 1px solid #ddd
               border-radius 4px
               outline 0
               font 400 14px Arial
               &:focus
-                border 1px solid #02a774
+                border 1px solid #de4b45
             .login_message
               position relative
               margin-top 16px
               height 48px
               font-size 14px
-              background #fff
-              
+              background #fff  
+              .get_verification
+                position absolute
+                top 50%
+                right 10px
+                transform translateY(-50%)
+                border 0
+                color #ccc
+                font-size 14px
+                background transparent
+
             .login_verification
               position relative
               margin-top 16px
@@ -151,8 +165,7 @@ export default {
                   border-radius 50%
                   background #fff
                   box-shadow 0 2px 4px 0 rgba(0,0,0,.1)
-                  transition transform .3s
-            
+                  transition transform .3s  
           .login_submit
             display block
             width 100%
