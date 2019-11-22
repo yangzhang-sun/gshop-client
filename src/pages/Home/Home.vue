@@ -258,6 +258,7 @@
 import Swiper from 'swiper'
 import Bscroll from 'better-scroll'
 import 'swiper/css/swiper.min.css'
+import moduleName from './index_data.json'
   export default {
     mounted(){
       new Swiper('.swiper-container', {
