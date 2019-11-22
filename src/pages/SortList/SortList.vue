@@ -14,11 +14,15 @@
         </div>
         <!-- 导航栏 -->
         <div class="shop_tabBar">
-          <span  class="shop_tabBar_com on" >综合</span>
-          <span  class="shop_tabBar_prod" >效率</span>
-          <span  class="shop_tabBar_price">价格</span>
+          <span v-for="item in wpList" :key="item.name" 
+            :class="{'active' : active == item.name}" 
+            @click="selected(item.name)">{{item.name}}
+          </span>
+          <!-- <span   >综合</span>
+          <span  class="" >效率</span>
+          <span  class="">价格</span>
           <span  class="shop_tabBar_line" >|</span>
-          <span  class="shop_tabBa_filtr" >筛选</span>
+          <span  class="" >筛选</span> -->
         </div>
         <div class="shop_filtrate">
           <span class="shop_filtrate_left">酒仙配送</span>
@@ -200,7 +204,26 @@
     },
     data(){
       return {
-        active:false,
+        wpList: [
+        {
+          name: '综合'
+        },
+        {
+          name: '效率'
+        },
+        {
+          name: '价格'
+        },
+        {
+          name: '筛选'
+        }
+      ],
+      active:''
+      }
+    },
+    methods:{
+      selected(name){
+        this.active = name;
       }
     }
   }
@@ -233,7 +256,7 @@
           text-align center
           color #252525
           overflow hidden
-        .on
+        .active
           color #fc5a5a
         .shop_tabBar_line
           color #eee
