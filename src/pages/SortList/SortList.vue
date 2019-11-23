@@ -6,7 +6,7 @@
       <!-- 头部 -->
         
       <header class="SortHeader" >
-        <span @click="$router.replace('/Sort')" slot="left" class="header_search">
+        <span @click="$router.push('/Sort')" slot="left" class="header_search">
           <i class="iconfont icon-zuozhishi"></i>
         </span>
         <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -37,7 +37,11 @@
       <!-- 搜索详情 -->
       <div class="shop_container" @click="isShowInout=false">
         <ul class="shop_list">
-          <li class="shop_li border-1px" v-for="(wine, index) in filterPersons" :key="index">
+          <li class="shop_li border-1px" 
+              v-for="(wine, index) in filterPersons" 
+              :key="index"
+              @click="$router.replace('/wdetail')"
+              >
               <div class="shop_left">
                 <img class="shop_img" v-lazy='wine.image_url'>
               </div>

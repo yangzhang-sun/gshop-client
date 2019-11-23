@@ -2,40 +2,15 @@
   <div class="w-bigContain">
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/Flush')" slot="left" class="header_search">
+      <span @click="$router.replace('/flush')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
         <i class="iconfont icon-webicon03"></i>
       </span>
-      </HeaderGuide>
+      </HeaderGuide >
     </header>
-     <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice" style="z-index= 2">
-      <div class="guideItem" @click="goPath('/Home')">
-        <span>
-          <i class="iconfont icon-index"></i>
-        </span>
-        <span>首页</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Sort')">
-        <span>
-          <i class="iconfont icon-sousuo1"></i>
-        </span>
-        <span>搜索</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Cart')">
-        <span>
-          <i class="iconfont icon-icongouwuche1"></i>
-        </span>
-        <span>购物车</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Login')">
-        <span>
-          <i class="iconfont icon-wodedangxuan1"></i>
-        </span>
-        <span>我的酒仙</span>
-      </div>
-    </div> 
+    <HeaderNavigation class="headerNavigation" v-show="isShowNotice"/>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" >
@@ -164,29 +139,32 @@
 <script type="text/ecmascript-6">
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
-export default {
- data(){
+  import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
+  export default {
+    components:{
+      HeaderNavigation
+    },
+    data(){
       return{
         isShowNotice: false 
       }
     },
-  methods: {
-    shade(){
-      // console.log('1')
-      this.isShade = !this.isShade
-    }
-   
-  },
-  mounted() {
-    var mySwiper = new Swiper(".swiper-container", {
-       loop: true,
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination"
+    methods: {
+      shade(){
+        // console.log('1')
+        this.isShade = !this.isShade
       }
-    });
+    },
+    mounted() {
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true,
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination"
+        }
+      })
+    }
   }
-};
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
@@ -198,6 +176,8 @@ export default {
       position fixed
       top 46px
       left 42px
+  .headerNavigation
+    z-index 99
   .SortList
     width 100%
     height 324px
