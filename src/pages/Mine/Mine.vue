@@ -9,7 +9,7 @@
         <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
           <i class="iconfont icon-webicon03"></i>
         </span>
-      </HeaderGuide>
+      </HeaderGuide>  
       <div class="SortInput">
         <Input />
       </div>

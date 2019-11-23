@@ -132,7 +132,11 @@
 
 "@babel/helper-module-imports@7.0.0-beta.35":
   version "7.0.0-beta.35"
+<<<<<<< HEAD
   resolved "https://registry.npm.taobao.org/@babel/helper-module-imports/download/@babel/helper-module-imports-7.0.0-beta.35.tgz?cache=0&sync_timestamp=1572951228240&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fhelper-module-imports%2Fdownload%2F%40babel%2Fhelper-module-imports-7.0.0-beta.35.tgz#308e350e731752cdb4d0f058df1d704925c64e0a"
+=======
+  resolved "https://registry.npm.taobao.org/@babel/helper-module-imports/download/@babel/helper-module-imports-7.0.0-beta.35.tgz#308e350e731752cdb4d0f058df1d704925c64e0a"
+>>>>>>> 362663c7422bb8510049e8c524b52cea27be9ca7
   integrity sha1-MI41DnMXUs200PBY3x1wSSXGTgo=
   dependencies:
     "@babel/types" "7.0.0-beta.35"
@@ -8185,7 +8189,7 @@ vary@~1.1.2:
   resolved "https://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-vee-validate@2.2.15:
+vee-validate@^2.2.15:
   version "2.2.15"
   resolved "https://registry.npm.taobao.org/vee-validate/download/vee-validate-2.2.15.tgz#dc6c925d21e57288d3308fe5a39a0941036c575a"
   integrity sha1-3GySXSHlcojTMI/lo5oJQQNsV1o=
@@ -8203,6 +8207,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vex@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npm.taobao.org/vex/download/vex-0.0.4.tgz#a22d7fb02e97be938e4b2b4327c314d25d82f402"
+  integrity sha1-oi1/sC6XvpOOSytDJ8MU0l2C9AI=
 
 vm-browserify@^1.0.1:
   version "1.1.2"
@@ -8226,7 +8235,7 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
 
-vue-lazyload@^1.0.1:
+vue-lazyload@^1.0.1, vue-lazyload@^1.3.3:
   version "1.3.3"
   resolved "https://registry.npm.taobao.org/vue-lazyload/download/vue-lazyload-1.3.3.tgz#4df50a271bde9b74c3caf7a228d6e0af50d5682f"
   integrity sha1-TfUKJxvem3TDyveiKNbgr1DVaC8=

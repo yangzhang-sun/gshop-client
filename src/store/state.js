@@ -10,8 +10,10 @@ export default {
   wines:[],//获取酒分类
   wpList: [
     {name: '综合'},
-    {name: '效率'},
+    {name: '销量'},
     {name: '价格'},
     {name: '筛选'}
   ],
+  products:{},
+
 }

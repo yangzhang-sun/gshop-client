@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/Home')" slot="left" class="header_search">
+      <span @click="$router.replace('/home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -15,37 +15,46 @@
       </div>
     </header>
     <!-- 遮罩层 -->
+<<<<<<< HEAD
     <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice">
-      <div class="guideItem" @click="goPath('/Home')">
+      <div class="guideItem" @click="goPath('/home')">
         <span>
           <i class="iconfont icon-index"></i>
         </span>
         <span>首页</span>
       </div>
-      <div class="guideItem" @click="goPath('/Sort')">
+      <div class="guideItem" @click="goPath('/sort')">
         <span>
           <i class="iconfont icon-sousuo1"></i>
         </span>
         <span>搜索</span>
       </div>
-      <div class="guideItem" @click="goPath('/Cart')">
+      <div class="guideItem" @click="goPath('/cart')">
         <span>
           <i class="iconfont icon-icongouwuche1"></i>
         </span>
         <span>购物车</span>
       </div>
-      <div class="guideItem" @click="goPath('/Login')">
+      <div class="guideItem" @click="goPath('/login')">
         <span>
           <i class="iconfont icon-wodedangxuan1"></i>
         </span>
         <span>我的酒仙</span>
       </div>
     </div>
+=======
+    <HeaderNavigation v-show="isShowNotice"/>
+>>>>>>> baa40181d7b1b8fc273706c1c6218958843822dc
     <!-- 主页 -->
     <div class="SortList">
-      <ul class="SortDetail">
+      <ul class="SortDetail"  @click.prevent="goPath('/SortList')">
         <li >
-          <a @click.prevent="goPath('/SortList')" href="">
+<<<<<<< HEAD
+          <a @click.prevent="goPath('/sortList')" href="">
+=======
+          <a href="">
+          
+>>>>>>> baa40181d7b1b8fc273706c1c6218958843822dc
             <i class="iconfont icon-jiubei"></i>
             <span>白酒</span>
           </a>
@@ -86,7 +95,11 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
   import Input from '../../components/Input/Input'
+  
+  import CountDown from '../../components/CountDown/CountDown'
+ 
   export default {
     data(){
       return{
@@ -94,7 +107,8 @@
       }
     },
     components:{
-      Input
+      Input,
+      HeaderNavigation
     },
     methods:{
       goPath(path){
@@ -104,7 +118,7 @@
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" >
+<style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
   .SortHeader
     width 100%
@@ -140,29 +154,4 @@
           span 
             margin-top 6px
             font-size 18px
-  #SortGuideContainer
-    position fixed
-    left 0
-    top 40px
-    width 100%
-    height 50px
-    border-top 1px solid #eee
-    box-sizing border-box
-    display flex
-    background #eee
-    .guideItem
-      width 25%
-      height 100%
-      padding-bottom 6px
-      text-align center
-      display flex
-      flex-direction column
-      span
-        i
-          font-size 12px
-        &:first-child
-          margin 6px 0
-      .flush
-        width 42px
-        height 42px
 </style>

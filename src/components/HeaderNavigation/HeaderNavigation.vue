@@ -1,29 +1,24 @@
 <template>
-  <div id="footerGuideContainer">
-    <div class="guideItem" @click="goPath('/home')">
+  <div @click="isShowNotice=false" id="SortGuideContainer">
+    <div class="guideItem" @click="goPath('/Home')">
       <span>
         <i class="iconfont icon-index"></i>
       </span>
       <span>首页</span>
     </div>
-    <div class="guideItem" @click="goPath('/sort')">
+    <div class="guideItem" @click="goPath('/Sort')">
       <span>
-        <i class="iconfont icon-leimupinleifenleileibie"></i>
+        <i class="iconfont icon-sousuo1"></i>
       </span>
-      <span>分类</span>
+      <span>搜索</span>
     </div>
-    <div class="guideItem" @click="goPath('/flush')">
-      <span>
-        <img class="iconfont flush" src="https://img09.jiuxian.com/bill/2018/0528/56760d41e3e745afa14e3cea1713631c.png">
-      </span>
-    </div>
-    <div class="guideItem" @click="goPath('/cart')">
+    <div class="guideItem" @click="goPath('/Cart')">
       <span>
         <i class="iconfont icon-icongouwuche1"></i>
       </span>
       <span>购物车</span>
     </div>
-    <div class="guideItem" @click="goPath('/login')">
+    <div class="guideItem" @click="goPath('/Login')">
       <span>
         <i class="iconfont icon-wodedangxuan1"></i>
       </span>
@@ -36,19 +31,17 @@
   export default {
     methods:{
       goPath(path){
-        console.log(this.$route)
         this.$route.path !== path && this.$router.replace(path)
       }
     }
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
-@import "../../common/stylus/mixins.styl"
-  #footerGuideContainer
+<style lang="stylus" rel="stylesheet/stylus" scoped>
+  #SortGuideContainer
     position fixed
     left 0
-    bottom 0
+    top 40px
     width 100%
     height 50px
     border-top 1px solid #eee
@@ -56,7 +49,7 @@
     display flex
     background #eee
     .guideItem
-      width 20%
+      width 25%
       height 100%
       padding-bottom 6px
       text-align center
@@ -70,5 +63,5 @@
       .flush
         width 42px
         height 42px
-
+ 
 </style>

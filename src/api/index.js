@@ -13,6 +13,7 @@ export const getWines = ()=>ajax({
   
 })
 
+<<<<<<< HEAD
 // /* 用户名密码登陆 */
 // export const loginWithPassword = (name, pwd, captcha) => ajax({
 //   url: '/login_pwd',
@@ -50,3 +51,9 @@ export const getWines = ()=>ajax({
 //     needToken: true
 //   }
 // })
+=======
+export const getProducts = () => ajax({
+  url: '/Products'
+
+})
+>>>>>>> 362663c7422bb8510049e8c524b52cea27be9ca7
