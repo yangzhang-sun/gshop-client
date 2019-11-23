@@ -19,6 +19,7 @@ import Sort from '../pages/Sort/Sort.vue'
 import Wdetail from '../pages/Wdetail/Wdetail'
 import SortList from '../pages/SortList/SortList.vue'
 import Purchase from '../pages/Purchase/Purchase.vue'
+import Mine from '../pages/Mine/Mine.vue'
 
 export default[
   {
@@ -60,5 +61,9 @@ export default[
   {
     path:'/',
     redirect: '/sort'
+  },
+  {
+    path:'/mine',
+    component:Mine
   }
 ]
