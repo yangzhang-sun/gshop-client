@@ -15,7 +15,6 @@ import {
 export default{
   [SAVE_WINES](state,{wines}){
     state.wines = wines
-    console.log('mutations',state.wines)
   },
   [SAVE_PRODUCTS](state,{products}){
     state.products = products

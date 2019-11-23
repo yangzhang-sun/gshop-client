@@ -9,11 +9,9 @@ import ajax from './ajax'
 
 // 获取酒仙分类列表
 export const getWines = ()=>ajax({
-  url:'/index_category',
-  
+  url:'/wines',
 })
-
+// 获取首页轮播图
 export const getProducts = () => ajax({
-  url: '/Products'
-
+  url: '/products'
 })
