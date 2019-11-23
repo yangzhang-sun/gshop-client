@@ -6,18 +6,28 @@
 */
 import {
   getWines,
+  getProducts
 } from '../api'
 
 import { 
   SAVE_WINES ,
+  SAVE_PRODUCTS
 } from './mutation-type'
 
 export default {
   async getWinesAction({commit}){
     let result = await getWines()
-    if(result.code === 0){
+    if(result.code === 0){ 
       commit(SAVE_WINES,{wines:result.data})
       console.log('actions',result.data)
     }
+  },
+  async gitProductAction({commit}){
+    //1.发送请求
+    let result = await getProducts()
+    if (result.code ===0) {
+      commit(SAVE_PRODUCTS,{products:result.data})
+    }
+    //2.diaoyong mutation,将数据交给mutation
   }
 }

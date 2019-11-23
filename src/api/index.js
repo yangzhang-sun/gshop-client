@@ -12,3 +12,8 @@ export const getWines = ()=>ajax({
   url:'/index_category',
   
 })
+
+export const getProducts = () => ajax({
+  url: '/Products'
+
+})

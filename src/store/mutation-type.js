@@ -6,3 +6,5 @@
 */
 
 export const SAVE_WINES = 'save_wines'
+
+export const SAVE_PRODUCTS = 'save_products'
