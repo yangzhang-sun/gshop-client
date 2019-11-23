@@ -14,6 +14,10 @@ export default {
     {name: '价格'},
     {name: '筛选'}
   ],
+<<<<<<< HEAD
+  goods: [],//商品列表信息
+=======
   products:{},
 
+>>>>>>> baa40181d7b1b8fc273706c1c6218958843822dc
 }
