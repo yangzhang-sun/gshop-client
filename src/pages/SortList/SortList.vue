@@ -1,10 +1,11 @@
 <template>
-  <div class="SortShopContainer" > 
+  <div class="SortShopContainer"  > 
     <div class="Srot_shop_guide">       
     </div>
     <div class="Sort_shop_list">
       <!-- 头部 -->
-      <header class="SortHeader">
+        
+      <header class="SortHeader" >
         <span @click="$router.replace('/Sort')" slot="left" class="header_search">
           <i class="iconfont icon-zuozhishi"></i>
         </span>
@@ -14,25 +15,31 @@
         <div class="SortInput">
           <Input/>
         </div>
-        <!-- 导航栏 -->
+        <HeaderNavigation class="headerNavigation" v-show="isShowNotice"/>
+       <!-- 导航 -->
         <div class="shop_tabBar">
           <span v-for="item in wpList" :key="item.name" 
             :class="{'active' : active == item.name}" 
             @click="selected(item.name)">{{item.name}}
           </span>
-          <input v-show="isShowInout===true" class="Srot_ipout" type="text">
+          <input 
+            v-show="isShowInout===true" 
+            class="Srot_ipout" 
+            type="text" 
+            v-model="scarchDescri"
+          />
         </div>
-        <div class="shop_filtrate">
+        <div class="shop_filtrate" @click="isShowInout=false">
           <span class="shop_filtrate_left">酒仙配送</span>
           <span class="shop_filtrate_right">CLUB会员</span>
         </div>
       </header>   
       <!-- 搜索详情 -->
-      <div class="shop_container">
+      <div class="shop_container" @click="isShowInout=false">
         <ul class="shop_list">
           <li class="shop_li border-1px" v-for="(wine, index) in filterPersons" :key="index">
               <div class="shop_left">
-                <img class="shop_img" :src='wine.image_url'>
+                <img class="shop_img" v-lazy='wine.image_url'>
               </div>
               <div class="shop_right">
                 <section class="shop_detail_header">
@@ -65,14 +72,19 @@
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex'
   import Input from '../../components/Input/Input'
+  import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation' 
+  
   export default {
     components:{
-      Input
+      Input,
+      HeaderNavigation
     },
     data(){
       return {
         active:'综合',
+        isShowNotice: false,
         isShowInout:false,
+        scarchDescri:''
       }
     },
     async mounted(){
@@ -83,7 +95,8 @@
         this.active !== name && (this.active = name)
         if(this.active === '筛选'){
           this.isShowInout = !this.isShowInout
-          console.log(this.isShowInout)
+        }else{
+          this.isShowInout = false
         }
       }
     },
@@ -93,8 +106,8 @@
         wpList:state => state.wpList
       }),
       filterPersons () {
-        const { wines, active } =this
-        const arr = wines.filter(p => p.price)
+        const { scarchDescri, wines, active } =this
+        const arr = wines.filter(p => p.description.indexOf(scarchDescri)!==-1)
         // 有可能要进行排序
         if(active!=='综合'){
           if(active==='价格'){
@@ -134,6 +147,8 @@
         top 0
         width 100%
         height 120px
+        .headerNavigation
+          z-index 99
         .shop_tabBar
           display flex
           width 100%

@@ -4,10 +4,17 @@
  *@Date: 2019-11-20 23:26:53
  *@NO BUG!!! It is better to be clear than to be clever
 */
-import Login from '../pages/Login/Login.vue'
-import Cart from '../pages/Cart/Cart.vue'
-import Home from '../pages/Home/Home.vue'
-import Flush from '../pages/Flush/Flush.vue'
+// import Login from '../pages/Login/Login.vue'
+// import Cart from '../pages/Cart/Cart.vue'
+// import Home from '../pages/Home/Home.vue'
+// import Flush from '../pages/Flush/Flush.vue'
+// 首页组件懒加载
+let Login = () => import ('../pages/Login/Login.vue')
+let Cart  = () => import ('../pages/Cart/Cart.vue')
+let Home  = () => import ('../pages/Home/Home.vue')
+let Flush = () => import ('../pages/Flush/Flush.vue')
+
+
 import Sort from '../pages/Sort/Sort.vue'
 import Wdetail from '../pages/Wdetail/Wdetail'
 import SortList from '../pages/SortList/SortList.vue'
