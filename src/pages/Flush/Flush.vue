@@ -123,6 +123,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+@import "../../common/stylus/mixins.styl"
     .w-headerTitle
       width 100%
       height 40px
