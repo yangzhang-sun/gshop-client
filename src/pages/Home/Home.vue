@@ -132,90 +132,20 @@
     <!-- 移动 -->
     <div class="wrapper">
       <ul class="content">
-        <li>
+        <li v-for="(product,index) in products" :key="index">
           <a href="">
             <div>
               <img
-                src="https://img07.jiuxian.com/2019/0506/43e6b63c9a5c4257af5d8d868028a1b34.jpg"
+                :src="product.image_url"
                 alt=""
               />
             </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
+            <span class="g_text1">{{product.description}}</span>
+            <span class="g_text2">¥{{product.price}}</span>
+            <div class="myp">¥{{product.beforprice}}</div>
           </a>
         </li>
-        <li>
-          <a href="">
-            <div>
-              <img
-                src="https://img10.jiuxian.com/2019/1107/5881ec36d3ea464a87789d242ba32f234.jpg"
-                alt=""
-              />
-            </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div>
-              <img
-                src="https://img06.jiuxian.com/2019/0627/b26d7c99c2564794a1245d85d3effbc94.jpg"
-                alt=""
-              />
-            </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div>
-              <img
-                src="https://img07.jiuxian.com/2019/0506/43e6b63c9a5c4257af5d8d868028a1b34.jpg"
-                alt=""
-              />
-            </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div>
-              <img
-                src="https://img10.jiuxian.com/2019/1107/5881ec36d3ea464a87789d242ba32f234.jpg"
-                alt=""
-              />
-            </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <div>
-              <img
-                src="https://img06.jiuxian.com/2019/0627/b26d7c99c2564794a1245d85d3effbc94.jpg"
-                alt=""
-              />
-            </div>
-            <span class="g_text1">法国梦幻之星半干起泡葡萄酒750ml</span>
-            <br />
-            <span class="g_text2">¥45.00</span>
-            <div class="myp">¥79.00</div>
-          </a>
-        </li>
+
       </ul>
     </div>
     <!-- 爆品go -->
@@ -255,11 +185,17 @@
 </template>
 
 <script type="text/ecmascript-6">
+// import {getProducts} from '../../api'
+import {mapState} from 'vuex'
 import Swiper from 'swiper'
 import Bscroll from 'better-scroll'
 import 'swiper/css/swiper.min.css'
+// import moduleName from './index_data.json'
   export default {
     mounted(){
+
+      this.$store.dispatch('gitProductAction')
+
       new Swiper('.swiper-container', {
             loop: true,
             pagination: {
@@ -277,6 +213,11 @@ import 'swiper/css/swiper.min.css'
       // console.log(path)
       this.$route.path !== path && this.$router.replace(path)
      }
+   },
+   computed:{
+     ...mapState({
+       products:state => state.products
+     })
    }
   }
 </script>
@@ -391,7 +332,7 @@ import 'swiper/css/swiper.min.css'
       display flex
       li
         width 96px
-        height 156px
+        height 160px
         margin 10px
         overflow hidden
         a
@@ -400,9 +341,13 @@ import 'swiper/css/swiper.min.css'
             height 92px
             img
               width 100%
-              height 100%
+              height 100%            
           .g_text1
             color black
+            display block
+            overflow: hidden;
+            font-size: 12px;
+            height 24px
           .g_text2
             color: #fc5a5a;
             font-size: 14px;

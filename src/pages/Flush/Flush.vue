@@ -6,7 +6,7 @@
       <div class="w-Container">
         <img class="w-headerImage" src="../../common/images/qingcang/yaxianghaohuodatu.jpg" alt="">
         <div class="w-goodListContain">
-          <ul class="w-goodList">
+          <ul class="w-goodList" @click="goPath('/wdetail')">
             <li class="w-List">
               <img src="../../common/images/qingcang/yaxianghaohuo.jpg" alt="">
               <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
@@ -49,7 +49,7 @@
       <div class="w-Container">
         <img class="w-headerImage" src="../../common/images/qingcang/chaodidatu.jpg" alt="">
         <div class="w-goodListContain">
-          <ul class="w-goodList">
+          <ul class="w-goodList"  @click="goPath('/wdetail')">
             <li class="w-List">
               <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
               <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
@@ -113,11 +113,17 @@
       return{
         
       }
+    },
+    methods: {
+      goPath(path){
+        this.$router.replace(path)
+      }
     }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+@import "../../common/stylus/mixins.styl"
     .w-headerTitle
       width 100%
       height 40px
@@ -180,12 +186,4 @@
         .right img
           width 50%
           float right
-          
-         
-              
-           
-
-
-
-
 </style>
