@@ -68,7 +68,7 @@
                 <span style="color: red;" v-show="errors.has('code')">{{errors.first('code')}}</span>
                 <img 
                  ref="captcha"
-                 class="get_verification"  
+                class="get_verification"  
                  @click="updateCaptcha" 
                  src="http://localhost:4000/captcha" 
                  alt="captcha" />
@@ -97,20 +97,22 @@ export default {
     return {
       isPassWrrldLogin: true, //标识是否是用户名 / 密码登录
       isShowPassword: false //是否显示密码
-    };
+    }
   },
   methods: {
     goPost(path) {
       this.$route.path !== path && this.$router.replace(path);
-    }
-  },
-
-   methods: {
-    updateCaptcha() {
+    },
+     updateCaptcha() {
       this.$refs.captcha.src =
         "http://localhost:4000/captcha?time=" + Date.now();
-    }
+    
     },
+
+  },
+
+   
+   
 };
 </script>
 
