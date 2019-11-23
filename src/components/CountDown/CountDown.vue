@@ -53,9 +53,9 @@ export default {
     justify-content center
     p
       box-sizing border-box
-      background #eee
+      background #858585
       padding 2px
-      color red
+      color #fff
       border-radius 2px
       text-align center      
 </style>

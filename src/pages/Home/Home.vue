@@ -125,7 +125,10 @@
     <div class="spikeBox">
       <div class="spikeTip">
         <h3>掌上秒拍</h3>
-        <div class="lastTime">距结束03：03：03</div>
+        <!-- <div class="lastTime">距结束03：03：03</div> -->
+        <!-- <p>距结束</p> -->
+        <p class="end">距结束</p>
+        <CountDown class="countdown"></CountDown>
         <a class="rush" href="">更多商品等你来抢！ </a>
       </div>
     </div>
@@ -185,12 +188,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-// import {getProducts} from '../../api'
+import CountDown from '../../components/CountDown/CountDown'
 import {mapState} from 'vuex'
 import Swiper from 'swiper'
 import Bscroll from 'better-scroll'
 import 'swiper/css/swiper.min.css'
-// import moduleName from './index_data.json'
+
   export default {
     mounted(){
 
@@ -218,7 +221,8 @@ import 'swiper/css/swiper.min.css'
      ...mapState({
        products:state => state.products
      })
-   }
+   },
+   components:{CountDown}
   }
 </script>
 
@@ -298,6 +302,7 @@ import 'swiper/css/swiper.min.css'
       // 掌上秒拍
   .spikeBox
     .spikeTip
+
       height 30px
       position relative
       border-bottom 1px solid #ededed
@@ -308,11 +313,10 @@ import 'swiper/css/swiper.min.css'
         line-height 30px
         top 0
         font-weight bold
-      .lastTime
-        margin-left 75px
-        height 16px
-        line-height 16px
-        padding 7px 0
+      .end   
+        margin 2px 0px 0px 100px 
+      .countdown
+        margin-top -10px
       .rush
         display inline-block
         position absolute
