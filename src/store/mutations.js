@@ -7,6 +7,7 @@
 
 import {
   SAVE_WINES,
+  SAVE_GOODS_SHOPS,
   SAVE_PRODUCTS
 } from './mutation-type'
 
@@ -15,6 +16,9 @@ import {
 export default{
   [SAVE_WINES](state,{wines}){
     state.wines = wines
+  },
+  [SAVE_GOODS_SHOPS](state,goods) {
+    state.goods = goods
   },
   [SAVE_PRODUCTS](state,{products}){
     state.products = products

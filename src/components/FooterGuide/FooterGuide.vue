@@ -1,29 +1,29 @@
 <template>
   <div id="footerGuideContainer">
-    <div class="guideItem" @click="goPath('/Home')">
+    <div class="guideItem" @click="goPath('/home')">
       <span>
         <i class="iconfont icon-index"></i>
       </span>
       <span>首页</span>
     </div>
-    <div class="guideItem" @click="goPath('/Sort')">
+    <div class="guideItem" @click="goPath('/sort')">
       <span>
         <i class="iconfont icon-leimupinleifenleileibie"></i>
       </span>
       <span>分类</span>
     </div>
-    <div class="guideItem" @click="goPath('/Flush')">
+    <div class="guideItem" @click="goPath('/flush')">
       <span>
         <img class="iconfont flush" src="https://img09.jiuxian.com/bill/2018/0528/56760d41e3e745afa14e3cea1713631c.png">
       </span>
     </div>
-    <div class="guideItem" @click="goPath('/Cart')">
+    <div class="guideItem" @click="goPath('/cart')">
       <span>
         <i class="iconfont icon-icongouwuche1"></i>
       </span>
       <span>购物车</span>
     </div>
-    <div class="guideItem" @click="goPath('/Login')">
+    <div class="guideItem" @click="goPath('/login')">
       <span>
         <i class="iconfont icon-wodedangxuan1"></i>
       </span>

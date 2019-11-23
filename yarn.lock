@@ -8204,6 +8204,11 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vex@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npm.taobao.org/vex/download/vex-0.0.4.tgz#a22d7fb02e97be938e4b2b4327c314d25d82f402"
+  integrity sha1-oi1/sC6XvpOOSytDJ8MU0l2C9AI=
+
 vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz?cache=0&sync_timestamp=1572870837170&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvm-browserify%2Fdownload%2Fvm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
