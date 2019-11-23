@@ -14,4 +14,5 @@ export default {
     {name: '价格'},
     {name: '筛选'}
   ],
+  goods: [],//商品列表信息
 }

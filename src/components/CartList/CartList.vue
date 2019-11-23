@@ -1,28 +1,28 @@
 <template>
   <div class="CartListContainer">
     <ul class="CartListShopUl">
-      <li class="CartListShopLi">
+      <li class="CartListShopLi" v-for="(good, index) in goods" :key='good.id'>
         <div class="shopTitle">
-          <input type="checkbox">
+          <input class="shopAll-check" type="checkbox" v-model="isCheck[good.id].isChecked" @click="checkGoods(index)">
           <img class="CartShopImg" src="../../common/images/cart/jiujia01.jpg" alt="酒家">
-          <span class="jiujia">酒家自营</span>
+          <span class="jiujia">{{good.title}}</span>
           <div class="discount">
             <span>领券</span>
             <span class="more">></span>
           </div>
         </div>
         <ul class="CartListWineUl">
-          <li class="CartListWineLi">
+          <li class="CartListWineLi" v-for="item in good.jiuxianziying" :key="item.id">
             <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="https://img10.jiuxian.com/2019/0109/4c9c7fc2fcf247e283b14637fe1862994.jpg" alt="美国伏特加">
+                <input type="checkbox" class="CartListCheckBox" v-model="isCheckItem[item.id]" ref="inputItem">
+                <img class="winesImg" :src="item.image" alt="美国伏特加">
             </div>
             <div class="winesDetail">
                 <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
+                  <span>{{item.title}}</span>
                 </div>
                 <p class="winesPrice">
-                  <span>￥118.00</span>
+                  <span>{{item.price}}</span>
                 </p>
                 <div class="changeCount">
                   <a class="countDelete">-</a>
@@ -31,127 +31,7 @@
                 </div>
             </div>
             <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
-          <li class="CartListWineLi">
-            <div class="WineLiDet">
-                <input type="checkbox" class="CartListCheckBox">
-                <img class="winesImg" src="../../common/images/cart/wine01.jpg" alt="美国伏特加">
-            </div>
-            <div class="winesDetail">
-                <div class="futejia">
-                  <span>40°美国深蓝伏特加750ml(原味)</span>
-                </div>
-                <p class="winesPrice">
-                  <span>￥118.00</span>
-                </p>
-                <div class="changeCount">
-                  <a class="countDelete">-</a>
-                  <span class="countNumber">1</span>
-                  <a class="countAdd">+</a>
-                </div>
-            </div>
-            <a class="deleteWine">|&nbsp;删除</a>
-          </li>
+          </li> 
         </ul>
       </li>
     </ul>
@@ -178,8 +58,50 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
   export default {
-  }
+    data () {
+      return {
+         isCheck: {},
+         isCheckItem: {},
+      }
+    },
+    mounted(){ //页面渲染完之后分发数据
+        // console.log(this.goods)
+        this.$store.dispatch('getGoodsAddShopsAction')
+    },
+    computed: {
+      ...mapState({
+        goods: state => state.goods
+      }),
+    },
+    methods: {
+       checkGoods (index) {
+          // console.log(event.target.checked)
+           let itemArr = this.goods[index].jiuxianziying //每个店铺的商品
+           
+
+          itemArr.forEach(element => {
+             let indexItem = itemArr.indexOf(element)
+             if(event.target.checked) {
+                this.$refs.inputItem[indexItem].checked = true
+              }
+          });
+           console.log(this.$refs.inputItem)
+       }
+    },
+    watch: {
+      goods(newValue){
+        newValue.forEach((good, index) => {
+          this.isCheck[good.id] = {
+            isChecked: false,
+            items: {}
+          }
+        
+        })
+      }
+    }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
@@ -192,7 +114,7 @@
             width 100%
             line-height 45px
             border 1px solid #eee
-            input 
+            .shopAll-check 
               font-size 20px
               margin-left 5px
               display inline-block
@@ -212,7 +134,7 @@
                     margin-left 5px
                     font-size 16px
         .CartListWineUl
-          padding-bottom 40px
+          padding-bottom 10px
           .CartListWineLi
             height 100px
             line-height 18px
@@ -229,15 +151,17 @@
                  left 2px
                  top 38px
                .winesImg
-                 padding-left 15px
+                 padding 0 10px 0 20px
                  width 80px
                  height 80px
-                 border 1px solid #eee
+
             .winesDetail
                float left
-               width calc(100vw - 105px)
+               width calc(100vw - 120px)
                .futejia
                   width 100%
+                  height 36px
+                  overflow hidden
                   span 
                     font-size 16px
                .winesPrice
@@ -245,7 +169,7 @@
                     font-size 14px
                     color #ff0000 
                .changeCount
-                  margin-top 25px
+                  margin-top 5px
                   font-size 20px
                   border 1px solid #d0d0d0
                   width 84px

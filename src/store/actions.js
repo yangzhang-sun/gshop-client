@@ -6,10 +6,12 @@
 */
 import {
   getWines,
+  getShopAndGoodsList
 } from '../api'
 
 import { 
   SAVE_WINES ,
+  SAVE_GOODS_SHOPS
 } from './mutation-type'
 
 export default {
@@ -18,6 +20,13 @@ export default {
     if(result.code === 0){
       commit(SAVE_WINES,{wines:result.data})
       console.log('actions',result.data)
+    }
+  },
+  async getGoodsAddShopsAction({commit}){
+    let result = await getShopAndGoodsList()
+    if(result.code === 0){
+       commit(SAVE_GOODS_SHOPS,result.data)
+      //  console.log('------',result.data)
     }
   }
 }

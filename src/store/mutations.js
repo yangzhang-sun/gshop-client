@@ -6,7 +6,8 @@
 */
 
 import {
-  SAVE_WINES
+  SAVE_WINES,
+  SAVE_GOODS_SHOPS
 } from './mutation-type'
 
 
@@ -14,6 +15,10 @@ import {
 export default{
   [SAVE_WINES](state,{wines}){
     state.wines = wines
-    console.log('mutations',state.wines)
+    // console.log('mutations',state.wines)
+  },
+  [SAVE_GOODS_SHOPS](state,goods) {
+    state.goods = goods
+    // console.log('--------',state.goods)
   }
 }
