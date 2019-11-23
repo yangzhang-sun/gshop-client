@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import 'lib-flexible/flexible'
 import '../public/reset.css'
-import './veevalidate'
+import './vuevalidate'
 
 import { Button } from 'mint-ui'
 import 'mint-ui/lib/style.css'
