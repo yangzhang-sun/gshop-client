@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueLazyload from 'vue-lazyload'
 import 'lib-flexible/flexible'
 import '../public/reset.css'
-
 import { Button } from 'mint-ui'
-import 'mint-ui/lib/style.css'
+import { MessageBox } from 'mint-ui';
+import'mint-ui/lib/style.css'
 
 import router from './router'
 import store from './store'
@@ -12,6 +13,7 @@ Vue.config.productionTip = false
 import './vuevalidate'
 
 import HeaderGuide from './components/HeaderGuide/HeaderGuide.vue'
+
 
 
 Vue.use(VueLazyload,{
