@@ -32,7 +32,7 @@
                 maxlength="11"
                 placeholder="手机号"
               />
-              <span style="color: red;" v-show="errors.has('username')">{{errors.first('username')}}</span>
+              <!-- <span style="color: red;" v-show="errors.has('username')">{{errors.first('username')}}</span> -->
               <button @click.prevent="facode" :disabled="!Isthisright" class="get_verification" :class="{light_this_liang : Isthisright}">获取验证码</button>
             </section>
 
@@ -43,7 +43,7 @@
                 type="tel" 
                 maxlength="8" 
                 placeholder="验证码" />
-                <span style="color: red;" v-show="errors.has('captcha')">{{errors.first('captcha')}}</span>
+                <!-- <span style="color: red;" v-show="errors.has('captcha')">{{errors.first('captcha')}}</span> -->
               </section>
 
           </div>
@@ -51,7 +51,7 @@
             <section>
               <section class="login_message">
                 <input  v-model="phone" v-validate="'required|phone'" type="tel" maxlength="11" name="phone" placeholder="手机/邮件/用户名" />
-                   <span style="color: red;" v-show="errors.has('phone')">{{errors.first('phone')}}</span>
+                   <!-- <span style="color: red;" v-show="errors.has('phone')">{{errors.first('phone')}}</span> -->
               </section>
 
               <section class="login_verification">
@@ -63,7 +63,7 @@
                 placeholder="密码"
                 name="pwd"
               />
-              <span style="color: red;" v-show="errors.has('pwd')">{{errors.first('pwd')}}</span>
+              <!-- <span style="color: red;" v-show="errors.has('pwd')">{{errors.first('pwd')}}</span> -->
 
               <div
                 @click="isShowPassword=!isShowPassword"
@@ -77,7 +77,7 @@
              
               <section class="login_message">
                 <input  v-model="code" v-validate="'required|code'" type="text" maxlength="11" name="code" placeholder="请输入验证码" />
-                <span style="color: red;" v-show="errors.has('code')">{{errors.first('code')}}</span>
+                <!-- <span style="color: red;" v-show="errors.has('code')">{{errors.first('code')}}</span> -->
                 <img 
                  ref="captcha"
                  class="get_verification"  

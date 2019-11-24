@@ -46,19 +46,3 @@ export const loginWithPhone = (phone, code, pwd) => ajax({
   }
 })
 
-
-// /* 发送短信验证码 */
-// export const sendCode = phone => ajax({
-//   url: '/sendcode',
-//   params: {
-//     phone
-//   }
-// })
-// /*  自动登录 */
-// export const autoLogin = () => ajax({
-//   url:'/auto_login',
-//   headers: {
-//     needToken: true
-//   }
-// })
-
