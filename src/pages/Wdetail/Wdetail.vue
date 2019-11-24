@@ -2,7 +2,7 @@
   <div class="w-bigContain">
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/Flush')" slot="left" class="header_search">
+      <span @click="$router.replace('/flush')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -453,20 +453,24 @@ export default {
       display flex
       font-size 15px
       li:nth-child(1)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(2)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
         border-left 1px solid #999
         border-right 1px solid #999
       li:nth-child(3)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(4)
+        border-radius 5%
         width 45%
         line-height 40px
         text-align center
