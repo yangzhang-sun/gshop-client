@@ -8,7 +8,8 @@
 import {
   SAVE_WINES,
   SAVE_GOODS_SHOPS,
-  SAVE_PRODUCTS
+  SAVE_PRODUCTS,
+  SAVE_FLUSHDATAS
 } from './mutation-type'
 
 
@@ -23,5 +24,8 @@ export default{
   },
   [SAVE_PRODUCTS](state,{products}){
     state.products = products
+  },
+  [SAVE_FLUSHDATAS](state,{flushdatas}){
+    state.flushdatas = flushdatas
   }
 }

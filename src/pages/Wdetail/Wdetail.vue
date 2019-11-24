@@ -15,13 +15,14 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" >
           <img :src="detailDate.image_url" alt="">
-          </div>
+        </div>
         <div class="swiper-slide">
           <img :src="detailDate.image_url" alt="">
         </div>
-        <div class="swiper-slide">
+        <!-- <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
-        </div>
+        </div> -->
+
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -137,6 +138,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
   import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
@@ -144,12 +146,35 @@
     components:{
       HeaderNavigation
     },
+    computed:{
+      ...mapState({
+        wines:state => state.wines
+      })
+    },
     created(){
       const { id, name } = this.$route.query
       // const path = JSON.parse(sessionStorage.getItem('path'))
       // if(path == '/SortList'){
       console.log(name)
       if(name == '张阳'){
+        console.log(11111111111)
+        // this.$ajax({
+        //   url:'/getDetails',
+        //   params:{
+        //     id
+        //   }
+        // })
+        // .then((res)=>{
+        //   this.detailDate=res.arr[0]
+        //   console.log(res.arr[0])
+        // })
+        // console.log(this.wines)
+        const arr = this.wines.filter(item => id==item.id)
+        this.detailDate = arr[0]
+        console.log(this.detailDate)
+      }else{
+        // 老哥的数据
+        console.log('1111111111')
         this.$ajax({
           url:'/getDetails',
           params:{
@@ -160,8 +185,6 @@
           this.detailDate=res.arr[0]
           console.log(res.arr[0])
         })
-      }else{
-        // 老哥的数据
       }
     },
     data(){
@@ -182,6 +205,16 @@
       }
     },
     mounted() {
+      // this.$nextTick(() => { //$nextTick代表下次页面全部渲染完毕
+      //     new Swiper('.swiper-container', {
+      //       loop: true,
+      //       loopedSlides:5,
+      //       pagination: {
+      //         el: '.swiper-pagination',
+      //       },
+      //     })
+      //   })
+      this.$store.dispatch('getWinesAction')
       var mySwiper = new Swiper(".swiper-container", {
         loop: true,
         // 如果需要分页器
@@ -201,6 +234,7 @@
 
 <style lang='stylus' rel='stylesheet/stylus'>
  @import "../../common/stylus/mixins.styl"
+ .w-bigContain
   .SortHeader
     width 100%
     height 40px
@@ -210,62 +244,6 @@
       left 42px
   .headerNavigation
     z-index 99
-  .SortList
-    width 100%
-    height 324px
-    .SortDetail
-      width 100%
-      height 100%
-      display block
-      li
-        text-align center
-        float left
-        width 124px
-        height 81px
-        border  1px solid #eee
-        margin 0 -1px -1px 0
-        a
-          display flex
-          flex-direction column
-          text-align center
-          margin-top 10px
-          color #333
-          i
-            width 100%
-            height 36px
-            font-size 36px
-          span 
-            margin-top 6px
-            font-size 18px
-.w-bigContain
-  position relative
-  background #F5F5F5
-  // .w-headerTitle 
-  //   width: 100%
-  //   height: 40px
-  //   background: red
-  .shade
-    width 100%
-    height 45px
-    border-bottom: 1px solid #ccc
-    background-color: #efefef
-    position absolute
-    top 40px
-    left 0
-    display flex
-    justify-content space-around
-    .shadeItem
-      display flex
-      flex-direction column
-      margin 10px
-  .viewModule
-    margin-top 40px
-    height: 40px;
-    line-height: 40px;
-    padding: 0 10px;
-    background: #f13063;
-    text-align: center;
-    font-size: 16px;
   .swiper-container
     .swiper-wrapper
       .swiper-slide
@@ -460,7 +438,7 @@
     bottom 0
     width 100%
     background white
-    border-top 1px solid #999
+    border-top 1px solid #eee
     .w-bottomLIst
       height 40px
       line-height 40px
@@ -474,8 +452,8 @@
         width 20%
         line-height 40px
         text-align center
-        border-left 1px solid #999
-        border-right 1px solid #999
+        border-left 1px solid #eee
+        border-right 1px solid #eee
       li:nth-child(3)
         width 20%
         line-height 40px

@@ -6,7 +6,7 @@
       <!-- 头部 -->
         
       <header class="SortHeader" >
-        <span @click="$router.push('/Sort')" slot="left" class="header_search">
+        <span @click="$router.replace('/Sort')" slot="left" class="header_search">
           <i class="iconfont icon-zuozhishi"></i>
         </span>
         <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">

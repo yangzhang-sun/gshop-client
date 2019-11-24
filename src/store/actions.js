@@ -7,13 +7,15 @@
 import {
   getWines,
   getShopAndGoodsList,
-  getProducts
+  getProducts,
+  getFlushdatas
 } from '../api'
 
 import { 
   SAVE_WINES ,
   SAVE_GOODS_SHOPS,
-  SAVE_PRODUCTS
+  SAVE_PRODUCTS,
+  SAVE_FLUSHDATAS
 } from './mutation-type'
 
 export default {
@@ -29,12 +31,20 @@ export default {
        commit(SAVE_GOODS_SHOPS,result.data)
     }
   },
-  async gitProductAction({commit}){
+  async getProductAction({commit}){
     //1.发送请求
     let result = await getProducts()
     if (result.code ===0) {
       //2.diaoyong mutation,将数据交给mutation
       commit(SAVE_PRODUCTS,{products:result.data})
+    }
+  },
+  async getFlushdatasAction({commit}){
+    //1.发送请求
+    let result = await getFlushdatas()
+    if (result.code ===0) {
+      //2.diaoyong mutation,将数据交给mutation
+      commit(SAVE_FLUSHDATAS,{flushdatas:result.data})
     }
   }
 }
