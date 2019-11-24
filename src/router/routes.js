@@ -22,13 +22,8 @@ import Purchase from '../pages/Purchase/Purchase.vue'
 import WhiteJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
 import CartList from '../components/CartList/CartList.vue'
 import CartEmply from '../components/CartEmply/CartEmply.vue'
-<<<<<<< HEAD
-import Mine from '../pages/Mine/Mine.vue'
-
-=======
 
 import Mine from '../pages/Mine/Mine.vue'
->>>>>>> 531369821684e42005f601e3cc3b587eab60b1ef
 
 export default[
   {
