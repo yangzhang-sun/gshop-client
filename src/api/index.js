@@ -13,28 +13,27 @@ export const getWines = ()=>ajax({
   
 })
 
-<<<<<<< HEAD
-// /* 用户名密码登陆 */
-// export const loginWithPassword = (name, pwd, captcha) => ajax({
-//   url: '/login_pwd',
-//   method: 'POST',
-//   data: {
-//     name,
-//     pwd,
-//     captcha
-//   }
-// })
+/* 手机动态登陆 */
+export const loginWithPassword = (name,  captcha) => ajax({
+  url: '/login_pwd',
+  method: 'POST',
+  data: {
+    name,
+    captcha
+  }
+})
 
 
-// /* 手机号验证码登陆 */
-// export const loginWithPhone = (phone, code) => ajax({
-//   url: '/login_sms',
-//   method: 'POST',
-//   data: {
-//     phone,
-//     code
-//   }
-// })
+/*账号登录 */
+export const loginWithPhone = (phone, code, pwd) => ajax({
+  url: '/login_sms',
+  method: 'POST',
+  data: {
+    phone,
+    pwd,
+    code
+  }
+})
 
 
 // /* 发送短信验证码 */
@@ -51,9 +50,7 @@ export const getWines = ()=>ajax({
 //     needToken: true
 //   }
 // })
-=======
 export const getProducts = () => ajax({
   url: '/Products'
 
 })
->>>>>>> 362663c7422bb8510049e8c524b52cea27be9ca7

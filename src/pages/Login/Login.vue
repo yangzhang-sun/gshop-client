@@ -25,6 +25,7 @@
           <div :class="{on:!isPassWrrldLogin}">
             <section class="login_message">
               <input
+                v-model="name"
                 name="username"
                 v-validate="'required|phone'"
                 type="tel"
@@ -32,10 +33,30 @@
                 placeholder="手机号"
               />
               <span style="color: red;" v-show="errors.has('username')">{{errors.first('username')}}</span>
+              <button @click.prevent="facode" :disabled="!Isthisright" class="get_verification" :class="{light_this_liang : Isthisright}">获取验证码</button>
             </section>
 
-            <section class="login_verification">
+             <section class="login_verification">
+                <input 
+                v-model="captcha"
+                name="captcha"
+                type="tel" 
+                maxlength="8" 
+                placeholder="验证码" />
+                <span style="color: red;" v-show="errors.has('captcha')">{{errors.first('captcha')}}</span>
+              </section>
+
+          </div>
+          <div :class="{on:isPassWrrldLogin}">
+            <section>
+              <section class="login_message">
+                <input  v-model="phone" v-validate="'required|phone'" type="tel" maxlength="11" name="phone" placeholder="手机/邮件/用户名" />
+                   <span style="color: red;" v-show="errors.has('phone')">{{errors.first('phone')}}</span>
+              </section>
+
+              <section class="login_verification">
               <input
+                v-model="pwd"
                 v-validate="'required'"
                 :type=" isShowPassword?'tel':'password'"
                 maxlength="8"
@@ -53,22 +74,13 @@
                 <span class="switch_text">{{isShowPassword?'abc':'...'}}</span>
               </div>
             </section>
-          </div>
-          <div :class="{on:isPassWrrldLogin}">
-            <section>
+             
               <section class="login_message">
-                <input  v-validate="'required|phone'" type="tel" maxlength="11" name="phone" placeholder="请输入手机号" />
-                   <span style="color: red;" v-show="errors.has('phone')">{{errors.first('phone')}}</span>
-              </section>
-              <!-- <section class="login_verification">
-                <input type="tel" maxlength="8" placeholder="请以此点击" />
-              </section>-->
-              <section class="login_message">
-                <input v-validate="'required|code'" type="text" maxlength="11" name="code" placeholder="请输入验证码" />
+                <input  v-model="code" v-validate="'required|code'" type="text" maxlength="11" name="code" placeholder="请输入验证码" />
                 <span style="color: red;" v-show="errors.has('code')">{{errors.first('code')}}</span>
                 <img 
                  ref="captcha"
-                class="get_verification"  
+                 class="get_verification"  
                  @click="updateCaptcha" 
                  src="http://localhost:4000/captcha" 
                  alt="captcha" />
@@ -79,7 +91,9 @@
           </div>
 
           <!-- 登陆按钮 -->
-          <mt-button class="login_submit" type="danger" @click="goPost('/Mine')">立即登录</mt-button>
+          <!-- 直接跳转个人中心 -->
+          <!-- <mt-button class="login_submit" type="danger" @click="goPost('/Mine')">立即登录</mt-button> -->
+          <mt-button class="login_submit" type="danger" @click.prevent="Login">立即登录</mt-button>
         </form>
         <a href="javascript:;" class="about_us">关于我们</a>
       </div>
@@ -91,29 +105,59 @@
 </template>
 
 <script type="text/ecmascript-6">
+import {loginWithPassword, loginWithPhone} from '../../api'
 import { Button } from "mint-ui";
+import { log } from 'util';
 export default {
   data() {
     return {
       isPassWrrldLogin: true, //标识是否是用户名 / 密码登录
-      isShowPassword: false //是否显示密码
+      isShowPassword: false, //是否显示密码
+      name: '',
+      pwd: '',
+      captcha : '',
+      phone: '',
+      code: ''
     }
   },
   methods: {
-    goPost(path) {
-      this.$route.path !== path && this.$router.replace(path);
-    },
+    // goPost(path) {
+    //   this.$route.path !== path && this.$router.replace(path);
+    //   console.log('111')
+    // }, //直接跳转个人中心
      updateCaptcha() {
-      this.$refs.captcha.src =
-        "http://localhost:4000/captcha?time=" + Date.now();
-    
+      this.$refs.captcha.src ="http://localhost:4000/captcha?time=" + Date.now();
+       
     },
-
-  },
-
    
+   async Login(){
+        //提出表单
+        let {isPassWordLogin , name , pwd, captcha , phone, code} = this
+        let names = isPassWordLogin ? ["username", "captcha"] : ["phone", "code", "pwd"];
+        const success = await this.$validator.validateAll(names) //对所有表单进行验证
+        // console.log(success)
+        if(success){
+          alert('前端验证成功')
+          //手机前端数据，发送请求进行后端验证
+          let result = await loginWithPassword (phone, code, pwd)
+          console.log(result)
+        }else {
+          alert('前端验证失败')
+        } 
+     },
+    facode (){
+        console.log('发送验证码')
+   }
+  }, 
+  computed :{
+     Isthisright (){  
+         //验证手机号是否满足要求
+          return /^1(3|4|5|6|7|8|9)\d{9}$/.test(this.name) 
+       }
    
-};
+  }
+     
+}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -192,6 +236,11 @@ export default {
               color: #ccc;
               font-size: 14px;
               background: transparent;
+
+               &.light_this_liang {
+                color: #333;
+              }
+          
             }
           }
 

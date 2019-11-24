@@ -3,13 +3,7 @@ import App from './App.vue'
 import VueLazyload from 'vue-lazyload'
 import 'lib-flexible/flexible'
 import '../public/reset.css'
-<<<<<<< HEAD
-import './vuevalidate'
-=======
 
-import { Button } from 'mint-ui'
-import 'mint-ui/lib/style.css'
->>>>>>> 362663c7422bb8510049e8c524b52cea27be9ca7
 
 import { Button } from 'mint-ui'
 import 'mint-ui/lib/style.css'
