@@ -16,6 +16,7 @@ export default {
   ],
   goods: [],//商品列表信息
   products:{},
-  count: 1  //商品的数量
+  count: 1,//商品的数量
 
+  products:{}
 }

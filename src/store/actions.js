@@ -27,16 +27,14 @@ export default {
     let result = await getShopAndGoodsList()
     if(result.code === 0){
        commit(SAVE_GOODS_SHOPS,result.data)
-      //  console.log('------',result.data)
     }
   },
-
   async gitProductAction({commit}){
     //1.发送请求
     let result = await getProducts()
     if (result.code ===0) {
+      //2.diaoyong mutation,将数据交给mutation
       commit(SAVE_PRODUCTS,{products:result.data})
     }
-    //2.diaoyong mutation,将数据交给mutation
   }
 }

@@ -14,10 +14,10 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" >
-          <img src="../../common/images/jiudatu.jpg" alt="">
+          <img :src="detailDate.image_url" alt="">
           </div>
         <div class="swiper-slide">
-          <img src="../../common/images/jiu2datu.jpg" alt="">
+          <img :src="detailDate.image_url" alt="">
         </div>
         <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
@@ -27,9 +27,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="w-messageContainer">
-      <div class="w-degree" >46°牛栏山二锅头大二（绿瓶）500ml</div>
+      <div class="w-degree" >{{detailDate.description}}</div>
       <div class="w-message">
-        <p class="w-price" >￥888.00</p>
+        <p class="w-price" >￥{{detailDate.price}}</p>
         <p class="w-club">会员下单再享98折,可省0.38元</p>
       </div>
     </div>
@@ -144,15 +144,41 @@
     components:{
       HeaderNavigation
     },
+    created(){
+      const { id, name } = this.$route.query
+      // const path = JSON.parse(sessionStorage.getItem('path'))
+      // if(path == '/SortList'){
+      console.log(name)
+      if(name == '张阳'){
+        this.$ajax({
+          url:'/getDetails',
+          params:{
+            id
+          }
+        })
+        .then((res)=>{
+          this.detailDate=res.arr[0]
+          console.log(res.arr[0])
+        })
+      }else{
+        // 老哥的数据
+      }
+    },
     data(){
       return{
-        isShowNotice: false 
+        isShowNotice: false ,
+        detailDate:{},
+        path:''
       }
     },
     methods: {
       shade(){
         // console.log('1')
         this.isShade = !this.isShade
+      },
+      goPath(){
+        const path = JSON.parse(sessionStorage.getItem('path'))
+        this.$router.replace(path)
       }
     },
     mounted() {
@@ -163,6 +189,12 @@
           el: ".swiper-pagination"
         }
       })
+    },
+    beforeRouteEnter (to, from, next) {
+      sessionStorage.setItem('path',JSON.stringify(from.fullPath))
+      // this.path = 
+      console.log()
+      next(true)
     }
   }
 </script>
@@ -247,12 +279,14 @@
     padding-bottom 30px
     .w-degree
       font-size 17px
-      text-align center
+      text-align left 
       padding-top 15px
+      margin-left 2px  
     .w-message
       display flex
       flex-direction column
-      margin-top 10px        
+      margin-top 10px
+      margin-left 2px   
       .w-price
         color red
         font-size 20px
@@ -433,20 +467,24 @@
       display flex
       font-size 15px
       li:nth-child(1)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(2)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
         border-left 1px solid #999
         border-right 1px solid #999
       li:nth-child(3)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(4)
+        border-radius 5%
         width 45%
         line-height 40px
         text-align center
