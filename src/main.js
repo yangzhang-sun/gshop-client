@@ -6,6 +6,7 @@ import '../public/reset.css'
 import { Button } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+import ajax from './api/ajax'
 import router from './router'
 import store from './store'
 Vue.config.productionTip = false
@@ -13,6 +14,8 @@ import './vuevalidate'
 
 import HeaderGuide from './components/HeaderGuide/HeaderGuide.vue'
 
+// vue实例挂载ajax方法
+Vue.prototype.$ajax = ajax
 
 Vue.use(VueLazyload,{
   loading: 'dist/loading.gif'

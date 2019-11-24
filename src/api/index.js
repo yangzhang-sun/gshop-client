@@ -17,3 +17,8 @@ export const getWines = ()=>ajax({
 export const getProducts = () => ajax({
   url: '/products'
 })
+
+// 获取商店列表请求
+export const getShopAndGoodsList = () => ajax({
+  url:'/shopAndGoods',
+})

@@ -40,7 +40,7 @@
           <li class="shop_li border-1px" 
               v-for="(wine, index) in filterPersons" 
               :key="index"
-              @click="$router.replace('/wdetail')"
+              @click="goDetail(wine.id)"
               >
               <div class="shop_left">
                 <img class="shop_img" v-lazy='wine.image_url'>
@@ -102,6 +102,15 @@
         }else{
           this.isShowInout = false
         }
+      },
+      goDetail(ID){
+        this.$router.push({
+          path:'/wdetail',
+          query:{
+            'id':ID,
+            'name':'张阳'
+            }
+        })
       }
     },
     computed:{
@@ -127,10 +136,15 @@
               return p2.id - p1.id
             })
           }
-        }
-        
+        } 
         return arr
-      }
+      },
+      beforeRouteEnter (to, from, next) {
+        console.log('------------ beforeRouteEnter  ----------------');
+        // debugger
+        console.log(to,from)
+        next(true)
+      },
     }
   }
 </script>
