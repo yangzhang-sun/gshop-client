@@ -9,6 +9,7 @@ import '../public/reset.css'
 import { Button } from 'mint-ui'
 import { MessageBox } from 'mint-ui';
 import'mint-ui/lib/style.css'
+import './vuevalidate'
 
 
 import ajax from './api/ajax'
