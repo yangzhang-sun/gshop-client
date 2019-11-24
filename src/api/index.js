@@ -22,3 +22,4 @@ export const getProducts = () => ajax({
 export const getShopAndGoodsList = () => ajax({
   url:'/shopAndGoods',
 })
+

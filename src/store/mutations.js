@@ -19,6 +19,7 @@ export default{
   },
   [SAVE_GOODS_SHOPS](state,goods) {
     state.goods = goods
+    // console.log('mutations',state.wines)
   },
   [SAVE_PRODUCTS](state,{products}){
     state.products = products

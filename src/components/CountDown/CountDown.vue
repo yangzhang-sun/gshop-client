@@ -40,7 +40,6 @@ export default {
         this.m = Math.floor((leftTime / 1000 / 60) % 60)
         this.s = Math.floor((leftTime / 1000) % 60)
       }
-      console.log(this.s)
       //递归每秒调用countTime方法，显示动态时间效果
       setTimeout(this.countTime, 1000)
     },
@@ -53,9 +52,9 @@ export default {
     justify-content center
     p
       box-sizing border-box
-      background #eee
+      background #858585
       padding 2px
-      color red
+      color #fff
       border-radius 2px
       text-align center      
 </style>
