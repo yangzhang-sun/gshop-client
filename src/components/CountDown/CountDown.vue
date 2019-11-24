@@ -1,7 +1,7 @@
 <template>
   <div class="Date">
-    <p class="date">{{d}}</p>
-    <p>:</p>
+    <!-- <p class="date">{{d}}</p> -->
+    <!-- <p>:</p> -->
     <p class="date">{{h}}</p>
     <p>:</p>
     <p class="date">{{m}}</p>
