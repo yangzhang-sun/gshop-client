@@ -6,11 +6,13 @@
 */
 import {
   getWines,
+  getShopAndGoodsList,
   getProducts
 } from '../api'
 
 import { 
   SAVE_WINES ,
+  SAVE_GOODS_SHOPS,
   SAVE_PRODUCTS
 } from './mutation-type'
 
@@ -21,6 +23,14 @@ export default {
       commit(SAVE_WINES,{wines:result.data})
     }
   },
+  async getGoodsAddShopsAction({commit}){
+    let result = await getShopAndGoodsList()
+    if(result.code === 0){
+       commit(SAVE_GOODS_SHOPS,result.data)
+      //  console.log('------',result.data)
+    }
+  },
+
   async gitProductAction({commit}){
     //1.发送请求
     let result = await getProducts()
