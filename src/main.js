@@ -3,8 +3,8 @@ import App from './App.vue'
 import VueLazyload from 'vue-lazyload'
 import 'lib-flexible/flexible'
 import '../public/reset.css'
-import VueLazyload from 'vue-lazyload'
 import { Button } from 'mint-ui'
+import { MessageBox } from 'mint-ui';
 import 'mint-ui/lib/style.css'
 
 import router from './router'
