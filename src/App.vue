@@ -1,8 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <!-- <FooterGuide v-if="this.$route.meta.isShowFooterGuide"/> -->
-    <FooterGuide v-if="this.$route.path==='/Home'"/>
+    <FooterGuide v-if="$route.meta.isShowFooterGuide"/>
   </div>
 </template>
 

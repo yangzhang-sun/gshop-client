@@ -3,7 +3,7 @@
     <!-- 头部 -->
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/Home')" slot="left" class="header_search">
+      <span @click="$router.replace('/home')" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -21,7 +21,6 @@
       <ul class="SortDetail"  @click.prevent="goPath('/SortList')">
         <li >
           <a href="">
-          
             <i class="iconfont icon-jiubei"></i>
             <span>白酒</span>
           </a>

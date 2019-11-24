@@ -6,3 +6,7 @@
 */
 
 export const SAVE_WINES = 'save_wines'
+
+export const SAVE_GOODS_SHOPS = 'save_goods_shops'
+
+export const SAVE_PRODUCTS = 'save_products'

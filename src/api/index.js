@@ -10,4 +10,16 @@ import ajax from './ajax'
 // 获取酒仙分类列表
 export const getWines = ()=>ajax({
   url:'/wines',
+  
 })
+
+// 获取首页轮播图照片
+export const getProducts = () => ajax({
+  url: '/products'
+})
+
+// 获取商店列表请求
+export const getShopAndGoodsList = () => ajax({
+  url:'/shopAndGoods',
+})
+

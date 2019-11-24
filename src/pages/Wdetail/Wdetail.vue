@@ -8,41 +8,16 @@
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
         <i class="iconfont icon-webicon03"></i>
       </span>
-      </HeaderGuide>
+      </HeaderGuide >
     </header>
-     <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice" style="z-index= 2">
-      <div class="guideItem" @click="goPath('/Home')">
-        <span>
-          <i class="iconfont icon-index"></i>
-        </span>
-        <span>首页</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Sort')">
-        <span>
-          <i class="iconfont icon-sousuo1"></i>
-        </span>
-        <span>搜索</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Cart')">
-        <span>
-          <i class="iconfont icon-icongouwuche1"></i>
-        </span>
-        <span>购物车</span>
-      </div>
-      <div class="guideItem" @click="goPath('/Login')">
-        <span>
-          <i class="iconfont icon-wodedangxuan1"></i>
-        </span>
-        <span>我的酒仙</span>
-      </div>
-    </div> 
+    <HeaderNavigation class="headerNavigation" v-show="isShowNotice"/>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" >
-          <img src="../../common/images/jiudatu.jpg" alt="">
+          <img :src="detailDate.image_url" alt="">
           </div>
         <div class="swiper-slide">
-          <img src="../../common/images/jiu2datu.jpg" alt="">
+          <img :src="detailDate.image_url" alt="">
         </div>
         <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
@@ -52,9 +27,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <div class="w-messageContainer">
-      <div class="w-degree" >46°牛栏山二锅头大二（绿瓶）500ml</div>
+      <div class="w-degree" >{{detailDate.description}}</div>
       <div class="w-message">
-        <p class="w-price" >￥888.00</p>
+        <p class="w-price" >￥{{detailDate.price}}</p>
         <p class="w-club">会员下单再享98折,可省0.38元</p>
       </div>
     </div>
@@ -164,29 +139,64 @@
 <script type="text/ecmascript-6">
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
-export default {
- data(){
-      return{
-        isShowNotice: false 
+  import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
+  export default {
+    components:{
+      HeaderNavigation
+    },
+    created(){
+      const { id, name } = this.$route.query
+      // const path = JSON.parse(sessionStorage.getItem('path'))
+      // if(path == '/SortList'){
+      console.log(name)
+      if(name == '张阳'){
+        this.$ajax({
+          url:'/getDetails',
+          params:{
+            id
+          }
+        })
+        .then((res)=>{
+          this.detailDate=res.arr[0]
+          console.log(res.arr[0])
+        })
+      }else{
+        // 老哥的数据
       }
     },
-  methods: {
-    shade(){
-      // console.log('1')
-      this.isShade = !this.isShade
-    }
-   
-  },
-  mounted() {
-    var mySwiper = new Swiper(".swiper-container", {
-       loop: true,
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination"
+    data(){
+      return{
+        isShowNotice: false ,
+        detailDate:{},
+        path:''
       }
-    });
+    },
+    methods: {
+      shade(){
+        // console.log('1')
+        this.isShade = !this.isShade
+      },
+      goPath(){
+        const path = JSON.parse(sessionStorage.getItem('path'))
+        this.$router.replace(path)
+      }
+    },
+    mounted() {
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true,
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination"
+        }
+      })
+    },
+    beforeRouteEnter (to, from, next) {
+      sessionStorage.setItem('path',JSON.stringify(from.fullPath))
+      // this.path = 
+      console.log()
+      next(true)
+    }
   }
-};
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
@@ -198,6 +208,8 @@ export default {
       position fixed
       top 46px
       left 42px
+  .headerNavigation
+    z-index 99
   .SortList
     width 100%
     height 324px
@@ -267,12 +279,14 @@ export default {
     padding-bottom 30px
     .w-degree
       font-size 17px
-      text-align center
+      text-align left 
       padding-top 15px
+      margin-left 2px  
     .w-message
       display flex
       flex-direction column
-      margin-top 10px        
+      margin-top 10px
+      margin-left 2px   
       .w-price
         color red
         font-size 20px

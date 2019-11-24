@@ -19,35 +19,62 @@ import Sort from '../pages/Sort/Sort.vue'
 import Wdetail from '../pages/Wdetail/Wdetail'
 import SortList from '../pages/SortList/SortList.vue'
 import Purchase from '../pages/Purchase/Purchase.vue'
+import WhiteJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
+import CartList from '../components/CartList/CartList.vue'
+import CartEmply from '../components/CartEmply/CartEmply.vue'
+
 import Mine from '../pages/Mine/Mine.vue'
 
 export default[
   {
     path:'/login',
-    component:Login
+    component:Login,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/cart',
-    component:Cart
+    component:Cart,
+    children:[
+      {
+        path:'/cart/cartList',
+        component:CartList,
+      },
+      {
+        path:'/cart/cartEmply',
+        component:CartEmply,
+      }
+    ]
   },
   {
     path:'/home',
-    component:Home
-    // meta:{//只有一个页面需要底部导航
-    //   isShowFooterGuide:true
-    // }
+    component:Home,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
-    path: '/Purchase',
+    path: '/purchase',
     component: Purchase
   },
   {
+    path:'/whiteJiu',
+    component:WhiteJiu,
+  },
+  {
     path:'/flush',
-    component:Flush
+    component:Flush,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path:'/sort',
-    component:Sort
+    component:Sort,
+    meta: {
+      isShowFooterGuide: true
+    }
   },
   {
     path: '/wdetail',
