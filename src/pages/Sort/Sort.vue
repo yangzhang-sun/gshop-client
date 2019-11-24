@@ -21,7 +21,6 @@
       <ul class="SortDetail"  @click.prevent="goPath('/SortList')">
         <li >
           <a href="">
-          
             <i class="iconfont icon-jiubei"></i>
             <span>白酒</span>
           </a>

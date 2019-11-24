@@ -22,7 +22,7 @@ import Purchase from '../pages/Purchase/Purchase.vue'
 import WhiteJiu from '../pages/Home/WhiteJiu/WhiteJiu.vue'
 import CartList from '../components/CartList/CartList.vue'
 import CartEmply from '../components/CartEmply/CartEmply.vue'
-import Search from '../pages/Home/Search/Search.vue'
+
 import Mine from '../pages/Mine/Mine.vue'
 
 export default[
@@ -62,10 +62,10 @@ export default[
     path:'/whiteJiu',
     component:WhiteJiu,
   },
-  {
-    path:'/search',
-    component:Search,
-  },
+  // {
+  //   path:'/search',
+  //   component:Search,
+  // },
   {
     path:'/flush',
     component:Flush,

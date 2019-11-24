@@ -169,6 +169,7 @@
                 font-size 15px
                 font-weight bold
               .w-btn
+                border-radius 10%
                 position absolute 
                 right 10px              
                 color white
