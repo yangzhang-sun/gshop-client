@@ -13,13 +13,10 @@ export const getWines = ()=>ajax({
   
 })
 
-<<<<<<< HEAD
 export const getShopAndGoodsList = () => ajax({
   url:'/shopAndGoods',
 })
 
-=======
->>>>>>> 362663c7422bb8510049e8c524b52cea27be9ca7
 export const getProducts = () => ajax({
   url:'/Products'
 

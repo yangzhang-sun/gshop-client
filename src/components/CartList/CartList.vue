@@ -44,11 +44,11 @@
               </p>
               <div class="changeCount">
                 <a class="countDelete" @click="reduceItem(item.id)">-</a>
-                <span class="countNumber">{{ count }}</span>
+                <span class="countNumber">{{ item.count||count }}</span>
                 <a class="countAdd" @click="addItem(item.id)">+</a>
               </div>
             </div>
-            <a class="deleteWine" @click="deteleItem(item.id)">|&nbsp;删除</a>
+            <a class="deleteWine" @click="deteleItem(item.id, $store.state.goods[index].id)">|&nbsp;删除</a>
           </li>
         </ul>
       </li>
@@ -113,25 +113,63 @@
 
        },
 
-       addItem(itemId,event){
-         console.log(event)
-         if(this.count >= 1){
-           this.count++
-         }
+
+    //添加商品
+       addItem(itemId){
+        //  console.log(this.goods)
+        this.goods.forEach(elements => {
+          // console.log(elements.jiuxianziying)
+          elements.jiuxianziying.forEach(element => {
+            // console.log(element)
+            if(this.count >= 1 && element.id === itemId){
+              // console.log(element.count)
+              element.count++
+            }
+          })
+        })
        },
+
+
+      //减商品
        reduceItem(itemId){
-         if(this.count <= 1){
-           return
-         }
-         this.count--
-       },
-       deteleItem(ItemId){
-          // MessageBox.confirm('确定删除该商品吗？').then(action => {
-          //   actionAgree => this.item.splice(ItemId,1)
-          //   actionReject => console.log('取消清空')
-          // })
-          console.log(this.itemArr)
-          // this.itemArr = this.itemArr.filter((element) => {ItemId !== event.target.value})
+         this.goods.forEach(elements => {
+            // console.log(elements.jiuxianziying)
+            elements.jiuxianziying.forEach(element => {
+              // console.log(element)
+              if(element.count <= 1){
+                return
+              }
+              if(element.id === itemId){
+                // console.log(element.count)
+                element.count--
+              }
+            })
+          })
+        },
+
+       
+       
+       //删除商品
+       deteleItem(ItemId, goodId){
+          MessageBox.confirm('确定删除该商品吗？')
+          .then(action => {
+              this.goods.forEach((elements,index) => {
+                console.log(elements.jiuxianziying.length )
+                   if(elements.jiuxianziying.length <= 1 && elements.id === goodId) {
+                      this.goods.splice(index,1)
+                   }
+                   elements.jiuxianziying.forEach((element,index) => {
+                     if(element.id === ItemId){
+                       elements.jiuxianziying.splice(index,1)
+                     }
+                   })
+              })
+
+              
+          },(err)=>{
+            console.log(1111)
+          })
+           // this.itemArr = this.itemArr.filter((element) => {ItemId !== event.target.value})
        }
 
     },
