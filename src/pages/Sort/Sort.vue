@@ -15,46 +15,13 @@
       </div>
     </header>
     <!-- 遮罩层 -->
-<<<<<<< HEAD
-    <div @click="isShowNotice=false" id="SortGuideContainer" v-show="isShowNotice">
-      <div class="guideItem" @click="goPath('/home')">
-        <span>
-          <i class="iconfont icon-index"></i>
-        </span>
-        <span>首页</span>
-      </div>
-      <div class="guideItem" @click="goPath('/sort')">
-        <span>
-          <i class="iconfont icon-sousuo1"></i>
-        </span>
-        <span>搜索</span>
-      </div>
-      <div class="guideItem" @click="goPath('/cart')">
-        <span>
-          <i class="iconfont icon-icongouwuche1"></i>
-        </span>
-        <span>购物车</span>
-      </div>
-      <div class="guideItem" @click="goPath('/login')">
-        <span>
-          <i class="iconfont icon-wodedangxuan1"></i>
-        </span>
-        <span>我的酒仙</span>
-      </div>
-    </div>
-=======
     <HeaderNavigation v-show="isShowNotice"/>
->>>>>>> baa40181d7b1b8fc273706c1c6218958843822dc
     <!-- 主页 -->
     <div class="SortList">
       <ul class="SortDetail"  @click.prevent="goPath('/SortList')">
         <li >
-<<<<<<< HEAD
-          <a @click.prevent="goPath('/sortList')" href="">
-=======
           <a href="">
           
->>>>>>> baa40181d7b1b8fc273706c1c6218958843822dc
             <i class="iconfont icon-jiubei"></i>
             <span>白酒</span>
           </a>
