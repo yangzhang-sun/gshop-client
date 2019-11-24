@@ -40,7 +40,6 @@ export default {
         this.m = Math.floor((leftTime / 1000 / 60) % 60)
         this.s = Math.floor((leftTime / 1000) % 60)
       }
-      // console.log(this.s)
       //递归每秒调用countTime方法，显示动态时间效果
       setTimeout(this.countTime, 1000)
     },
