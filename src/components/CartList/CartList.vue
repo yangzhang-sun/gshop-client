@@ -6,7 +6,7 @@
           <input
             class="shopAll-check"
             type="checkbox"
-            v-model="isCheck[good.id].isChecked"
+            v-model="good.isChecked"
             @click="checkGoods(index)"
           />
           <img
@@ -30,8 +30,8 @@
               <input
                 type="checkbox"
                 class="CartListCheckBox"
-                v-model="isCheck[good.id].items.isCheckedItem"
-                ref="inputItem"
+                v-model="item.isCheckedItem"
+                @click="checkItem(item.id, $store.state.goods[index].id)"
               />
               <img class="winesImg" :src="item.image" alt="美国伏特加" />
             </div>
@@ -44,11 +44,15 @@
               </p>
               <div class="changeCount">
                 <a class="countDelete" @click="reduceItem(item.id)">-</a>
-                <span class="countNumber">{{ count }}</span>
+                <span class="countNumber">{{ item.count || count }}</span>
                 <a class="countAdd" @click="addItem(item.id)">+</a>
               </div>
             </div>
-            <a class="deleteWine" @click="deteleItem(item.id)">|&nbsp;删除</a>
+            <a
+              class="deleteWine"
+              @click="deteleItem(item.id, $store.state.goods[index].id)"
+              >|&nbsp;删除</a
+            >
           </li>
         </ul>
       </li>
@@ -76,8 +80,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {mapState} from 'vuex'
+  import {mapState,mapMutations} from 'vuex'
   import {MessageBox} from 'mint-ui'
+  import { SAVE_ADD_GOOD, SAVE_REDUCE_GOOD, SAVE_DETELE_GOOD  } from '../../store/mutation-type.js'
   export default {
     data () {
       return {
@@ -93,68 +98,87 @@
     computed: {
       ...mapState({
         goods: state => state.goods
-      }),
+      })
     },
     methods: {
        checkGoods (index) {
           // // console.log(event.target.checked)
-           this.itemArr = this.goods[index].jiuxianziying  //每个店铺的商品
-         
-         this.itemArr.forEach(element => {
-            //  let indexItem = itemArr.indexOf(element)
-             if(event.target.checked) {
-                // this.$set(this.keyGoodId, 'isCheckedItem', true)
-                console.log(this.keyGoodId[index])
-                .items.isCheckedItem = true
-              }
-          });
-
-          // this.$set(this.keyGoodId.items, 'isCheckedItem', true)
+          let flag = !this.goods[index].isChecked //读取到每个商家是否选中的状态
+          this.goods[index].isChecked = flag  //修改商家是否选中的状态
+           /* 
+           由于 JavaScript 的限制，Vue 不能检测以下数组的变动：
+           当你利用索引直接设置一个数组项时，例如：vm.items[indexOfItem] = newValue
+           */
+          
+          let itemArr = this.goods[index].jiuxianziying  //每个店铺的商品
+          itemArr.forEach((element) => {              //遍历商品
+            this.$set(element,'isCheckedItem',flag)      // isCheckedItem每个商品的状态 和商店的状态一致
+            // element.isCheckedItem = !element.isCheckedItem
+          })
+          
+       },
+        
+       checkItem(ItemId,goodId){
+        //  this.goods.forEach(element => {
+        //     element.jiuxianziying.id === ItemId && (element.isCheckedItem = !!!element.isCheckedItem)
+        //  })
+            this.goods.filter(elements => { 
+              elements.id === goodId 
+              console.log(elements.id) 
+            })
+            // this.$set(this,'goods',this.goods.filter(elements => { elements.id === goodId })) 
+            console.log( this.goods.filter(elements => { elements.id == goodId }))
+            console.log(goodId)
+            // .jiuxianziying.forEach( element => {element.isCheckedItem = !!!element.isCheckedItem})
 
        },
 
-       addItem(itemId,event){
-         console.log(event)
-         if(this.count >= 1){
-           this.count++
-         }
+    //添加商品
+       addItem(itemId){
+         this.$store.commit(SAVE_ADD_GOOD,itemId)
        },
+
+
+      //减少商品
        reduceItem(itemId){
-         if(this.count <= 1){
-           return
-         }
-         this.count--
-       },
-       deteleItem(ItemId){
-          // MessageBox.confirm('确定删除该商品吗？').then(action => {
-          //   actionAgree => this.item.splice(ItemId,1)
-          //   actionReject => console.log('取消清空')
-          // })
-          console.log(this.itemArr)
-          // this.itemArr = this.itemArr.filter((element) => {ItemId !== event.target.value})
-       }
+         this.$store.commit(SAVE_REDUCE_GOOD,itemId)
+      },
 
+
+
+       //删除商品
+       deteleItem(ItemId, goodId){
+         console.log({ItemId, goodId})
+          MessageBox.confirm('确定删除该商品吗？')
+          .then(action => {
+             this.$store.commit(SAVE_DETELE_GOOD,{ItemId,goodId})
+           },(err)=>{
+            console.log('取消删除')
+          })
+       },
     },
-    watch: {
-      goods(newValue){
-        newValue.forEach((good, index) => {
-          this.isCheck[good.id] = {
-            isChecked: false,
-            items: {
-              isCheckedItem: false
-            }
-          }
-          this.keyGoodId = this.isCheck[good.id]
-        })
-      }
-    }
-  } 
+
+    // watch: {
+    //   // goods(newValue){
+    //   //   newValue.forEach((good, index) => {
+    //   //     this.isCheck[good.id] = {
+    //   //       isChecked: false,
+    //   //       items: {
+    //   //         isCheckedItem: false
+    //   //       }
+    //   //     }
+    //   //     this.keyGoodId = this.isCheck[good.id]
+    //   //   })
+    //   // }
+    // }
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
 .CartListContainer
   .CartListShopUl
-    padding 10px 0
+    padding 10px 2px 43px 2px
+    margin-top 60px
     .CartListShopLi
       .shopTitle
           height 45px
@@ -220,18 +244,21 @@
                 font-size 20px
                 border 1px solid #d0d0d0
                 width 84px
+                border-radius 3px
                 .countDelete,.countAdd
                   display inline-block
                   width 20px
                   height 20px
                   line-height 20px
                   text-align center
-                  border-right 1px solid #d0d0d0
+                .countDelete
+                  border-right 1px solid #d0d0d0 
                 .countNumber
                   display inline-block
                   width 40px
                   text-align center
-                  border-right 1px solid #d0d0d0
+                  font-size 16px
+                  border-right 1px solid #d0d0d0 
                   height 20px
                   line-height 20px
           .deleteWine

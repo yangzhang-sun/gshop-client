@@ -10,7 +10,10 @@ import {
   SAVE_GOODS_SHOPS,
   SAVE_PRODUCTS,
   SAVE_CUXIAO1,
-  SAVE_CUXIAO2
+  SAVE_CUXIAO2,
+  SAVE_ADD_GOOD,
+  SAVE_REDUCE_GOOD,
+  SAVE_DETELE_GOOD
 } from './mutation-type'
 
 
@@ -31,5 +34,46 @@ export default{
   },
   [SAVE_CUXIAO2](state,{cuxiao2}){
     state.cuxiao2 = cuxiao2
+  }, 
+  
+  [SAVE_ADD_GOOD](state,itemId){
+    state.goods.forEach(elements => {
+      // console.log(elements.jiuxianziying)
+      elements.jiuxianziying.forEach(element => {
+        // console.log(element)
+        if(element.count >= 1 && element.id === itemId){
+          // console.log(element.count)
+          element.count++
+        }
+      })
+    })
+  },
+  [SAVE_REDUCE_GOOD](state,itemId){
+    state.goods.forEach(elements => {
+      // console.log(elements.jiuxianziying)
+      elements.jiuxianziying.forEach(element => {
+        // console.log(element)
+        if(element.count <= 1){
+          return
+        }
+        if(element.id === itemId){
+          // console.log(element.count)
+          element.count--
+        }
+      })
+    })
+  },
+  [SAVE_DETELE_GOOD](state, {ItemId, goodId}){
+    console.log(ItemId, goodId)
+    state.goods.forEach((elements,index) => {
+          if(elements.jiuxianziying.length <= 1 && elements.id === goodId) {
+             state.goods.splice(index,1)
+          }
+          elements.jiuxianziying.forEach((element,index) => {
+            if(element.id === ItemId){
+              elements.jiuxianziying.splice(index,1)
+            }
+          })
+      })
   }
 }

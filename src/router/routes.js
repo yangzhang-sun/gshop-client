@@ -91,7 +91,7 @@ export default[
 
   {
     path:'/',
-    redirect: '/sort'
+    redirect: '/cart'
   },
   {
     path:'/mine',
