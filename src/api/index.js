@@ -23,9 +23,6 @@ export const getShopAndGoodsList = () => ajax({
   url:'/shopAndGoods',
 })
 
-export const getProducts = () => ajax({
-  url:'/Products'
-})
 
 /* 手机动态登陆 */
 export const loginWithPassword = (name,  captcha) => ajax({
