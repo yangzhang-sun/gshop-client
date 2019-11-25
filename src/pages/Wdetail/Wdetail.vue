@@ -144,26 +144,25 @@
     components:{
       HeaderNavigation
     },
-    created(){
-      const { id, name } = this.$route.query
-      // const path = JSON.parse(sessionStorage.getItem('path'))
-      // if(path == '/SortList'){
-      console.log(name)
-      if(name == '张阳'){
-        this.$ajax({
-          url:'/getDetails',
-          params:{
-            id
-          }
-        })
-        .then((res)=>{
-          this.detailDate=res.arr[0]
-          console.log(res.arr[0])
-        })
-      }else{
-        // 老哥的数据
-      }
-    },
+
+    // mounted(){
+    //   const { id, name } = this.$route.query
+    //   // const path = JSON.parse(sessionStorage.getItem('path'))
+    //   // if(path == '/SortList'){
+    //   console.log(name)
+    //   if(name == '嘿嘿'){
+    //     this.$ajax({
+    //       url:'/cuxiao1',
+    //       params:{
+    //         id
+    //       }
+    //     })
+    //     .then((res)=>{
+    //       this.detailDate=res.arr[0]
+    //       console.log(res.arr[0])
+    //     })
+    //   }},
+
     data(){
       return{
         isShowNotice: false ,
