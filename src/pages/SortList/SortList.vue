@@ -92,6 +92,7 @@
       }
     },
     async mounted(){
+      console.log(this.$store,this.wines)
       this.$store.dispatch('getWinesAction')
     },
     methods:{
@@ -139,12 +140,10 @@
         } 
         return arr
       },
-      beforeRouteEnter (to, from, next) {
-        console.log('------------ beforeRouteEnter  ----------------');
-        // debugger
-        console.log(to,from)
-        next(true)
-      },
+      // beforeRouteEnter (to, from, next) {
+      //   // debugger
+      //   next(true)
+      // },
     }
   }
 </script>

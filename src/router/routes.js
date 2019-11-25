@@ -62,6 +62,10 @@ export default[
     path:'/whiteJiu',
     component:WhiteJiu,
   },
+  // {
+  //   path:'/search',
+  //   component:Search,
+  // },
   {
     path:'/flush',
     component:Flush,
@@ -87,7 +91,7 @@ export default[
 
   {
     path:'/',
-    redirect: '/sort'
+    redirect: '/cart'
   },
   {
     path:'/mine',

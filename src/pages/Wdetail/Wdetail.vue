@@ -13,13 +13,13 @@
     <HeaderNavigation class="headerNavigation" v-show="isShowNotice"/>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" >
-          <img :src="detailDate.image_url" alt="">
-        </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide" v-for="(item, index) in 3" :key="index">
           <img :src="detailDate.image_url" alt="">
         </div>
         <!-- <div class="swiper-slide">
+          <img :src="detailDate.image_url" alt="">
+        </div>
+        <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
         </div> -->
 
@@ -139,8 +139,10 @@
 
 <script type="text/ecmascript-6">
   import {mapState} from 'vuex'
+  import Bscroll from 'better-scroll'
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
+  import {SAVE_WINES} from '../../store/mutation-type'
   import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
   export default {
     components:{
@@ -150,43 +152,7 @@
       ...mapState({
         wines:state => state.wines
       })
-    },
-    created(){
-      const { id, name } = this.$route.query
-      // const path = JSON.parse(sessionStorage.getItem('path'))
-      // if(path == '/SortList'){
-      console.log(name)
-      if(name == '张阳'){
-        console.log(11111111111)
-        // this.$ajax({
-        //   url:'/getDetails',
-        //   params:{
-        //     id
-        //   }
-        // })
-        // .then((res)=>{
-        //   this.detailDate=res.arr[0]
-        //   console.log(res.arr[0])
-        // })
-        // console.log(this.wines)
-        const arr = this.wines.filter(item => id==item.id)
-        this.detailDate = arr[0]
-        console.log(this.detailDate)
-      }else{
-        // 老哥的数据
-        console.log('1111111111')
-        this.$ajax({
-          url:'/getDetails',
-          params:{
-            id
-          }
-        })
-        .then((res)=>{
-          this.detailDate=res.arr[0]
-          console.log(res.arr[0])
-        })
-      }
-    },
+    }, 
     data(){
       return{
         isShowNotice: false ,
@@ -205,16 +171,26 @@
       }
     },
     mounted() {
-      // this.$nextTick(() => { //$nextTick代表下次页面全部渲染完毕
-      //     new Swiper('.swiper-container', {
-      //       loop: true,
-      //       loopedSlides:5,
-      //       pagination: {
-      //         el: '.swiper-pagination',
-      //       },
-      //     })
-      //   })
       this.$store.dispatch('getWinesAction')
+      if (sessionStorage.getItem('wines')) {
+        // 有值
+        let wines = JSON.parse(sessionStorage.getItem('wines'))
+        const { id, name } = this.$route.query
+        if(name == '张阳'){
+          const arr = wines.filter(item => id==item.id)
+          this.detailDate = arr[0]
+        }
+        // this.$store.commit(SAVE_WINES,{wines})
+      }else{
+        this.$store.dispatch('getWinesAction')
+      }
+      //beforeunload页面刷新前调用
+      window.addEventListener('beforeunload',()=>{
+        sessionStorage.setItem('wines',JSON.stringify(this.wines))
+      })
+
+      
+  
       var mySwiper = new Swiper(".swiper-container", {
         loop: true,
         // 如果需要分页器
@@ -225,8 +201,7 @@
     },
     beforeRouteEnter (to, from, next) {
       sessionStorage.setItem('path',JSON.stringify(from.fullPath))
-      // this.path = 
-      console.log()
+      console.log(from)
       next(true)
     }
   }
@@ -445,20 +420,24 @@
       display flex
       font-size 15px
       li:nth-child(1)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(2)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
         border-left 1px solid #eee
         border-right 1px solid #eee
       li:nth-child(3)
+        border-radius 5%
         width 20%
         line-height 40px
         text-align center
       li:nth-child(4)
+        border-radius 5%
         width 45%
         line-height 40px
         text-align center

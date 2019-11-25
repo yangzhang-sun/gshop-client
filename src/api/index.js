@@ -26,3 +26,42 @@ export const getFlushdatas = () => ajax({
   url:'/flushdatas',
 })
 
+
+/* 手机动态登陆 */
+export const loginWithPassword = (name,  captcha) => ajax({
+  url: '/login_pwd',
+  method: 'POST',
+  data: {
+    name,
+    captcha
+  }
+})
+
+
+/*账号登录 */
+export const loginWithPhone = (phone, code, pwd) => ajax({
+  url: '/login_sms',
+  method: 'POST',
+  data: {
+    phone,
+    pwd,
+    code
+  }
+})
+
+
+// /* 发送短信验证码 */
+// export const sendCode = phone => ajax({
+//   url: '/sendcode',
+//   params: {
+//     phone
+//   }
+// })
+// /*  自动登录 */
+// export const autoLogin = () => ajax({
+//   url:'/auto_login',
+//   headers: {
+//     needToken: true
+//   }
+// })
+

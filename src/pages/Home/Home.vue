@@ -197,7 +197,7 @@ import 'swiper/css/swiper.min.css'
   export default {
     mounted(){
 
-      this.$store.dispatch('gitProductAction')
+      this.$store.dispatch('getProductAction')
 
       new Swiper('.swiper-container', {
             loop: true,
