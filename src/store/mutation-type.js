@@ -10,3 +10,7 @@ export const SAVE_WINES = 'save_wines'
 export const SAVE_GOODS_SHOPS = 'save_goods_shops'
 
 export const SAVE_PRODUCTS = 'save_products'
+
+export const SAVE_CUXIAO1 = 'save_cuxiao1'
+
+export const SAVE_CUXIAO2 = 'save_cuxiao2'

@@ -23,3 +23,11 @@ export const getShopAndGoodsList = () => ajax({
   url:'/shopAndGoods',
 })
 
+//获取促销商品
+export const getCuXiao1 = () => ajax({
+  url:'/cuxiao1',
+})
+export const getCuXiao2 = () => ajax({
+  url:'/cuxiao2',
+})
+

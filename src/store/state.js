@@ -15,5 +15,7 @@ export default {
     {name: '筛选'}
   ],
   goods: [],//商品列表信息
-  products:{}
+  products:{},
+  cuxiao1: [],
+  cuxiao2: []
 }
