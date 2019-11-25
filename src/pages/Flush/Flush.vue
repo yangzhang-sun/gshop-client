@@ -20,7 +20,7 @@
         <img class="w-headerImage" src="../../common/images/qingcang/chaodidatu.jpg" alt="">
         <div class="w-goodListContain">
           <ul class="w-goodList"  @click="goPath('/wdetail')">
-            <li class="w-List" @click="wgoDetai1(item.id)" v-for="(itme,index) in cuxiao2" key="index">
+            <li class="w-List" v-for="(itme,index) in cuxiao2" key="index">
               <img :src="itme.image_url" alt="">
               <p>{{itme.description}}</p>
               <span class="w-price">￥{{itme.price}}</span>
@@ -58,14 +58,6 @@ import {mapState} from 'vuex'
       goPath(path){
         this.$router.replace(path)
       },
-      wgoDetai1(ID){
-        this.$router.push({
-          path:'/wdetail',
-          query:{
-            'id':ID,
-            'name':'嘿嘿'
-            }})
-      }
     },
     computed:{
      ...mapState({
