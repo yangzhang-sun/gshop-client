@@ -23,26 +23,11 @@ export const getShopAndGoodsList = () => ajax({
   url:'/shopAndGoods',
 })
 
-
-/* 手机动态登陆 */
-export const loginWithPassword = (name,  captcha) => ajax({
-  url: '/login_pwd',
-  method: 'POST',
-  data: {
-    name,
-    captcha
-  }
+//获取促销商品
+export const getCuXiao1 = () => ajax({
+  url:'/cuxiao1',
 })
-
-
-/*账号登录 */
-export const loginWithPhone = (phone, code, pwd) => ajax({
-  url: '/login_sms',
-  method: 'POST',
-  data: {
-    phone,
-    pwd,
-    code
-  }
+export const getCuXiao2 = () => ajax({
+  url:'/cuxiao2',
 })
 

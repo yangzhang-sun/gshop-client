@@ -11,6 +11,10 @@ export const SAVE_GOODS_SHOPS = 'save_goods_shops'
 
 export const SAVE_PRODUCTS = 'save_products'
 
+export const SAVE_CUXIAO1 = 'save_cuxiao1'
+
+export const SAVE_CUXIAO2 = 'save_cuxiao2'
+
 export const SAVE_ADD_GOOD = 'save_add_good'
 
 export const SAVE_REDUCE_GOOD = 'save_reduce_good'
