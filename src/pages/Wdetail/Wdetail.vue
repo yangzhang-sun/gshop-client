@@ -22,7 +22,6 @@
         <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
         </div> -->
-
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -189,15 +188,16 @@
         sessionStorage.setItem('wines',JSON.stringify(this.wines))
       })
 
-      
+      window.onload = function(){
+        var mySwiper = new Swiper(".swiper-container", {
+          loop: true,
+          // 如果需要分页器
+          pagination: {
+            el: ".swiper-pagination"
+          }
+        })
+      }
   
-      var mySwiper = new Swiper(".swiper-container", {
-        loop: true,
-        // 如果需要分页器
-        pagination: {
-          el: ".swiper-pagination"
-        }
-      })
     },
     beforeRouteEnter (to, from, next) {
       sessionStorage.setItem('path',JSON.stringify(from.fullPath))
