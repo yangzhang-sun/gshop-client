@@ -11,7 +11,8 @@ import {
   SAVE_PRODUCTS,
   SAVE_ADD_GOOD,
   SAVE_REDUCE_GOOD,
-  SAVE_DETELE_GOOD
+  SAVE_DETELE_GOOD,
+  SAVE_CHECK_GOOD
 } from './mutation-type'
 
 
@@ -66,5 +67,21 @@ export default{
             }
           })
       })
+  },
+  [SAVE_CHECK_GOOD](state, {ItemId, goodId,flagItem}){
+    // console.log(ItemId, goodId,flagItem)
+    state.goods.forEach((elements,index) => {
+          // if(elements.jiuxianziying.length <= 1 && elements.id === goodId) {
+          //    state.goods.splice(index,1)
+          // }
+          elements.jiuxianziying.forEach((element,index) => {
+            if(element.id === ItemId){
+              element.isCheckedItem = true
+            }
+          })
+      })
+      flagItem(ItemId, goodId)
   }
 }
+
+

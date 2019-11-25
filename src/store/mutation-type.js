@@ -17,3 +17,4 @@ export const SAVE_REDUCE_GOOD = 'save_reduce_good'
 
 export const SAVE_DETELE_GOOD = 'save_delete_good'
 
+export const SAVE_CHECK_GOOD = 'save_check_good'
