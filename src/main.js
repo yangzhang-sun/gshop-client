@@ -1,24 +1,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { Button } from 'mint-ui'
+import 'mint-ui/lib/style.css'
 import VueLazyload from 'vue-lazyload'
-import './veevalidate'
-import * as API from './api'
-
+// import './veevalidate'
 import 'lib-flexible/flexible'
 import '../public/reset.css'
 
 
-import 'mint-ui/lib/style.css'
 import ajax from './api/ajax'
 import router from './router'
 import store from './store'
-Vue.prototype.$API = API
 
 Vue.config.productionTip = false
 
 import HeaderGuide from './components/HeaderGuide/HeaderGuide.vue'
-import { from } from 'rxjs'
 
 // vue实例挂载ajax方法
 Vue.prototype.$ajax = ajax
@@ -33,7 +29,7 @@ Vue.component(Button.name, Button)
 
 
 
- const vm = new Vue({
+new Vue({
   components:{
     App
   },

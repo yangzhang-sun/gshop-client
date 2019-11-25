@@ -8,9 +8,8 @@
 import ajax from './ajax'
 
 // 获取酒仙分类列表
-export const getWines = ()=>ajax({
-  url:'/wines',
-  
+export const getWines = () => ajax({
+  url: '/wines'
 })
 
 // 获取首页轮播图照片
@@ -20,14 +19,29 @@ export const getProducts = () => ajax({
 
 // 获取商店列表请求
 export const getShopAndGoodsList = () => ajax({
-  url:'/shopAndGoods',
+  url: '/shopAndGoods',
 })
 
+export const getFlushdatas = () => ajax({
+  url: '/flushdatas',
+})
+
+
+/* 手机动态登陆 */
+export const loginWithPassword = (name, captcha) => ajax({
+  url: '/login_pwd',
+  method: 'POST',
+  data: {
+    name,
+    captcha
+  }
+})
 //获取促销商品
 export const getCuXiao1 = () => ajax({
-  url:'/cuxiao1',
-})
+    url: '/cuxiao1',
+  })
 export const getCuXiao2 = () => ajax({
+<<<<<<< HEAD
   url:'/cuxiao2',
 })
 
@@ -83,3 +97,7 @@ export const getShopDatas = () => ajax({
 
 
 
+=======
+    url: '/cuxiao2',
+  })
+>>>>>>> 9d077a4bff941b087234a7cf69efffd0738dd3e7

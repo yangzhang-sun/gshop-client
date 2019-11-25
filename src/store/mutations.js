@@ -9,6 +9,7 @@ import {
   SAVE_WINES,
   SAVE_GOODS_SHOPS,
   SAVE_PRODUCTS,
+  SAVE_FLUSHDATAS,
   SAVE_CUXIAO1,
   SAVE_CUXIAO2,
   SAVE_ADD_GOOD,
@@ -30,13 +31,15 @@ export default{
   [SAVE_PRODUCTS](state,{products}){
     state.products = products
   },
+  [SAVE_FLUSHDATAS](state,{flushdatas}){
+    state.flushdatas = flushdatas
+  },
   [SAVE_CUXIAO1](state,{cuxiao1}){
     state.cuxiao1 = cuxiao1
   },
   [SAVE_CUXIAO2](state,{cuxiao2}){
     state.cuxiao2 = cuxiao2
   }, 
-  
   [SAVE_ADD_GOOD](state,itemId){
     state.goods.forEach(elements => {
       // console.log(elements.jiuxianziying)
@@ -65,7 +68,6 @@ export default{
     })
   },
   [SAVE_DETELE_GOOD](state, {ItemId, goodId}){
-    console.log(ItemId, goodId)
     state.goods.forEach((elements,index) => {
           if(elements.jiuxianziying.length <= 1 && elements.id === goodId) {
              state.goods.splice(index,1)

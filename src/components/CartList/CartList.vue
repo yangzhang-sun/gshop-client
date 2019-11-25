@@ -58,21 +58,21 @@
       </li>
     </ul>
     <div class="cartCountContainer">
-      <input class="cartCountInput" type="checkBox" v-model="isCheckAll" @click="checkAll"/>
+      <input class="cartCountInput" type="checkbox" v-model="isCheckAll" @click="checkAll"/>
       <div class="cartCountAll">
         <span>全选</span>
       </div>
       <div class="priceCountContainer">
         <p class="totalCount">
           <span>合计:</span>
-          <strong>￥0.00</strong>
+          <strong>￥{{zongji||0.00}}</strong>
         </p>
         <!-- <p class="disCountsCount">
           <span>优惠:</span>
           <strong>￥0.00</strong>
         </p> -->
       </div>
-      <div class="jiesuanCount">
+      <div class="jiesuanCount" :class="payClass">
         <span>去结算&nbsp; (0)</span>
       </div>
     </div>
@@ -103,15 +103,34 @@ export default {
     }),
 
 
-    // 计算总价
+    payClass(){
+      return this.zongji > 0?'enough':'not-enough'
+    },
+    zongji(){
+        let countPrice = 0
+        this.goods.forEach(elements => {
+          elements.jiuxianziying.forEach(element => {
+            console.log(element.isCheckedItem)
+            if(element.isCheckedItem){
+              console.log(element.price*element.count)
+              countPrice+= element.price*element.count
+            }
+          })
+        })
+       
+        return countPrice
+    }
+      
     
   },
+
   methods: {
     
-
+     
     //1. 点击店铺商品全选
      checkGoods (index) {
         // // console.log(event.target.checked)
+        // let checkedGoodArr = []
 
         let flag = !this.goods[index].isChecked //读取到每个商家是否选中的状态
         this.goods[index].isChecked = flag  //修改商家是否选中的状态
@@ -125,7 +144,16 @@ export default {
           this.$set(element,'isCheckedItem',flag)      // isCheckedItem每个商品的状态 和商店的状态一致
           // element.isCheckedItem = !element.isCheckedItem
         })
+        
+        //  checkedGoodArr += checkedGoodArr.push(this.goods[index].isChecked)
 
+        this.flagGood = this.goods.every(element => {
+         return  element.isChecked === true
+        })
+        if(this.flagGood){
+          this.isCheckAll = true
+        }
+        
      },
 
      //2. 店铺内的每个商品都选中的时候，店铺选中
@@ -158,23 +186,15 @@ export default {
 
      //3. 底部全部选中的时候，商品和店铺都选中
      checkAll () {
-       let flag = !!!this.isCheckAll
-      //  let flag = !this.isCheckAll
-      //  console.log(!flag)
+
+      let flag = !this.isCheckAll
       console.log(flag)
        this.isCheckAll = flag
         this.goods.forEach(elements => {
-          // let flag = !elements.isChecked //读取到每个商家是否选
-          // let flag = true
           elements.isChecked = flag
           elements.jiuxianziying.forEach((ele)=>{
             ele.isCheckedItem = flag
           })
-          // if(elements.isChecked){
-          //   elements.isChecked = false
-          // }
-          // this.$set(elements,'isChecked',true)
-          // console.log(flag)
         })
      },
 
@@ -337,9 +357,10 @@ export default {
       line-height 50px
       position absolute
       right 0
-      background-color #d9d9d9
       text-align center
-      &.active
+      &.not-enough
+        background-color #d9d9d9
+      &.enough
         background-color #fd5a5b
       span
         font-size 16px
