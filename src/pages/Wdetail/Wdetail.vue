@@ -166,6 +166,7 @@
       },
       goPath(){
         const path = JSON.parse(sessionStorage.getItem('path'))
+        console.log(path)
         this.$router.replace(path)
       }
     },
@@ -188,6 +189,7 @@
       //beforeunload页面刷新前调用
       window.addEventListener('beforeunload',()=>{
         sessionStorage.setItem('wines',JSON.stringify(this.wines))
+        sessionStorage.setItem('path',JSON.stringify(from.fullPath))
       })
 
       window.onload = function(){
@@ -202,7 +204,7 @@
   
     },
     beforeRouteEnter (to, from, next) {
-      sessionStorage.setItem('path',JSON.stringify(from.fullPath))
+      // sessionStorage.setItem('path',JSON.stringify(from.fullPath))
       console.log(from)
       next(true)
     }
