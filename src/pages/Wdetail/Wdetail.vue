@@ -2,7 +2,7 @@
   <div class="w-bigContain">
     <header class="SortHeader">
       <HeaderGuide title="选酒">
-      <span @click="$router.replace('/flush')" slot="left" class="header_search">
+      <span @click="goPath()" slot="left" class="header_search">
         <i class="iconfont icon-zuozhishi"></i>
       </span>
       <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -13,15 +13,15 @@
     <HeaderNavigation class="headerNavigation" v-show="isShowNotice"/>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" >
+        <div class="swiper-slide" v-for="(item, index) in 3" :key="index">
           <img :src="detailDate.image_url" alt="">
-          </div>
-        <div class="swiper-slide">
+        </div>
+        <!-- <div class="swiper-slide">
           <img :src="detailDate.image_url" alt="">
         </div>
         <div class="swiper-slide">
           <img src="../../common/images/jiu3datu.jpg" alt="">
-        </div>
+        </div> -->
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -137,8 +137,11 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import {mapState} from 'vuex'
+  import Bscroll from 'better-scroll'
   import Swiper from "swiper";
   import 'swiper/css/swiper.min.css'
+  import {SAVE_WINES} from '../../store/mutation-type'
   import HeaderNavigation from '../../components/HeaderNavigation/HeaderNavigation'
   export default {
     components:{
@@ -163,6 +166,11 @@
     //     })
     //   }},
 
+    computed:{
+      ...mapState({
+        wines:state => state.wines
+      })
+    }, 
     data(){
       return{
         isShowNotice: false ,
@@ -177,22 +185,46 @@
       },
       goPath(){
         const path = JSON.parse(sessionStorage.getItem('path'))
+        console.log(path)
         this.$router.replace(path)
       }
     },
     mounted() {
-      var mySwiper = new Swiper(".swiper-container", {
-        loop: true,
-        // 如果需要分页器
-        pagination: {
-          el: ".swiper-pagination"
+      
+
+      this.$store.dispatch('getWinesAction')
+      if (sessionStorage.getItem('wines')) {
+        // 有值
+        let wines = JSON.parse(sessionStorage.getItem('wines'))
+        const { id, name } = this.$route.query
+        if(name == '张阳'){
+          const arr = wines.filter(item => id==item.id)
+          this.detailDate = arr[0]
         }
+        // this.$store.commit(SAVE_WINES,{wines})
+      }else{
+        this.$store.dispatch('getWinesAction')
+      }
+      //beforeunload页面刷新前调用
+      window.addEventListener('beforeunload',()=>{
+        sessionStorage.setItem('wines',JSON.stringify(this.wines))
+        sessionStorage.setItem('path',JSON.stringify(from.fullPath))
       })
+
+      window.onload = function(){
+        var mySwiper = new Swiper(".swiper-container", {
+          loop: true,
+          // 如果需要分页器
+          pagination: {
+            el: ".swiper-pagination"
+          }
+        })
+      }
+  
     },
     beforeRouteEnter (to, from, next) {
-      sessionStorage.setItem('path',JSON.stringify(from.fullPath))
-      // this.path = 
-      console.log()
+      // sessionStorage.setItem('path',JSON.stringify(from.fullPath))
+      console.log(from)
       next(true)
     }
   }
@@ -200,6 +232,7 @@
 
 <style lang='stylus' rel='stylesheet/stylus'>
  @import "../../common/stylus/mixins.styl"
+ .w-bigContain
   .SortHeader
     width 100%
     height 40px
@@ -209,62 +242,6 @@
       left 42px
   .headerNavigation
     z-index 99
-  .SortList
-    width 100%
-    height 324px
-    .SortDetail
-      width 100%
-      height 100%
-      display block
-      li
-        text-align center
-        float left
-        width 124px
-        height 81px
-        border  1px solid #eee
-        margin 0 -1px -1px 0
-        a
-          display flex
-          flex-direction column
-          text-align center
-          margin-top 10px
-          color #333
-          i
-            width 100%
-            height 36px
-            font-size 36px
-          span 
-            margin-top 6px
-            font-size 18px
-.w-bigContain
-  position relative
-  background #F5F5F5
-  // .w-headerTitle 
-  //   width: 100%
-  //   height: 40px
-  //   background: red
-  .shade
-    width 100%
-    height 45px
-    border-bottom: 1px solid #ccc
-    background-color: #efefef
-    position absolute
-    top 40px
-    left 0
-    display flex
-    justify-content space-around
-    .shadeItem
-      display flex
-      flex-direction column
-      margin 10px
-  .viewModule
-    margin-top 40px
-    height: 40px;
-    line-height: 40px;
-    padding: 0 10px;
-    background: #f13063;
-    text-align: center;
-    font-size: 16px;
   .swiper-container
     .swiper-wrapper
       .swiper-slide
@@ -459,7 +436,7 @@
     bottom 0
     width 100%
     background white
-    border-top 1px solid #999
+    border-top 1px solid #eee
     .w-bottomLIst
       height 40px
       line-height 40px
@@ -475,8 +452,8 @@
         width 20%
         line-height 40px
         text-align center
-        border-left 1px solid #999
-        border-right 1px solid #999
+        border-left 1px solid #eee
+        border-right 1px solid #eee
       li:nth-child(3)
         border-radius 5%
         width 20%

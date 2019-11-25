@@ -6,7 +6,7 @@
       <!-- 头部 -->
         
       <header class="SortHeader" >
-        <span @click="$router.push('/Sort')" slot="left" class="header_search">
+        <span @click="$router.replace('/Sort')" slot="left" class="header_search">
           <i class="iconfont icon-zuozhishi"></i>
         </span>
         <span @click="isShowNotice=!isShowNotice" slot="right" class="header_menu">
@@ -92,6 +92,7 @@
       }
     },
     async mounted(){
+      console.log(this.$store,this.wines)
       this.$store.dispatch('getWinesAction')
     },
     methods:{
@@ -139,12 +140,10 @@
         } 
         return arr
       },
-      beforeRouteEnter (to, from, next) {
-        console.log('------------ beforeRouteEnter  ----------------');
-        // debugger
-        console.log(to,from)
-        next(true)
-      },
+      // beforeRouteEnter (to, from, next) {
+      //   // debugger
+      //   next(true)
+      // },
     }
   }
 </script>
