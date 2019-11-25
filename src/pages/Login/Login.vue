@@ -129,7 +129,7 @@ export default {
     },
 
     async sendCode(){
-      // console.log('2')
+      console.log('发送验证码')
       this.countDown = 10
       this.intervalId = window.setInterval(()=>{
         this.countDown--
