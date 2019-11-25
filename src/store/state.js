@@ -16,5 +16,8 @@ export default {
   ],
   goods: [],//商品列表信息
   products:{},
-  flushdatas:[]
+  flushdatas:[],
+  cuxiao1: [],
+  cuxiao2: [],
+  products:{}
 }

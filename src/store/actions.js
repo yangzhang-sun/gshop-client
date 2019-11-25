@@ -8,14 +8,18 @@ import {
   getWines,
   getShopAndGoodsList,
   getProducts,
-  getFlushdatas
+  getFlushdatas,
+  getCuXiao1,
+  getCuXiao2
 } from '../api'
 
 import { 
   SAVE_WINES ,
   SAVE_GOODS_SHOPS,
   SAVE_PRODUCTS,
-  SAVE_FLUSHDATAS
+  SAVE_FLUSHDATAS,
+  SAVE_CUXIAO1,
+  SAVE_CUXIAO2
 } from './mutation-type'
 
 export default {
@@ -45,6 +49,18 @@ export default {
     if (result.code ===0) {
       //2.diaoyong mutation,将数据交给mutation
       commit(SAVE_FLUSHDATAS,{flushdatas:result.data})
+    }
+  },
+  async getCuXiao1Action({commit}){
+    let result = await getCuXiao1()
+    if (result.code ===0) {
+      commit(SAVE_CUXIAO1,{cuxiao1:result.data})
+    }
+  },
+  async getCuXiao2Action({commit}){
+    let result = await getCuXiao2()
+    if (result.code ===0) {
+      commit(SAVE_CUXIAO2,{cuxiao2:result.data})
     }
   }
 }

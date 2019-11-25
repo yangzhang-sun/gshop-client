@@ -170,6 +170,8 @@
       }
     },
     mounted() {
+      
+
       this.$store.dispatch('getWinesAction')
       if (sessionStorage.getItem('wines')) {
         // 有值

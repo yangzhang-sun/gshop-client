@@ -8,8 +8,8 @@
 import ajax from './ajax'
 
 // 获取酒仙分类列表
-export const getWines = ()=>ajax({
-  url:'/wines'
+export const getWines = () => ajax({
+  url: '/wines'
 })
 
 // 获取首页轮播图照片
@@ -19,16 +19,16 @@ export const getProducts = () => ajax({
 
 // 获取商店列表请求
 export const getShopAndGoodsList = () => ajax({
-  url:'/shopAndGoods',
+  url: '/shopAndGoods',
 })
 
 export const getFlushdatas = () => ajax({
-  url:'/flushdatas',
+  url: '/flushdatas',
 })
 
 
 /* 手机动态登陆 */
-export const loginWithPassword = (name,  captcha) => ajax({
+export const loginWithPassword = (name, captcha) => ajax({
   url: '/login_pwd',
   method: 'POST',
   data: {
@@ -36,32 +36,10 @@ export const loginWithPassword = (name,  captcha) => ajax({
     captcha
   }
 })
-
-
-/*账号登录 */
-export const loginWithPhone = (phone, code, pwd) => ajax({
-  url: '/login_sms',
-  method: 'POST',
-  data: {
-    phone,
-    pwd,
-    code
-  }
-})
-
-
-// /* 发送短信验证码 */
-// export const sendCode = phone => ajax({
-//   url: '/sendcode',
-//   params: {
-//     phone
-//   }
-// })
-// /*  自动登录 */
-// export const autoLogin = () => ajax({
-//   url:'/auto_login',
-//   headers: {
-//     needToken: true
-//   }
-// })
-
+//获取促销商品
+export const getCuXiao1 = () => ajax({
+    url: '/cuxiao1',
+  })
+export const getCuXiao2 = () => ajax({
+    url: '/cuxiao2',
+  })

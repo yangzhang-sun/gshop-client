@@ -88,6 +88,11 @@ import CartList from '../../components/CartList/CartList'
 <style lang="stylus" rel="stylesheet/stylus">
 .xt-cart
   .CartHeader
+    position fixed
+    left 0 
+    top 0
+    z-index 222
+    width 100%
     .CartHeader-T
       background-color #fafafa
       position relative
@@ -149,6 +154,7 @@ import CartList from '../../components/CartList/CartList'
             width 25%
             line-height 18px
             text-align center
+            background #fff
             p
               .iconfont
                 font-size 12px

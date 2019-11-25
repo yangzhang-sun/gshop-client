@@ -6,15 +6,11 @@
       <div class="w-Container">
         <img class="w-headerImage" src="../../common/images/qingcang/yaxianghaohuodatu.jpg" alt="">
         <div class="w-goodListContain">
-          <ul class="w-goodList" @click="$router.replace('/wdetail')">
-            <li 
-              class="w-List" 
-              v-for="(flushdata, index) in flushdatas" :key="index"
-              @click="goDetail(flushdata.id)"
-              >
-              <img v-lazy='flushdata.image_url'>
-              <p>{{flushdata.description}}</p>
-              <span class="w-price">￥{{flushdata.price}}</span>
+          <ul class="w-goodList" @click="goPath('/wdetail')">
+            <li class="w-List" v-for="(item,index) in cuxiao1" :key="index">
+              <img :src="item.image_url" alt="">
+              <p>{{item.description}}</p>
+              <span class="w-price">￥{{item.price}}</span>
               <button style="border: none;" class="w-btn">点击购买</button>
             </li>
           </ul>
@@ -24,40 +20,10 @@
         <img class="w-headerImage" src="../../common/images/qingcang/chaodidatu.jpg" alt="">
         <div class="w-goodListContain">
           <ul class="w-goodList"  @click="goPath('/wdetail')">
-            <li class="w-List">
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
-              <button style="border: none;" class="w-btn">点击购买</button>
-            </li>
-            <li class="w-List">
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
-              <button style="border: none;" class="w-btn">点击购买</button>
-            </li>
-            <li class="w-List">
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
-              <button style="border: none;" class="w-btn">点击购买</button>
-            </li>
-            <li class="w-List">
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
-              <button style="border: none;" class="w-btn">点击购买</button>
-            </li>
-            <li class="w-List"  >
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
-              <button style="border: none;" class="w-btn">点击购买</button>
-            </li>
-            <li class="w-List">
-              <img src="../../common/images/qingcang/chaodihaohuo.jpg" alt="">
-              <p>46°牛栏山二锅头大二（绿瓶）500ml</p>
-              <span class="w-price">￥189</span>
+            <li class="w-List" @click="wgoDetai1(item.id)" v-for="(itme,index) in cuxiao2" key="index">
+              <img :src="itme.image_url" alt="">
+              <p>{{itme.description}}</p>
+              <span class="w-price">￥{{itme.price}}</span>
               <button style="border: none;" class="w-btn">点击购买</button>
             </li>
           </ul>
@@ -82,36 +48,34 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {mapState} from 'vuex'
+import {mapState} from 'vuex'
   export default {
-    data(){
-      return{
-        
-      }
+    mounted() {
+       this.$store.dispatch('getCuXiao1Action'),
+       this.$store.dispatch('getCuXiao2Action')
     },
     methods: {
-      // goPath(path){
-      //   this.$router.replace(path)
-      // },
-      goDetail(ID){
+      goPath(path){
+        this.$router.replace(path)
+      },
+      wgoDetai1(ID){
         this.$router.push({
           path:'/wdetail',
           query:{
             'id':ID,
-            'name':'王涛'
-            }
-        })
+            'name':'嘿嘿'
+        }})
       }
     },
-    async mounted(){
-      this.$store.dispatch('getWinesAction')
-    },
     computed:{
-      ...mapState({
-        flushdatas: state => state.flushdatas
-      })
-    }
-  }
+     ...mapState({
+       cuxiao1:state => state.cuxiao1
+     }),
+     ...mapState({
+       cuxiao2:state => state.cuxiao2
+     })
+   },
+}
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -141,6 +105,7 @@
             background white
             display flex
             flex-wrap wrap
+
             .w-List
               width 50%
               height 223px
@@ -153,6 +118,9 @@
                 width 158px
                 height 28px
                 text-align center
+                white-space nowrap 
+                overflow hidden
+                text-overflow ellipsis 
               .w-price
                 position absolute 
                 left 10px
